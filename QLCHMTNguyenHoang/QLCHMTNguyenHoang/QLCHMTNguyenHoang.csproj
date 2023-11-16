@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="danh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="danh.Designer.cs">
+      <DependentUpon>danh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
