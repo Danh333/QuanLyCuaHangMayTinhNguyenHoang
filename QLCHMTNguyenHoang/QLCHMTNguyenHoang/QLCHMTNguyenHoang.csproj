@@ -87,6 +87,9 @@
     <EmbeddedResource Include="QuanLiHoaDon.resx">
       <DependentUpon>QuanLiHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sfsfs.resx">
+      <DependentUpon>sfsfs.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
