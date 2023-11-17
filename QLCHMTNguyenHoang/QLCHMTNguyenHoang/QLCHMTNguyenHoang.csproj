@@ -96,11 +96,11 @@
     <Compile Include="QuanLiKhoHang.Designer.cs">
       <DependentUpon>QuanLiKhoHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiNhanVien.cs">
+    <Compile Include="QuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiNhanVien.Designer.cs">
-      <DependentUpon>QuanLiNhanVien.cs</DependentUpon>
+    <Compile Include="QuanLyNhanVien.Designer.cs">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Dang_Nhap.resx">
       <DependentUpon>Dang_Nhap.cs</DependentUpon>
@@ -125,8 +125,8 @@
     <EmbeddedResource Include="QuanLiKhoHang.resx">
       <DependentUpon>QuanLiKhoHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiNhanVien.resx">
-      <DependentUpon>QuanLiNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyNhanVien.resx">
+      <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiBanHang.resx">
       <DependentUpon>QuanLiBanHang.cs</DependentUpon>
