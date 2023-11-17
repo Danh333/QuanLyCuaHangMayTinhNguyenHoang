@@ -33,7 +33,7 @@ namespace QLCHMTNguyenHoang
 
         private void QuanLiHoaDon_Load(object sender, EventArgs e)
         {
-            cn = new SqlConnection(@"Data Source=WHOANHMINH\SQLEXPRESS;Initial Catalog=abc;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=M3\SQLEXPRESS;Initial Catalog=nguoidung;Integrated Security=True");
             string sql = "select * from hoadon";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
@@ -53,6 +53,11 @@ namespace QLCHMTNguyenHoang
 
                 i++;
             }
+            this.textBox1.Enabled = false;
+            this.textBox2.Enabled = false;
+            this.txtGia.Enabled = false;
+            this.txtTensp.Enabled = false;
+            this.txttinhtrang.Enabled = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -91,6 +96,32 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Lỗi xảy ra");
             }
            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+  
+
+            this.textBox1.Clear();
+            this.textBox2.Clear();
+            this.txtGia.Clear();
+            this.txtTensp.Clear();
+            this.txttinhtrang.Clear();
+
+            this.textBox1.Enabled = true;
+            this.textBox2.Enabled = true;
+            this.txtGia.Enabled = true;
+            this.txtTensp.Enabled = true;
+            this.txttinhtrang.Enabled = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Enabled = false;
+            this.textBox2.Enabled = false;
+            this.txtGia.Enabled = false;
+            this.txtTensp.Enabled = false;
+            this.txttinhtrang.Enabled = false;
         }
     }
 }
