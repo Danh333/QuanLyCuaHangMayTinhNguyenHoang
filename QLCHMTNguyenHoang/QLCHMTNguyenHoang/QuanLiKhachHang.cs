@@ -20,7 +20,7 @@ namespace QLCHMTNguyenHoang
         public void LoadData()
         {
             co.KetNoi();
-            dgvkhachhang.DataSource = co.GetData("select * from tblKhachhang");
+            dataGridView1.DataSource = co.GetData("select * from tblKhachhang");
             co.NgatKetNoi();
         }
 

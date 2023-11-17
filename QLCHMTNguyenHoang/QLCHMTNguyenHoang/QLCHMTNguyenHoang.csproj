@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectCSDL.cs" />
     <Compile Include="QuanLiBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +103,12 @@
     <Compile Include="QuanLiNhanVien.Designer.cs">
       <DependentUpon>QuanLiNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quanlykhohang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quanlykhohang.Designer.cs">
+      <DependentUpon>Quanlykhohang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dang_Nhap.resx">
       <DependentUpon>Dang_Nhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiBanHang.resx">
       <DependentUpon>QuanLiBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quanlykhohang.resx">
+      <DependentUpon>Quanlykhohang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
