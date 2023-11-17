@@ -25,7 +25,7 @@ namespace QLCHMTNguyenHoang
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=WHOANHMINH\SQLEXPRESS;Initial Catalog=abc;Integrated Security=True");
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=M3\SQLEXPRESS;Initial Catalog=nguoidung;Integrated Security=True");
             string userName = txtTenDangNhap.Text;
             string passWord = txtMatKhau.Text;
             if (userName == null || userName.Equals(""))
@@ -59,6 +59,11 @@ namespace QLCHMTNguyenHoang
 
             }
             sqlcon.Close();
+
+        }
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
 
         }
     }
