@@ -24,7 +24,7 @@ namespace QLCHMTNguyenHoang
 
         private void QLnhanvien_Click(object sender, EventArgs e)
         {
-            QuanLiNhanVien fNhanvien = new QuanLiNhanVien();
+            QuanLyNhanVien fNhanvien = new QuanLyNhanVien();
             fNhanvien.Show();
             this.Hide();
         }

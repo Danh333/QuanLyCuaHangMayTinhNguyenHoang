@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLCHMTNguyenHoang
 {
-    public partial class QuanLiNhanVien : Form
+    public partial class QuanLyNhanVien : Form
     {
-        public QuanLiNhanVien()
+        public QuanLyNhanVien()
         {
             InitializeComponent();
         }
