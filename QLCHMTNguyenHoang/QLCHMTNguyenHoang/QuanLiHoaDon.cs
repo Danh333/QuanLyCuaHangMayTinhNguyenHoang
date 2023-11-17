@@ -28,5 +28,10 @@ namespace QLCHMTNguyenHoang
         {
             this.Close();
         }
+
+        private void QuanLiHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
