@@ -58,6 +58,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txttinhtrang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -188,7 +189,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 201);
+            this.dataGridView1.Size = new System.Drawing.Size(746, 201);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -249,7 +250,7 @@
             this.groupBox2.Controls.Add(this.txttimkiem);
             this.groupBox2.Location = new System.Drawing.Point(910, 99);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(220, 145);
+            this.groupBox2.Size = new System.Drawing.Size(284, 145);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -272,16 +273,37 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(880, 352);
+            this.listView1.Location = new System.Drawing.Point(819, 352);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(250, 201);
+            this.listView1.Size = new System.Drawing.Size(375, 201);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Mã HD";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên HD";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tên SP";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Giá";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Ngày HD";
             // 
             // txtTensp
             // 
@@ -314,6 +336,10 @@
             this.label7.Size = new System.Drawing.Size(84, 20);
             this.label7.TabIndex = 10;
             this.label7.Text = "Tình trạng";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tình trạng";
             // 
             // QuanLiHoaDon
             // 
@@ -376,5 +402,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTensp;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
