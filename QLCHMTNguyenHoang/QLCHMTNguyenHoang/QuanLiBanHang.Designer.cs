@@ -60,6 +60,7 @@
             this.QLhethong.TabIndex = 1;
             this.QLhethong.Text = "Quản lí hệ thống";
             this.QLhethong.UseVisualStyleBackColor = true;
+            this.QLhethong.Click += new System.EventHandler(this.QLhethong_Click);
             // 
             // QLkhohang
             // 
@@ -70,6 +71,7 @@
             this.QLkhohang.TabIndex = 3;
             this.QLkhohang.Text = "Quản lí kho hàng";
             this.QLkhohang.UseVisualStyleBackColor = true;
+            this.QLkhohang.Click += new System.EventHandler(this.QLkhohang_Click);
             // 
             // QLkhachhang
             // 
@@ -80,6 +82,7 @@
             this.QLkhachhang.TabIndex = 2;
             this.QLkhachhang.Text = "Quản lí khách hàng";
             this.QLkhachhang.UseVisualStyleBackColor = true;
+            this.QLkhachhang.Click += new System.EventHandler(this.QLkhachhang_Click);
             // 
             // QLhanghoa
             // 
@@ -90,6 +93,7 @@
             this.QLhanghoa.TabIndex = 5;
             this.QLhanghoa.Text = "Quản lí hàng hóa";
             this.QLhanghoa.UseVisualStyleBackColor = true;
+            this.QLhanghoa.Click += new System.EventHandler(this.QLhanghoa_Click);
             // 
             // QLhoadon
             // 
@@ -100,6 +104,7 @@
             this.QLhoadon.TabIndex = 4;
             this.QLhoadon.Text = "Quản lí hóa đơn";
             this.QLhoadon.UseVisualStyleBackColor = true;
+            this.QLhoadon.Click += new System.EventHandler(this.QLhoadon_Click);
             // 
             // label1
             // 

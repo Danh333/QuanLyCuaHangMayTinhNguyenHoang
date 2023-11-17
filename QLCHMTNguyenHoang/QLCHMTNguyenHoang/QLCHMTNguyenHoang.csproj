@@ -47,19 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="banthu1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="banthu1.Designer.cs">
-      <DependentUpon>banthu1.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLiBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLiBanHang.Designer.cs">
       <DependentUpon>QuanLiBanHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
     <Compile Include="Dang_Nhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,21 +66,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QuanLiHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiHangHoa.Designer.cs">
+      <DependentUpon>QuanLiHangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiHeThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiHeThong.Designer.cs">
+      <DependentUpon>QuanLiHeThong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiHoaDon.Designer.cs">
+      <DependentUpon>QuanLiHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiKhachHang.Designer.cs">
+      <DependentUpon>QuanLiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiKhoHang.Designer.cs">
+      <DependentUpon>QuanLiKhoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLiNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLiNhanVien.Designer.cs">
       <DependentUpon>QuanLiNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="sfsfs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sfsfs.Designer.cs">
-      <DependentUpon>sfsfs.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="banthu1.resx">
-      <DependentUpon>banthu1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dang_Nhap.resx">
       <DependentUpon>Dang_Nhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,14 +110,26 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiHangHoa.resx">
+      <DependentUpon>QuanLiHangHoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiHeThong.resx">
+      <DependentUpon>QuanLiHeThong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiHoaDon.resx">
+      <DependentUpon>QuanLiHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiKhachHang.resx">
+      <DependentUpon>QuanLiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLiKhoHang.resx">
+      <DependentUpon>QuanLiKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLiNhanVien.resx">
       <DependentUpon>QuanLiNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLiBanHang.resx">
       <DependentUpon>QuanLiBanHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="sfsfs.resx">
-      <DependentUpon>sfsfs.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
