@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QLCHMTNguyenHoang
 {
-    public partial class DangNhap : Form
+    public partial class QuanLiBanHang : Form
     {
-        public DangNhap()
+        public QuanLiBanHang()
         {
             InitializeComponent();
+        }
+
+        private void QuanLiBanHang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
