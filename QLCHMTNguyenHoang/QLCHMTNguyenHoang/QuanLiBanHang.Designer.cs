@@ -28,77 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.QLnhanvien = new System.Windows.Forms.Button();
+            this.QLhethong = new System.Windows.Forms.Button();
+            this.QLkhohang = new System.Windows.Forms.Button();
+            this.QLkhachhang = new System.Windows.Forms.Button();
+            this.QLhanghoa = new System.Windows.Forms.Button();
+            this.QLhoadon = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // QLnhanvien
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(47, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 59);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quản lí nhân viên";
-            this.button1.UseVisualStyleBackColor = true;
+            this.QLnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLnhanvien.Location = new System.Drawing.Point(47, 34);
+            this.QLnhanvien.Name = "QLnhanvien";
+            this.QLnhanvien.Size = new System.Drawing.Size(209, 59);
+            this.QLnhanvien.TabIndex = 0;
+            this.QLnhanvien.Text = "Quản lí nhân viên";
+            this.QLnhanvien.UseVisualStyleBackColor = true;
+            this.QLnhanvien.Click += new System.EventHandler(this.QLnhanvien_Click);
             // 
-            // button2
+            // QLhethong
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(47, 136);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 59);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Quản lí hệ thống";
-            this.button2.UseVisualStyleBackColor = true;
+            this.QLhethong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLhethong.Location = new System.Drawing.Point(47, 136);
+            this.QLhethong.Name = "QLhethong";
+            this.QLhethong.Size = new System.Drawing.Size(209, 59);
+            this.QLhethong.TabIndex = 1;
+            this.QLhethong.Text = "Quản lí hệ thống";
+            this.QLhethong.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // QLkhohang
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(299, 136);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(209, 59);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Quản lí kho hàng";
-            this.button3.UseVisualStyleBackColor = true;
+            this.QLkhohang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLkhohang.Location = new System.Drawing.Point(299, 136);
+            this.QLkhohang.Name = "QLkhohang";
+            this.QLkhohang.Size = new System.Drawing.Size(209, 59);
+            this.QLkhohang.TabIndex = 3;
+            this.QLkhohang.Text = "Quản lí kho hàng";
+            this.QLkhohang.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // QLkhachhang
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(299, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 59);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Quản lí khách hàng";
-            this.button4.UseVisualStyleBackColor = true;
+            this.QLkhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLkhachhang.Location = new System.Drawing.Point(299, 34);
+            this.QLkhachhang.Name = "QLkhachhang";
+            this.QLkhachhang.Size = new System.Drawing.Size(209, 59);
+            this.QLkhachhang.TabIndex = 2;
+            this.QLkhachhang.Text = "Quản lí khách hàng";
+            this.QLkhachhang.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // QLhanghoa
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(555, 136);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(209, 59);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Quản lí hàng hóa";
-            this.button5.UseVisualStyleBackColor = true;
+            this.QLhanghoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLhanghoa.Location = new System.Drawing.Point(555, 136);
+            this.QLhanghoa.Name = "QLhanghoa";
+            this.QLhanghoa.Size = new System.Drawing.Size(209, 59);
+            this.QLhanghoa.TabIndex = 5;
+            this.QLhanghoa.Text = "Quản lí hàng hóa";
+            this.QLhanghoa.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // QLhoadon
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(555, 34);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(209, 59);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Quản lí hóa đơn";
-            this.button6.UseVisualStyleBackColor = true;
+            this.QLhoadon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QLhoadon.Location = new System.Drawing.Point(555, 34);
+            this.QLhoadon.Name = "QLhoadon";
+            this.QLhoadon.Size = new System.Drawing.Size(209, 59);
+            this.QLhoadon.TabIndex = 4;
+            this.QLhoadon.Text = "Quản lí hóa đơn";
+            this.QLhoadon.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -124,12 +125,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.QLhanghoa);
+            this.groupBox1.Controls.Add(this.QLnhanvien);
+            this.groupBox1.Controls.Add(this.QLhethong);
+            this.groupBox1.Controls.Add(this.QLkhachhang);
+            this.groupBox1.Controls.Add(this.QLhoadon);
+            this.groupBox1.Controls.Add(this.QLkhohang);
             this.groupBox1.Location = new System.Drawing.Point(138, 158);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(861, 226);
@@ -155,12 +156,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button QLnhanvien;
+        private System.Windows.Forms.Button QLhethong;
+        private System.Windows.Forms.Button QLkhohang;
+        private System.Windows.Forms.Button QLkhachhang;
+        private System.Windows.Forms.Button QLhanghoa;
+        private System.Windows.Forms.Button QLhoadon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
