@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectCSDL.cs" />
-    <Compile Include="QuanLiBanHang.cs">
+    <Compile Include="QuanLyBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiBanHang.Designer.cs">
-      <DependentUpon>QuanLiBanHang.cs</DependentUpon>
+    <Compile Include="QuanLyBanHang.Designer.cs">
+      <DependentUpon>QuanLyBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Dang_Nhap.cs">
       <SubType>Form</SubType>
@@ -67,47 +67,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiHangHoa.cs">
+    <Compile Include="QuanLyHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiHangHoa.Designer.cs">
-      <DependentUpon>QuanLiHangHoa.cs</DependentUpon>
+    <Compile Include="QuanLyHangHoa.Designer.cs">
+      <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiHeThong.cs">
+    <Compile Include="QuanLyHeThong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiHeThong.Designer.cs">
-      <DependentUpon>QuanLiHeThong.cs</DependentUpon>
+    <Compile Include="QuanLyHeThong.Designer.cs">
+      <DependentUpon>QuanLyHeThong.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiHoaDon.cs">
+    <Compile Include="QuanLyHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiHoaDon.Designer.cs">
-      <DependentUpon>QuanLiHoaDon.cs</DependentUpon>
+    <Compile Include="QuanLyHoaDon.Designer.cs">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiKhachHang.cs">
+    <Compile Include="QuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiKhachHang.Designer.cs">
-      <DependentUpon>QuanLiKhachHang.cs</DependentUpon>
+    <Compile Include="QuanLyKhachHang.Designer.cs">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiKhoHang.cs">
+    <Compile Include="QuanLyKhoHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLiKhoHang.Designer.cs">
-      <DependentUpon>QuanLiKhoHang.cs</DependentUpon>
+    <Compile Include="QuanLyKhoHang.Designer.cs">
+      <DependentUpon>QuanLyKhoHang.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyNhanVien.Designer.cs">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Quanlykhohang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Quanlykhohang.Designer.cs">
-      <DependentUpon>Quanlykhohang.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Dang_Nhap.resx">
       <DependentUpon>Dang_Nhap.cs</DependentUpon>
@@ -117,29 +111,26 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiHangHoa.resx">
-      <DependentUpon>QuanLiHangHoa.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyHangHoa.resx">
+      <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiHeThong.resx">
-      <DependentUpon>QuanLiHeThong.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyHeThong.resx">
+      <DependentUpon>QuanLyHeThong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiHoaDon.resx">
-      <DependentUpon>QuanLiHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyHoaDon.resx">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiKhachHang.resx">
-      <DependentUpon>QuanLiKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyKhachHang.resx">
+      <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiKhoHang.resx">
-      <DependentUpon>QuanLiKhoHang.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyKhoHang.resx">
+      <DependentUpon>QuanLyKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyBanHang.resx">
+      <DependentUpon>QuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanLiBanHang.resx">
-      <DependentUpon>QuanLiBanHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Quanlykhohang.resx">
-      <DependentUpon>Quanlykhohang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

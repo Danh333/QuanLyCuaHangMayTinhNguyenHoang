@@ -48,7 +48,7 @@ namespace QLCHMTNguyenHoang
             if (dt.Read())
             {
                 // MessageBox.Show("Đăng nhập thành công ","Thông báo");
-               QuanLiBanHang  fmain = new QuanLiBanHang();
+               QuanLyBanHang  fmain = new QuanLyBanHang();
                 fmain.Show();
                 this.Hide();
 

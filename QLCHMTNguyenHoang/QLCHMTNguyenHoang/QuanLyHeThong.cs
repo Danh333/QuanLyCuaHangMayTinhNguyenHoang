@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace QLCHMTNguyenHoang
 {
-    public partial class QuanLiHeThong : Form
+    public partial class QuanLyHeThong : Form
     {
-        public QuanLiHeThong()
+        public QuanLyHeThong()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QuanLiBanHang trove = new QuanLiBanHang();
+            QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
 

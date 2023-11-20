@@ -17,21 +17,9 @@ namespace QLCHMTNguyenHoang
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btn_trove_Click(object sender, EventArgs e)
-        {
-            QuanLiBanHang trove = new QuanLiBanHang();
-            trove.Show();
-            this.Hide();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLCHMTNguyenHoang
 {
-    public partial class QuanLiHangHoa : Form
+    public partial class QuanLyHangHoa : Form
     {
-        public QuanLiHangHoa()
+        public QuanLyHangHoa()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace QLCHMTNguyenHoang
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QuanLiBanHang trove = new QuanLiBanHang();
+            QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
         }

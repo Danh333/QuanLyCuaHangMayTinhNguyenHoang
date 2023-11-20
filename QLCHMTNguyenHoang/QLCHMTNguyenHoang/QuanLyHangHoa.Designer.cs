@@ -1,6 +1,6 @@
 ﻿namespace QLCHMTNguyenHoang
 {
-    partial class QuanLiHangHoa
+    partial class QuanLyHangHoa
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(504, 214);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Location = new System.Drawing.Point(390, 201);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 49);
+            this.button2.Size = new System.Drawing.Size(118, 46);
             this.button2.TabIndex = 5;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 214);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(145, 201);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 49);
+            this.button1.Size = new System.Drawing.Size(118, 46);
             this.button1.TabIndex = 4;
             this.button1.Text = "Trở về";
             this.button1.UseVisualStyleBackColor = true;
@@ -56,23 +58,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(229, 44);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(138, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 39);
+            this.label1.Size = new System.Drawing.Size(370, 38);
             this.label1.TabIndex = 3;
-            this.label1.Text = "QUẢN LÍ HÀNG HÓA";
+            this.label1.Text = "QUẢN LÝ HÀNG HÓA";
             // 
-            // QuanLiHangHoa
+            // QuanLyHangHoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 422);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "QuanLiHangHoa";
-            this.Text = "QuanLiHangHoa";
+            this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Name = "QuanLyHangHoa";
+            this.Text = "Quản Lý Hàng Hóa";
             this.Load += new System.EventHandler(this.QuanLiHangHoa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

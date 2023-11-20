@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace QLCHMTNguyenHoang
 {
-    public partial class QuanLiHoaDon : Form
+    public partial class QuanLyHoaDon : Form
     {
         SqlConnection cn;
-        public QuanLiHoaDon()
+        public QuanLyHoaDon()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QuanLiBanHang trove = new QuanLiBanHang();
+            QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
         }
