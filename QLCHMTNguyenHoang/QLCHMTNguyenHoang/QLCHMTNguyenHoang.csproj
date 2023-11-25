@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectCSDL.cs" />
     <Compile Include="QuanLyBanHang.cs">
       <SubType>Form</SubType>
     </Compile>

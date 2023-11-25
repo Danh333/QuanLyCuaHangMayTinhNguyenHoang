@@ -363,6 +363,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "QuanLyKhachHang";
             this.Text = "Quản Lý Khách Hàng";
+            this.Load += new System.EventHandler(this.QuanLyKhachHang_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

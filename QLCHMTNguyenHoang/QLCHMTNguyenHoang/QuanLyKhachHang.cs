@@ -16,12 +16,10 @@ namespace QLCHMTNguyenHoang
         {
             InitializeComponent();
         }
-        ConnectCSDL co = new ConnectCSDL();
+       
         public void LoadData()
         {
-            co.KetNoi();
-            dataGridView1.DataSource = co.GetData("select * from tblKhachhang");
-            co.NgatKetNoi();
+           
         }
 
         private void frmkhachhang_Load(object sender, EventArgs e)
@@ -32,32 +30,18 @@ namespace QLCHMTNguyenHoang
 
         private void butthem_Click(object sender, EventArgs e)
         {
-            string sqlthem = "insert into tblKhachhang values ('" + txtmakh.Text + "','" + txttenkh.Text
-             + "','" + txtghichu.Text + "','" + txtSodt.Text + "','" + txtdiachi.Text + "')";
-            co.ThucThi(sqlthem);
-            frmkhachhang_Load(sender, e);
+            
         }
 
         private void butsua_Click(object sender, EventArgs e)
         {
-            string sqlsua = "update tblKhachhang set MaKH='" + txtmakh.Text + "',TenKH='" + txttenkh.Text + "',Ghichu = '" + txtghichu.Text
-                 + "',Diachi='" + txtdiachi.Text + "',sdt='" + txtSodt.Text + "'where MaKH='" + txtmakh.Text + "'";
-            co.ThucThi(sqlsua);
-            LoadData();
-            frmkhachhang_Load(sender, e);
+           
 
         }
 
         private void butxoa_Click(object sender, EventArgs e)
         {
-            DialogResult traloi;
-            traloi = MessageBox.Show("Bạn có chắc muốn xóa không?", "Trả lời",
-           MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (traloi == DialogResult.OK)
-            {
-                string sqlxoa = "delete from tblKhachhang where MaKH = '" + txtmakh.Text + "'";
-                co.ThucThi(sqlxoa);
-            }
+          
         }
 
         private void butcapnhat_Click(object sender, EventArgs e)
@@ -81,6 +65,11 @@ namespace QLCHMTNguyenHoang
         }
 
         private void buttimkiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuanLyKhachHang_Load(object sender, EventArgs e)
         {
 
         }
