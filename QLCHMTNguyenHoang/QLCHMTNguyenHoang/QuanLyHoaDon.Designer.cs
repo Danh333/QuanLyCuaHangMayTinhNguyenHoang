@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.hoadon1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txttimkiem = new System.Windows.Forms.TextBox();
@@ -57,31 +54,16 @@
             this.btnTrove = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.hoadon1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // hoadon1BindingSource
-            // 
-            this.hoadon1BindingSource.DataMember = "hoadon1";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(909, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 49);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Chon";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(374, 312);
+            this.btnTimKiem.Location = new System.Drawing.Point(374, 322);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(119, 30);
             this.btnTimKiem.TabIndex = 29;
@@ -91,7 +73,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(803, 81);
+            this.pictureBox1.Location = new System.Drawing.Point(813, 81);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(264, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +83,7 @@
             // txttimkiem
             // 
             this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttimkiem.Location = new System.Drawing.Point(86, 312);
+            this.txttimkiem.Location = new System.Drawing.Point(86, 322);
             this.txttimkiem.Multiline = true;
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(288, 28);
@@ -111,7 +93,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(81, 353);
+            this.label8.Location = new System.Drawing.Point(81, 374);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(176, 25);
             this.label8.TabIndex = 27;
@@ -187,7 +169,7 @@
             this.groupBox1.Controls.Add(this.txtMahd);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(86, 81);
+            this.groupBox1.Location = new System.Drawing.Point(85, 68);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(722, 170);
             this.groupBox1.TabIndex = 19;
@@ -229,7 +211,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(359, 74);
+            this.label5.Location = new System.Drawing.Point(359, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 20);
             this.label5.TabIndex = 7;
@@ -238,7 +220,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(476, 73);
+            this.dateTimePicker1.Location = new System.Drawing.Point(476, 74);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(174, 27);
             this.dateTimePicker1.TabIndex = 6;
@@ -318,7 +300,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(359, 36);
+            this.label1.Location = new System.Drawing.Point(377, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(341, 38);
             this.label1.TabIndex = 16;
@@ -327,7 +309,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(86, 402);
+            this.dataGridView1.Location = new System.Drawing.Point(86, 417);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -341,7 +323,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 619);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txttimkiem);
@@ -360,7 +341,6 @@
             this.Name = "QuanLyHoaDon";
             this.Text = "Quản Lý Hóa Đơn";
             this.Load += new System.EventHandler(this.QuanLiHoaDon_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.hoadon1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -371,9 +351,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource hoadon1BindingSource;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txttimkiem;

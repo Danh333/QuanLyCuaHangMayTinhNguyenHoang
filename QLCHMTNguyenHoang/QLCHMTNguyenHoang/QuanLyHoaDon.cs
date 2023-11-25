@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
@@ -22,7 +23,7 @@ namespace QLCHMTNguyenHoang
             dataGridView1.RowsAdded += RowsAdded;
             dataGridView1.RowsRemoved += RowsRemoved;
         }
-       void hienthi()
+        void hienthi()
         {
             cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=abc;Integrated Security=True");
             string sql = "select * from hoadon1";
@@ -50,7 +51,6 @@ namespace QLCHMTNguyenHoang
             txtTenhd.Enabled = false;
             txtTensp.Enabled = false;
             comboBox1.Enabled = false;
-            //  txttinhtrang.Enabled = false;
             txtGia.Enabled = false;
         }
         void dongButton()
@@ -103,6 +103,7 @@ namespace QLCHMTNguyenHoang
             hienthi();
             dongTextbox();
             LoadComboBox();
+           
         }
         private void btnThem_Click_1(object sender, EventArgs e)
         {
@@ -116,7 +117,6 @@ namespace QLCHMTNguyenHoang
             txtTenhd.Enabled = true;
             txtTensp.Enabled = true;
             dateTimePicker1.Value = DateTime.Now.Date;
-            //txttinhtrang.Enabled = true;
             comboBox1.Enabled = true;
             txtGia.Enabled = true;
             moButton();
@@ -124,6 +124,7 @@ namespace QLCHMTNguyenHoang
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            txttimkiem.Focus();
             cn.Open();
             string sql = @"select * from hoadon1 where mahd like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
@@ -135,7 +136,6 @@ namespace QLCHMTNguyenHoang
             dongTextbox();
             cn.Close();
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (txtMahd.Text == "")
@@ -164,8 +164,7 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Vui lòng chọn ngày hóa đơn");
                 dateTimePicker1.Focus(); return;
             }
-
-           // try
+            try
             {
                 cn.Open();
                 string mahd = txtMahd.Text;
@@ -182,13 +181,12 @@ namespace QLCHMTNguyenHoang
                 dongTextbox();
                 cn.Close();
             }
-          //  catch (Exception)
-            //{
-            //    MessageBox.Show(" Đã có Hóa đơn mang tên : " + txtMahd.Text + ". Vui lòng chọn tên khác ", "THÔNG BÁO ");
-            //}
+            catch (Exception)
+            {
+                MessageBox.Show(" Đã có Hóa đơn mang tên : " + txtMahd.Text + ". Vui lòng chọn tên khác ", "THÔNG BÁO ");
+            }
 
         }
-
         private void btnCapnhat_Click(object sender, EventArgs e)
         {
             try
@@ -214,7 +212,6 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Lỗi cập nhật");
             }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             cn.Open();
@@ -232,7 +229,6 @@ namespace QLCHMTNguyenHoang
                 cn.Close();
             }
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             moTextbox();
@@ -243,14 +239,12 @@ namespace QLCHMTNguyenHoang
         {
             this.Close();
         }
-
         private void btnTrove_Click_1(object sender, EventArgs e)
         {
             QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -264,8 +258,7 @@ namespace QLCHMTNguyenHoang
                     txtTensp.Text = dataGridView1.Rows[numrow].Cells[2].Value.ToString();
                     txtGia.Text = dataGridView1.Rows[numrow].Cells[3].Value.ToString();
                     dateTimePicker1.Text = dataGridView1.Rows[numrow].Cells[4].Value.ToString();
-                    comboBox1.Text = dataGridView1.Rows[numrow].Cells[5].Value.ToString();
-                   
+                    comboBox1.Text = dataGridView1.Rows[numrow].Cells[5].Value.ToString();                  
                 }
             }
             catch
@@ -273,21 +266,20 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Lỗi xảy ra");
             }
         }
-
         private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số
-           
+            // Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số          
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
                 {
                     e.Handled = true;
                 }    
-
-            // Nếu bạn muốn, bạn có thể cho phép nhập số thực với dấu chấm
+            // có thể cho phép nhập số thực với dấu chấm
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
         }
+
+     
     }
 }
