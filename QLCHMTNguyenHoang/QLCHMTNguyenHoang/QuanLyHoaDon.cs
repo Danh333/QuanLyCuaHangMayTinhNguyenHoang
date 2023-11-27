@@ -33,16 +33,19 @@ namespace QLCHMTNguyenHoang
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
-
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dataGridView1.Columns[6];
-            pic.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
+            getsizecolums();
+            //dataGridView1.Columns
             this.txtMahd.Enabled = false;
             this.txtTenhd.Enabled = false;
             this.txtGia.Enabled = false;
             this.txtTensp.Enabled = false;
             this.comboBox1.Enabled = false;
+            btnAnh.Enabled= false;
+
         }
         void moTextbox()
         {
@@ -70,6 +73,7 @@ namespace QLCHMTNguyenHoang
         {
             btnLuu.Enabled = true;
             btnCapnhat.Enabled = true;
+            btnAnh.Enabled = true;
         }
         public void LoadComboBox()
         {
@@ -112,11 +116,17 @@ namespace QLCHMTNguyenHoang
             hienthi();
             dongTextbox();
             LoadComboBox();
-          
+          btnLuu.Enabled = false;
+            btnCapnhat.Enabled = false;
+            btnSua.Enabled = false;
         }
         private void btnThem_Click_1(object sender, EventArgs e)
         {   
-            Image imageCircle = Image.FromFile("Anh\\empty.jpg");
+            dataGridView1.Enabled = false;
+            btnXoa.Visible = false;
+            btnSua.Visible = false;
+            btnCapnhat.Visible = false;
+            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
             //Dat hinh mat dinh khi khoi dong
             pictureBox1.Image = imageCircle;
             //Reset textBox
@@ -133,11 +143,20 @@ namespace QLCHMTNguyenHoang
             txtGia.Enabled = true;
             moButton();
         }
+        public void getsizecolums()
+        {
+            dataGridView1.Columns[0].Width = 150;
+            dataGridView1.Columns[1].Width = 150; 
+            dataGridView1.Columns[2].Width = 150;
+            dataGridView1.Columns[3].Width = 150;
+            dataGridView1.Columns[4].Width = 150;
+            dataGridView1.Columns[5].Width = 150;
+            dataGridView1.Columns[6].Width = 250;         
+        }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            txttimkiem.Focus();
-            
+            txttimkiem.Focus();           
             cn.Open();
             string sql = @"select * from hoadon2 where mahd like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
@@ -145,43 +164,55 @@ namespace QLCHMTNguyenHoang
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
-
-           
-
             cmd.ExecuteNonQuery();
             dongTextbox();
-            cn.Close();
-            
+            cn.Close();           
+        }
+        void dongbtn_clickdatagridview_()
+        {
+            dataGridView1.Enabled = false;
+            btnXoa.Visible = false;
+            btnSua.Visible = false;
+            btnCapnhat.Visible = false;
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            dataGridView1.Enabled = true;
+            btnXoa.Visible = true;
+            btnSua.Visible = true;
+            btnCapnhat.Visible = true;
             if (txtMahd.Text == "")
             {
+                dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập mã hóa đơn !");
                 txtMahd.Focus();
                 return;
             }
             if (txtTenhd.Text == "")
             {
+                dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập Tên hóa đơn");
                 txtTenhd.Focus(); return;
             }
             if (txtTensp.Text == "")
             {
+                dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập Tên sản phẩm");
                 txtTensp.Focus(); return;
             }
             if (txtGia.Text == "")
             {
+                dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập Giá tiền ");
                 txtGia.Focus(); return;
             }
             if (dateTimePicker1.Text == "")
             {
+                dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng chọn ngày hóa đơn");
                 dateTimePicker1.Focus(); return;
             }
-           // try
+           try
             {
                 cn.Open();
                 string sql = "insert  into hoadon2(mahd,tenhd,tensp,gia,ngayhd,tinhtrang,anh)  values(@mahd,@tenhd,@tensp,@gia,@ngayhd,@tinhtrang,@anh)";
@@ -200,10 +231,13 @@ namespace QLCHMTNguyenHoang
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
+                btnLuu.Enabled = false;
+                btnCapnhat.Enabled = false;
             }
-           // catch (Exception)
+            catch (Exception)
             {
-              //  MessageBox.Show(" Đã có Hóa đơn mang tên : " + txtMahd.Text + ". Vui lòng chọn tên khác ", "THÔNG BÁO ");
+              
+                MessageBox.Show(" Đã có Hóa đơn mang tên : " + txtMahd.Text + ". Vui lòng chọn tên khác ", "THÔNG BÁO ");
             }
 
         }
@@ -232,8 +266,10 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Lỗi cập nhật");
             }
         }
+       
         private void btnXoa_Click(object sender, EventArgs e)
         {
+           
                 string sql = "delete from hoadon2 where mahd=@mahd";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 cmd.Parameters.AddWithValue("@mahd", txtMahd.Text);
@@ -244,17 +280,22 @@ namespace QLCHMTNguyenHoang
                 pictureBox1.Image=null;
                 dongTextbox();
 
-            
+
             //else if (dialogResult == DialogResult.No)
             //{
             //    cn.Close();
             //}
+            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
+            //Dat hinh mat dinh khi khoi dong
+            pictureBox1.Image = imageCircle;
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
             moTextbox();
             moButton();
             btnLuu.Enabled = false;
+            btnAnh.Enabled = true;
+            btnSua.Enabled = false;
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -266,10 +307,14 @@ namespace QLCHMTNguyenHoang
             trove.Show();
             this.Hide();
         }
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            //try
+            btnCapnhat.Enabled = false;
+            btnLuu.Enabled = false;
+            btnSua.Enabled = true;
+           
+            try
             {
                 txtMahd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txtTenhd.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -278,14 +323,12 @@ namespace QLCHMTNguyenHoang
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 comboBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[6].Value);
-                pictureBox1.Image = Image.FromStream(ms);
-                
-                
+                pictureBox1.Image = Image.FromStream(ms);              
             }
-            //catch
-            //{
-            //    MessageBox.Show("Lỗi xảy ra");
-            //}
+            catch
+            {
+                MessageBox.Show("Lỗi xảy ra");
+            }
         }
         private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -301,7 +344,7 @@ namespace QLCHMTNguyenHoang
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog op = new OpenFileDialog();
             op.Title = "Chọn ảnh";
@@ -310,24 +353,17 @@ namespace QLCHMTNguyenHoang
             {
                 pictureBox1.ImageLocation = op.FileName;
             }    
-        }
-
-       
+        }    
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
-            {
-                //To handle 'ConstraintException' default error dialog (for example, unique value)
+            {                
                 if ((e.Exception) is System.Data.ConstraintException)
-                {
-                    // ErrorText glyphs show
+                {             
                     dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
-
-                    //...or MessageBox show
                     MessageBox.Show(e.Exception.Message, "Error ConstraintException",
-                                                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    //Suppress a ConstraintException
+                                                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);            
                     e.ThrowException = false;
                 }
             }
@@ -336,6 +372,39 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            ChiTietHoaDon fhd= new ChiTietHoaDon();
+            fhd.ShowDialog();
+        }
+        void Xoa_TextBox()
+        {
+            txtMahd.Clear();
+            txtTenhd.Clear();
+            txtTensp.Clear();
+            txtGia.Clear();
+            dateTimePicker1.Value = DateTime.Now.Date;
+            comboBox1.ValueMember = "";
+            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
+            //Dat hinh mat dinh khi khoi dong
+            pictureBox1.Image = imageCircle;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //mở
+            dataGridView1.Enabled = true;
+            btnXoa.Visible = true;
+            btnSua.Visible = true;
+            btnCapnhat.Visible = true;
+            //đóng
+            btnLuu.Enabled = false;
+            btnSua.Enabled= false;
+            btnCapnhat.Enabled=false;
+            btnAnh.Enabled = false;
+            dongTextbox();
+            Xoa_TextBox();
         }
     }
 }
