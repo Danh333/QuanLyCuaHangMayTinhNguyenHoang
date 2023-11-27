@@ -156,7 +156,7 @@
     <None Include="abcDataSet.xss">
       <DependentUpon>abcDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
