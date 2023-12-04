@@ -181,9 +181,6 @@
     <None Include="bin\Debug\Anh\empty.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Anh\addicon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bin\Debug\Anh\change.jpg" />
   </ItemGroup>
   <ItemGroup>
