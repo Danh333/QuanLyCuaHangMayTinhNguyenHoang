@@ -63,5 +63,69 @@ namespace QLCHMTNguyenHoang
             fHethong.Show();
             this.Hide();
         }
+
+        private void qUANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            QuanLyNhanVien f = new QuanLyNhanVien();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            QuanLyKhachHang f = new QuanLyKhachHang();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            QuanLyKhoHang f = new QuanLyKhoHang();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            QuanLyHoaDon f = new QuanLyHoaDon();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            QuanLyHangHoa f = new QuanLyHangHoa();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            QuanLyHeThong f = new QuanLyHeThong();
+            f.Show();
+            this.Hide();
+        }
+
+        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyHoaDon f = new QuanLyHoaDon();
+            f.Show();
+            this.Hide();
+        }
     }
-}
+    }
