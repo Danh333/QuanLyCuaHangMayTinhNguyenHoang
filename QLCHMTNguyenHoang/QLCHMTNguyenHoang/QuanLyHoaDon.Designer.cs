@@ -358,7 +358,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_reset_32;
+           // this.button2.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_reset_32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(9, 9);
             this.button2.Name = "button2";
@@ -372,7 +372,7 @@
             // btnAnh
             // 
             this.btnAnh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAnh.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_add_image_40__1_;
+            //this.btnAnh.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_add_image_40__1_;
             this.btnAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnh.Location = new System.Drawing.Point(920, 231);
             this.btnAnh.Name = "btnAnh";
@@ -387,7 +387,7 @@
             // 
             this.btnTimKiem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_search_20;
+           // this.btnTimKiem.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_search_20;
             this.btnTimKiem.Location = new System.Drawing.Point(406, 286);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(73, 34);
@@ -398,8 +398,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.ErrorImage = global::QLCHMTNguyenHoang.Properties.Resources.empty;
-            this.pictureBox1.Image = global::QLCHMTNguyenHoang.Properties.Resources.empty1;
+           // this.pictureBox1.ErrorImage = global::QLCHMTNguyenHoang.Properties.Resources.empty;
+           // this.pictureBox1.Image = global::QLCHMTNguyenHoang.Properties.Resources.empty1;
             this.pictureBox1.Location = new System.Drawing.Point(869, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(243, 170);
@@ -410,7 +410,7 @@
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_save_32;
+           // this.btnLuu.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_save_32;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.Location = new System.Drawing.Point(193, 229);
             this.btnLuu.Name = "btnLuu";
@@ -424,7 +424,7 @@
             // btnCapnhat
             // 
             this.btnCapnhat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapnhat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_sync_40;
+          //  this.btnCapnhat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_sync_40;
             this.btnCapnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCapnhat.Location = new System.Drawing.Point(679, 231);
             this.btnCapnhat.Name = "btnCapnhat";
@@ -438,7 +438,7 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_pencil_drawing_40;
+         //   this.btnSua.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_pencil_drawing_40;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(355, 231);
             this.btnSua.Name = "btnSua";
@@ -452,7 +452,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_delete_40;
+           // this.btnXoa.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_delete_40;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(517, 231);
             this.btnXoa.Name = "btnXoa";
@@ -466,7 +466,7 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_add_40;
+           // this.btnThem.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_add_40;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(32, 229);
             this.btnThem.Name = "btnThem";
@@ -480,7 +480,7 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_close_window_32;
+           // this.btnThoat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_close_window_32;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(958, 312);
             this.btnThoat.Name = "btnThoat";
@@ -494,7 +494,7 @@
             // btnTrove
             // 
             this.btnTrove.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrove.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_previous_32;
+           // this.btnTrove.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_previous_32;
             this.btnTrove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrove.Location = new System.Drawing.Point(847, 311);
             this.btnTrove.Name = "btnTrove";

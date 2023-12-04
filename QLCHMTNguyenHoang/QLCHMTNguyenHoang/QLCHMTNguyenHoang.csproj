@@ -59,6 +59,11 @@
     <Compile Include="ChiTietHoaDon.Designer.cs">
       <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +78,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,21 +172,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Anh\emp.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\Anh\OIP.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\Anh\empty.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\Anh\change.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\Anh\delete.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bin\Debug\icon\add-1-icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -230,9 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-insert-42.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\Anh\empty1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-search-20.png" />

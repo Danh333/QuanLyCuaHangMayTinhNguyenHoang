@@ -63,16 +63,6 @@ namespace QLCHMTNguyenHoang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Accept_icon {
-            get {
-                object obj = ResourceManager.GetObject("Accept-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap add_1_icon {
             get {
                 object obj = ResourceManager.GetObject("add-1-icon", resourceCulture);
@@ -86,66 +76,6 @@ namespace QLCHMTNguyenHoang.Properties {
         internal static System.Drawing.Bitmap add_1_icon1 {
             get {
                 object obj = ResourceManager.GetObject("add-1-icon1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap addicon {
-            get {
-                object obj = ResourceManager.GetObject("addicon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap change {
-            get {
-                object obj = ResourceManager.GetObject("change", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delete {
-            get {
-                object obj = ResourceManager.GetObject("delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap emp {
-            get {
-                object obj = ResourceManager.GetObject("emp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap empty {
-            get {
-                object obj = ResourceManager.GetObject("empty", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap empty1 {
-            get {
-                object obj = ResourceManager.GetObject("empty1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,26 +316,6 @@ namespace QLCHMTNguyenHoang.Properties {
         internal static System.Drawing.Bitmap icons8_system_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-system-48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OIP {
-            get {
-                object obj = ResourceManager.GetObject("OIP", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap products {
-            get {
-                object obj = ResourceManager.GetObject("products", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -126,7 +126,7 @@ namespace QLCHMTNguyenHoang
             btnXoa.Visible = false;
             btnSua.Visible = false;
             btnCapnhat.Visible = false;
-            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
+            Image imageCircle = Image.FromFile("dell2.jpg");
             //Dat hinh mat dinh khi khoi dong
             pictureBox1.Image = imageCircle;
             //Reset textBox
