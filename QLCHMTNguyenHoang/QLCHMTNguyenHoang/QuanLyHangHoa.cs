@@ -38,5 +38,10 @@ namespace QLCHMTNguyenHoang
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

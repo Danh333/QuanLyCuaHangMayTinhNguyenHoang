@@ -39,9 +39,9 @@ namespace QLCHMTNguyenHoang
             getsizecolums();
             //dataGridView1.Columns
             this.txtMahd.Enabled = false;
-            this.txtTenhd.Enabled = false;
+            this.txtMahh.Enabled = false;
             this.txtGia.Enabled = false;
-            this.txtTensp.Enabled = false;
+            this.txtManv.Enabled = false;
             this.comboBox1.Enabled = false;
             btnAnh.Enabled= false;
 
@@ -49,16 +49,16 @@ namespace QLCHMTNguyenHoang
         void moTextbox()
         {
             txtMahd.Enabled = true;
-            txtTenhd.Enabled = true;
-            txtTensp.Enabled = true;
+            txtMahh.Enabled = true;
+            txtManv.Enabled = true;
             comboBox1.Enabled = true;
             txtGia.Enabled = true;
         }
         void dongTextbox()
         {
             txtMahd.Enabled = false;
-            txtTenhd.Enabled = false;
-            txtTensp.Enabled = false;
+            txtMahh.Enabled = false;
+            txtManv.Enabled = false;
             comboBox1.Enabled = false;
             txtGia.Enabled = false;
         }
@@ -76,28 +76,28 @@ namespace QLCHMTNguyenHoang
         }
         public void LoadComboBox()
         {
-            //DataTable dt = new DataTable();
-            //cn.Open();
-            //try
-            //{
-            //    SqlDataAdapter da = new SqlDataAdapter("Select distinct tinhtrang From hoadon2", cn);
-            //    da.Fill(dt);
-            //    cn.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception("Error " + ex.ToString());
-            //}
-            //try
-            //{
-            //    comboBox1.DataSource = dt;
-            //    comboBox1.DisplayMember = "tinhtrang";
-            //    comboBox1.ValueMember = "tinhtrang";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Có lỗi khi load dữ liệu!\n", ex.ToString());
-            //}
+            DataTable dt = new DataTable();
+            cn.Open();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("Select distinct tinhtrang From hoadon2", cn);
+                da.Fill(dt);
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error " + ex.ToString());
+            }
+            try
+            {
+                comboBox1.DataSource = dt;
+                comboBox1.DisplayMember = "tinhtrang";
+                comboBox1.ValueMember = "tinhtrang";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi load dữ liệu!\n", ex.ToString());
+            }
         }
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -131,13 +131,13 @@ namespace QLCHMTNguyenHoang
             pictureBox1.Image = imageCircle;
             //Reset textBox
             txtMahd.Clear();
-            txtTenhd.Clear();
-            txtTensp.Clear();
+            txtMahh.Clear();
+            txtManv.Clear();
             txtGia.Clear();
             //Mở textBox
             txtMahd.Enabled = true;
-            txtTenhd.Enabled = true;
-            txtTensp.Enabled = true;
+            txtMahh.Enabled = true;
+            txtManv.Enabled = true;
             dateTimePicker1.Value = DateTime.Now.Date;
             comboBox1.Enabled = true;
             txtGia.Enabled = true;
@@ -188,17 +188,17 @@ namespace QLCHMTNguyenHoang
                 txtMahd.Focus();
                 return;
             }
-            if (txtTenhd.Text == "")
+            if (txtMahh.Text == "")
             {
                 dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập Tên hóa đơn");
-                txtTenhd.Focus(); return;
+                txtMahh.Focus(); return;
             }
-            if (txtTensp.Text == "")
+            if (txtManv.Text == "")
             {
                 dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập Tên sản phẩm");
-                txtTensp.Focus(); return;
+                txtManv.Focus(); return;
             }
             if (txtGia.Text == "")
             {
@@ -219,15 +219,14 @@ namespace QLCHMTNguyenHoang
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@mahd", txtMahd.Text);
-                cmd.Parameters.AddWithValue("@tenhd", txtTenhd.Text);
-                cmd.Parameters.AddWithValue("@tensp", txtTensp.Text);
+                cmd.Parameters.AddWithValue("@tenhd", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@tensp", txtManv.Text);
                 cmd.Parameters.AddWithValue("@gia", txtGia.Text);
                 cmd.Parameters.AddWithValue("@ngayhd", dateTimePicker1.Value.ToString());
                 cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
                 pictureBox1.Image.Save(str, pictureBox1.Image.RawFormat);
                 cmd.Parameters.AddWithValue("@anh", str.ToArray());
                
-                
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
@@ -250,8 +249,8 @@ namespace QLCHMTNguyenHoang
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@mahd", txtMahd.Text);
-                cmd.Parameters.AddWithValue("@tenhd", txtTenhd.Text);
-                cmd.Parameters.AddWithValue("@tensp", txtTensp.Text);
+                cmd.Parameters.AddWithValue("@tenhd", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@tensp", txtManv.Text);
                 cmd.Parameters.AddWithValue("@gia", txtGia.Text);
                 cmd.Parameters.AddWithValue("@ngayhd", dateTimePicker1.Value.ToString());
                 cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
@@ -317,8 +316,8 @@ namespace QLCHMTNguyenHoang
             try
             {
                 txtMahd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txtTenhd.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txtTensp.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txtMahh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtManv.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txtGia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 comboBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
@@ -356,30 +355,30 @@ namespace QLCHMTNguyenHoang
         }    
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            //try
-            //{                
-            //    if ((e.Exception) is System.Data.ConstraintException)
-            //    {             
-            //        dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
-            //        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
-            //        MessageBox.Show(e.Exception.Message, "Error ConstraintException",
-            //                                       MessageBoxButtons.OK, MessageBoxIcon.Exclamation);            
-            //        e.ThrowException = false;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
-            //                             MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            try
+            {
+                if ((e.Exception) is System.Data.ConstraintException)
+                {
+                    dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
+                    MessageBox.Show(e.Exception.Message, "Error ConstraintException",
+                                                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.ThrowException = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
        
         void Xoa_TextBox()
         {
             txtMahd.Clear();
-            txtTenhd.Clear();
-            txtTensp.Clear();
+            txtMahh.Clear();
+            txtManv.Clear();
             txtGia.Clear();
             dateTimePicker1.Value = DateTime.Now.Date;
             comboBox1.ValueMember = "";
@@ -396,8 +395,8 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Visible = true;
             //đóng
             btnLuu.Enabled = false;
-            btnSua.Enabled= false;
-            btnCapnhat.Enabled=false;
+            btnSua.Enabled = false;
+            btnCapnhat.Enabled = false;
             btnAnh.Enabled = false;
             dongTextbox();
             Xoa_TextBox();
