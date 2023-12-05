@@ -38,7 +38,7 @@
             this.button2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button2.Location = new System.Drawing.Point(390, 201);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 46);
+            this.button2.Size = new System.Drawing.Size(127, 46);
             this.button2.TabIndex = 5;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
