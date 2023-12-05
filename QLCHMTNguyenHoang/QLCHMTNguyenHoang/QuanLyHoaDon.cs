@@ -22,7 +22,7 @@ namespace QLCHMTNguyenHoang
             InitializeComponent();
             dataGridView1.RowsAdded += RowsAdded;
             dataGridView1.RowsRemoved += RowsRemoved;
-            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+           // this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
         }
        
         void hienthi()
@@ -36,7 +36,6 @@ namespace QLCHMTNguyenHoang
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
             pic = (DataGridViewImageColumn)dataGridView1.Columns[6];
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
-
             getsizecolums();
             //dataGridView1.Columns
             this.txtMahd.Enabled = false;
@@ -77,28 +76,28 @@ namespace QLCHMTNguyenHoang
         }
         public void LoadComboBox()
         {
-            DataTable dt = new DataTable();
-            cn.Open();
-            try
-            {
-                SqlDataAdapter da = new SqlDataAdapter("Select distinct tinhtrang From hoadon2", cn);
-                da.Fill(dt);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error " + ex.ToString());
-            }
-            try
-            {
-                comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "tinhtrang";
-                comboBox1.ValueMember = "tinhtrang";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi khi load dữ liệu!\n", ex.ToString());
-            }
+            //DataTable dt = new DataTable();
+            //cn.Open();
+            //try
+            //{
+            //    SqlDataAdapter da = new SqlDataAdapter("Select distinct tinhtrang From hoadon2", cn);
+            //    da.Fill(dt);
+            //    cn.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw new Exception("Error " + ex.ToString());
+            //}
+            //try
+            //{
+            //    comboBox1.DataSource = dt;
+            //    comboBox1.DisplayMember = "tinhtrang";
+            //    comboBox1.ValueMember = "tinhtrang";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Có lỗi khi load dữ liệu!\n", ex.ToString());
+            //}
         }
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -357,29 +356,25 @@ namespace QLCHMTNguyenHoang
         }    
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            try
-            {                
-                if ((e.Exception) is System.Data.ConstraintException)
-                {             
-                    dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
-                    MessageBox.Show(e.Exception.Message, "Error ConstraintException",
-                                                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);            
-                    e.ThrowException = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
-                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //try
+            //{                
+            //    if ((e.Exception) is System.Data.ConstraintException)
+            //    {             
+            //        dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
+            //        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
+            //        MessageBox.Show(e.Exception.Message, "Error ConstraintException",
+            //                                       MessageBoxButtons.OK, MessageBoxIcon.Exclamation);            
+            //        e.ThrowException = false;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
+            //                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
-        //private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        //{
-        //    ChiTietHoaDon fhd= new ChiTietHoaDon();
-        //    fhd.ShowDialog();
-        //}
+       
         void Xoa_TextBox()
         {
             txtMahd.Clear();
@@ -406,6 +401,11 @@ namespace QLCHMTNguyenHoang
             btnAnh.Enabled = false;
             dongTextbox();
             Xoa_TextBox();
+        }
+
+        private void txtTenhd_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
