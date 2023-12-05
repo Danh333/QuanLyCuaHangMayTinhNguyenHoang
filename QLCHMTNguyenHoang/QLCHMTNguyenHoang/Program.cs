@@ -16,7 +16,7 @@ namespace QLCHMTNguyenHoang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyHoaDon());
+            Application.Run(new QuanLyBanHang());
         }
     }
 }
