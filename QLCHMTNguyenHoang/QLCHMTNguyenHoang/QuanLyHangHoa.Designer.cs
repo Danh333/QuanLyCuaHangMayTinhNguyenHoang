@@ -61,15 +61,15 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(138, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(370, 38);
+            this.label1.Size = new System.Drawing.Size(295, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "QUẢN LÝ HÀNG HÓA";
             // 
             // QuanLyHangHoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 422);
+            this.ClientSize = new System.Drawing.Size(606, 413);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
