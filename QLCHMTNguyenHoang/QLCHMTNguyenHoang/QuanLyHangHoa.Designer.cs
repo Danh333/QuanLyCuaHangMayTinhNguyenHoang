@@ -112,10 +112,10 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(446, 30);
+            this.textBox3.Location = new System.Drawing.Point(387, 30);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(165, 31);
+            this.textBox3.Size = new System.Drawing.Size(224, 31);
             this.textBox3.TabIndex = 12;
             // 
             // label4
@@ -166,6 +166,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::QLCHMTNguyenHoang.Properties.Resources.rong;
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(650, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(227, 162);
@@ -256,7 +258,7 @@
             // 
             this.btnTrove.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTrove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrove.Location = new System.Drawing.Point(679, 279);
+            this.btnTrove.Location = new System.Drawing.Point(648, 281);
             this.btnTrove.Name = "btnTrove";
             this.btnTrove.Size = new System.Drawing.Size(130, 50);
             this.btnTrove.TabIndex = 49;
@@ -267,8 +269,9 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_close_window_32;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(815, 280);
+            this.btnThoat.Location = new System.Drawing.Point(784, 281);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(130, 49);
             this.btnThoat.TabIndex = 50;
@@ -384,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 477);
+            this.ClientSize = new System.Drawing.Size(926, 477);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txttimkiem);

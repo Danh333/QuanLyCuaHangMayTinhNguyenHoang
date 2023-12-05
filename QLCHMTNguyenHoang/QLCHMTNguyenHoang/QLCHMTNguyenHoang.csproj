@@ -53,12 +53,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>abcDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ChiTietHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChiTietHoaDon.Designer.cs">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,9 +108,6 @@
     <Compile Include="QuanLyNhanVien.Designer.cs">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChiTietHoaDon.resx">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dang_Nhap.resx">
       <DependentUpon>Dang_Nhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,25 +175,7 @@
     <None Include="bin\Debug\icon\save.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-save-94.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-save-94 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-save-16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-save-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-add-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-add-image-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-add-image-40.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-add-40.png" />
@@ -212,9 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sync-40.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-insert-42.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-search-20.png" />
@@ -227,9 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-add-image-40 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-pencil-drawing-32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-pencil-drawing-40.png" />
