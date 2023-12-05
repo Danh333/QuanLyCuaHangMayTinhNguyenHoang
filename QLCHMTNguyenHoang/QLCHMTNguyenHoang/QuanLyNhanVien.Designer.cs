@@ -312,7 +312,7 @@
             this.ButtonThoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonThoat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_close_window_32;
             this.ButtonThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonThoat.Location = new System.Drawing.Point(695, 224);
+            this.ButtonThoat.Location = new System.Drawing.Point(695, 225);
             this.ButtonThoat.Name = "ButtonThoat";
             this.ButtonThoat.Size = new System.Drawing.Size(130, 49);
             this.ButtonThoat.TabIndex = 32;
