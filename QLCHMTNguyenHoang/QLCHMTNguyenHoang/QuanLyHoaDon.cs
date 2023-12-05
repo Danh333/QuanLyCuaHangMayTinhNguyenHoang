@@ -402,5 +402,10 @@ namespace QLCHMTNguyenHoang
             dongTextbox();
             Xoa_TextBox();
         }
+
+        private void txtTenhd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
