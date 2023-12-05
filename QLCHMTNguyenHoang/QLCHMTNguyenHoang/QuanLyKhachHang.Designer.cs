@@ -68,7 +68,7 @@
             this.label1.Location = new System.Drawing.Point(414, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(406, 37);
+            this.label1.Size = new System.Drawing.Size(336, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ KHÁCH HÀNG";
             // 
@@ -80,6 +80,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listView1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
@@ -94,7 +95,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã KH";
-            this.columnHeader1.Width = 49;
+            this.columnHeader1.Width = 80;
             // 
             // columnHeader2
             // 
@@ -114,12 +115,13 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Địa Chỉ";
-            this.columnHeader5.Width = 119;
+            this.columnHeader5.Width = 150;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.buttimkiem);
             this.groupBox2.Controls.Add(this.txttimkiem);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.Location = new System.Drawing.Point(905, 106);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
@@ -132,7 +134,7 @@
             // buttimkiem
             // 
             this.buttimkiem.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttimkiem.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttimkiem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttimkiem.Location = new System.Drawing.Point(96, 93);
             this.buttimkiem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttimkiem.Name = "buttimkiem";
@@ -152,7 +154,7 @@
             // 
             // butcapnhat
             // 
-            this.butcapnhat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.butcapnhat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.butcapnhat.Location = new System.Drawing.Point(694, 304);
             this.butcapnhat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butcapnhat.Name = "butcapnhat";
@@ -164,7 +166,7 @@
             // 
             // butsua
             // 
-            this.butsua.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.butsua.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.butsua.Location = new System.Drawing.Point(330, 304);
             this.butsua.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butsua.Name = "butsua";
@@ -176,7 +178,7 @@
             // 
             // butxoa
             // 
-            this.butxoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.butxoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.butxoa.Location = new System.Drawing.Point(514, 304);
             this.butxoa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butxoa.Name = "butxoa";
@@ -188,11 +190,11 @@
             // 
             // butthem
             // 
-            this.butthem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.butthem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.butthem.Location = new System.Drawing.Point(159, 304);
             this.butthem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butthem.Name = "butthem";
-            this.butthem.Size = new System.Drawing.Size(100, 52);
+            this.butthem.Size = new System.Drawing.Size(99, 52);
             this.butthem.TabIndex = 15;
             this.butthem.Text = "Thêm";
             this.butthem.UseVisualStyleBackColor = true;
@@ -235,16 +237,17 @@
             this.txtdiachi.Location = new System.Drawing.Point(564, 76);
             this.txtdiachi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(236, 27);
+            this.txtdiachi.Size = new System.Drawing.Size(236, 23);
             this.txtdiachi.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(441, 79);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 19);
+            this.label7.Size = new System.Drawing.Size(65, 21);
             this.label7.TabIndex = 10;
             this.label7.Text = "Địa chỉ";
             // 
@@ -253,16 +256,17 @@
             this.txtghichu.Location = new System.Drawing.Point(156, 115);
             this.txtghichu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtghichu.Name = "txtghichu";
-            this.txtghichu.Size = new System.Drawing.Size(232, 27);
+            this.txtghichu.Size = new System.Drawing.Size(232, 23);
             this.txtghichu.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(21, 118);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 19);
+            this.label6.Size = new System.Drawing.Size(69, 21);
             this.label6.TabIndex = 8;
             this.label6.Text = "Ghi chú";
             // 
@@ -271,16 +275,17 @@
             this.txtSodt.Location = new System.Drawing.Point(564, 35);
             this.txtSodt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSodt.Name = "txtSodt";
-            this.txtSodt.Size = new System.Drawing.Size(236, 27);
+            this.txtSodt.Size = new System.Drawing.Size(236, 23);
             this.txtSodt.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(441, 38);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 19);
+            this.label4.Size = new System.Drawing.Size(108, 21);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số điện thoại";
             // 
@@ -289,16 +294,17 @@
             this.txttenkh.Location = new System.Drawing.Point(156, 76);
             this.txttenkh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txttenkh.Name = "txttenkh";
-            this.txttenkh.Size = new System.Drawing.Size(232, 27);
+            this.txttenkh.Size = new System.Drawing.Size(232, 23);
             this.txttenkh.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(21, 79);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 19);
+            this.label3.Size = new System.Drawing.Size(128, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên khách hàng";
             // 
@@ -307,22 +313,23 @@
             this.txtmakh.Location = new System.Drawing.Point(156, 31);
             this.txtmakh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtmakh.Name = "txtmakh";
-            this.txtmakh.Size = new System.Drawing.Size(232, 27);
+            this.txtmakh.Size = new System.Drawing.Size(232, 23);
             this.txtmakh.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(21, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 19);
+            this.label2.Size = new System.Drawing.Size(123, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã khách hàng";
             // 
             // butthoat
             // 
-            this.butthoat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.butthoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.butthoat.Location = new System.Drawing.Point(1028, 304);
             this.butthoat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.butthoat.Name = "butthoat";
@@ -333,7 +340,7 @@
             // 
             // buttrove
             // 
-            this.buttrove.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttrove.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.buttrove.Location = new System.Drawing.Point(863, 304);
             this.buttrove.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttrove.Name = "buttrove";
@@ -345,7 +352,7 @@
             // 
             // QuanLyKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 615);
             this.Controls.Add(this.listView1);
