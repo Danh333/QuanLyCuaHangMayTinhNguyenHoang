@@ -375,11 +375,11 @@ namespace QLCHMTNguyenHoang
             }
         }
 
-        //private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        //{
-        //    ChiTietHoaDon fhd= new ChiTietHoaDon();
-        //    fhd.ShowDialog();
-        //}
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            ChiTietHoaDon fhd = new ChiTietHoaDon();
+            fhd.ShowDialog();
+        }
         void Xoa_TextBox()
         {
             txtMahd.Clear();
