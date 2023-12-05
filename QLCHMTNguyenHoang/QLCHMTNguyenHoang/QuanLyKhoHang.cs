@@ -26,10 +26,15 @@ namespace QLCHMTNguyenHoang
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+           this.Close();
         }
 
         private void QuanLyKhoHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
