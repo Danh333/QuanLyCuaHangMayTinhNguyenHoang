@@ -162,6 +162,7 @@
             this.txtTenhd.Name = "txtTenhd";
             this.txtTenhd.Size = new System.Drawing.Size(218, 29);
             this.txtTenhd.TabIndex = 3;
+            this.txtTenhd.TextChanged += new System.EventHandler(this.txtTenhd_TextChanged);
             // 
             // label3
             // 
