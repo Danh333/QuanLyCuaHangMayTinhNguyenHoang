@@ -116,7 +116,8 @@ namespace QLCHMTNguyenHoang
             hienthi();
             dongTextbox();
             LoadComboBox();
-          btnLuu.Enabled = false;
+           
+            btnLuu.Enabled = false;
             btnCapnhat.Enabled = false;
             btnSua.Enabled = false;
         }
@@ -126,7 +127,7 @@ namespace QLCHMTNguyenHoang
             btnXoa.Visible = false;
             btnSua.Visible = false;
             btnCapnhat.Visible = false;
-            Image imageCircle = Image.FromFile("dell2.jpg");
+            Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
             pictureBox1.Image = imageCircle;
             //Reset textBox
@@ -374,11 +375,11 @@ namespace QLCHMTNguyenHoang
             }
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            ChiTietHoaDon fhd= new ChiTietHoaDon();
-            fhd.ShowDialog();
-        }
+        //private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        //{
+        //    ChiTietHoaDon fhd= new ChiTietHoaDon();
+        //    fhd.ShowDialog();
+        //}
         void Xoa_TextBox()
         {
             txtMahd.Clear();
@@ -387,7 +388,7 @@ namespace QLCHMTNguyenHoang
             txtGia.Clear();
             dateTimePicker1.Value = DateTime.Now.Date;
             comboBox1.ValueMember = "";
-            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
+            Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
             pictureBox1.Image = imageCircle;
         }
