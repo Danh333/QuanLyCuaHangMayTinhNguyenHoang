@@ -59,9 +59,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(342, 9);
+            this.label1.Location = new System.Drawing.Point(451, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(376, 38);
+            this.label1.Size = new System.Drawing.Size(300, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
@@ -91,7 +91,7 @@
             this.TextBoxDiaChi.Location = new System.Drawing.Point(564, 76);
             this.TextBoxDiaChi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxDiaChi.Name = "TextBoxDiaChi";
-            this.TextBoxDiaChi.Size = new System.Drawing.Size(236, 27);
+            this.TextBoxDiaChi.Size = new System.Drawing.Size(236, 23);
             this.TextBoxDiaChi.TabIndex = 11;
             // 
             // label7
@@ -100,7 +100,7 @@
             this.label7.Location = new System.Drawing.Point(441, 79);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 19);
+            this.label7.Size = new System.Drawing.Size(48, 16);
             this.label7.TabIndex = 10;
             this.label7.Text = "Địa chỉ";
             // 
@@ -109,7 +109,7 @@
             this.TextBoxCCCD.Location = new System.Drawing.Point(156, 115);
             this.TextBoxCCCD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxCCCD.Name = "TextBoxCCCD";
-            this.TextBoxCCCD.Size = new System.Drawing.Size(232, 27);
+            this.TextBoxCCCD.Size = new System.Drawing.Size(232, 23);
             this.TextBoxCCCD.TabIndex = 9;
             // 
             // label6
@@ -118,7 +118,7 @@
             this.label6.Location = new System.Drawing.Point(21, 118);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 19);
+            this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 8;
             this.label6.Text = "Số CCCD";
             // 
@@ -127,7 +127,7 @@
             this.TextBoxSoDT.Location = new System.Drawing.Point(564, 35);
             this.TextBoxSoDT.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxSoDT.Name = "TextBoxSoDT";
-            this.TextBoxSoDT.Size = new System.Drawing.Size(236, 27);
+            this.TextBoxSoDT.Size = new System.Drawing.Size(236, 23);
             this.TextBoxSoDT.TabIndex = 5;
             // 
             // label4
@@ -136,7 +136,7 @@
             this.label4.Location = new System.Drawing.Point(441, 38);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 19);
+            this.label4.Size = new System.Drawing.Size(81, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số điện thoại";
             // 
@@ -145,7 +145,7 @@
             this.TextBoxTenNV.Location = new System.Drawing.Point(156, 76);
             this.TextBoxTenNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxTenNV.Name = "TextBoxTenNV";
-            this.TextBoxTenNV.Size = new System.Drawing.Size(232, 27);
+            this.TextBoxTenNV.Size = new System.Drawing.Size(232, 23);
             this.TextBoxTenNV.TabIndex = 3;
             // 
             // label3
@@ -154,7 +154,7 @@
             this.label3.Location = new System.Drawing.Point(21, 79);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 19);
+            this.label3.Size = new System.Drawing.Size(88, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên nhân viên";
             // 
@@ -163,7 +163,7 @@
             this.TextBoxMaNV.Location = new System.Drawing.Point(156, 31);
             this.TextBoxMaNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxMaNV.Name = "TextBoxMaNV";
-            this.TextBoxMaNV.Size = new System.Drawing.Size(232, 27);
+            this.TextBoxMaNV.Size = new System.Drawing.Size(232, 23);
             this.TextBoxMaNV.TabIndex = 1;
             // 
             // label2
@@ -172,7 +172,7 @@
             this.label2.Location = new System.Drawing.Point(21, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 19);
+            this.label2.Size = new System.Drawing.Size(84, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã nhân viên";
             // 
@@ -285,12 +285,12 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(608, 213);
+            this.dataGridView.Size = new System.Drawing.Size(1154, 213);
             this.dataGridView.TabIndex = 26;
             // 
             // QuanLyNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 631);
             this.Controls.Add(this.dataGridView);

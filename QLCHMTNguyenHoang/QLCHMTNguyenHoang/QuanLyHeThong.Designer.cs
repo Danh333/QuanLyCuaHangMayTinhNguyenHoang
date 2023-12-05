@@ -31,12 +31,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(407, 268);
+            this.button2.Location = new System.Drawing.Point(777, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 46);
             this.button2.TabIndex = 5;
@@ -47,7 +48,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(178, 268);
+            this.button1.Location = new System.Drawing.Point(624, 215);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 46);
             this.button1.TabIndex = 4;
@@ -59,17 +60,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(171, 109);
+            this.label1.Location = new System.Drawing.Point(305, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 38);
+            this.label1.Size = new System.Drawing.Size(293, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "QUẢN LÝ HỆ THỐNG";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(59, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 14);
+            this.label2.TabIndex = 6;
+            // 
             // QuanLyHeThong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 422);
+            this.ClientSize = new System.Drawing.Size(947, 422);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -86,5 +96,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
