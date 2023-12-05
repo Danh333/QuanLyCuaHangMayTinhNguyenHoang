@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxTendangnhap = new System.Windows.Forms.TextBox();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxMatkhau = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ButtonThem = new System.Windows.Forms.Button();
             this.ButtonSua = new System.Windows.Forms.Button();
@@ -82,22 +82,22 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Quyền";
             // 
-            // textBox2
+            // textBoxTendangnhap
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.Location = new System.Drawing.Point(119, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 22);
-            this.textBox2.TabIndex = 12;
+            this.textBoxTendangnhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBoxTendangnhap.Location = new System.Drawing.Point(119, 78);
+            this.textBoxTendangnhap.Name = "textBoxTendangnhap";
+            this.textBoxTendangnhap.Size = new System.Drawing.Size(147, 22);
+            this.textBoxTendangnhap.TabIndex = 12;
             // 
-            // comboBox1
+            // comboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 146);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(117, 23);
-            this.comboBox1.TabIndex = 13;
+            this.comboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(119, 146);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(117, 23);
+            this.comboBox.TabIndex = 13;
             // 
             // label6
             // 
@@ -109,13 +109,13 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Mật khẩu";
             // 
-            // textBox3
+            // textBoxMatkhau
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox3.Location = new System.Drawing.Point(119, 111);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(147, 22);
-            this.textBox3.TabIndex = 15;
+            this.textBoxMatkhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBoxMatkhau.Location = new System.Drawing.Point(119, 111);
+            this.textBoxMatkhau.Name = "textBoxMatkhau";
+            this.textBoxMatkhau.Size = new System.Drawing.Size(147, 22);
+            this.textBoxMatkhau.TabIndex = 15;
             // 
             // dataGridView1
             // 
@@ -173,10 +173,10 @@
             this.Controls.Add(this.ButtonSua);
             this.Controls.Add(this.ButtonThem);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxMatkhau);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.comboBox);
+            this.Controls.Add(this.textBoxTendangnhap);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -196,10 +196,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxTendangnhap;
+        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxMatkhau;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button ButtonThem;
         private System.Windows.Forms.Button ButtonSua;
