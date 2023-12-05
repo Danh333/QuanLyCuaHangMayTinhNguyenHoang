@@ -116,17 +116,19 @@
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.textBox2.Location = new System.Drawing.Point(164, 124);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 19);
+            this.textBox2.Size = new System.Drawing.Size(147, 22);
             this.textBox2.TabIndex = 12;
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 158);
+            this.comboBox1.Location = new System.Drawing.Point(164, 156);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(117, 20);
+            this.comboBox1.Size = new System.Drawing.Size(117, 23);
             this.comboBox1.TabIndex = 13;
             // 
             // label6
@@ -141,9 +143,10 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(141, 203);
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBox3.Location = new System.Drawing.Point(164, 202);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 19);
+            this.textBox3.Size = new System.Drawing.Size(136, 22);
             this.textBox3.TabIndex = 15;
             // 
             // dataGridView1
@@ -158,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 520);
+            this.ClientSize = new System.Drawing.Size(808, 520);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
