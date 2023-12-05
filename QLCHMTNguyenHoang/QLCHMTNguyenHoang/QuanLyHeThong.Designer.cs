@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(179, 9);
+            this.label1.Location = new System.Drawing.Point(92, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 31);
             this.label1.TabIndex = 3;
@@ -122,7 +122,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 253);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(420, 174);
+            this.dataGridView1.Size = new System.Drawing.Size(435, 174);
             this.dataGridView1.TabIndex = 16;
             // 
             // ButtonThem
@@ -143,7 +143,7 @@
             this.ButtonSua.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonSua.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_pencil_drawing_40;
             this.ButtonSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonSua.Location = new System.Drawing.Point(164, 187);
+            this.ButtonSua.Location = new System.Drawing.Point(163, 187);
             this.ButtonSua.Name = "ButtonSua";
             this.ButtonSua.Size = new System.Drawing.Size(130, 49);
             this.ButtonSua.TabIndex = 29;
@@ -156,7 +156,7 @@
             this.ButtonXoa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonXoa.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_delete_40;
             this.ButtonXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonXoa.Location = new System.Drawing.Point(342, 187);
+            this.ButtonXoa.Location = new System.Drawing.Point(317, 187);
             this.ButtonXoa.Name = "ButtonXoa";
             this.ButtonXoa.Size = new System.Drawing.Size(130, 49);
             this.ButtonXoa.TabIndex = 30;
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 438);
+            this.ClientSize = new System.Drawing.Size(459, 438);
             this.Controls.Add(this.ButtonXoa);
             this.Controls.Add(this.ButtonSua);
             this.Controls.Add(this.ButtonThem);
