@@ -39,12 +39,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(424, 245);
+            this.button2.Location = new System.Drawing.Point(430, 272);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 46);
             this.button2.TabIndex = 5;
@@ -55,7 +57,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(242, 245);
+            this.button1.Location = new System.Drawing.Point(240, 272);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 46);
             this.button1.TabIndex = 4;
@@ -84,7 +86,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Location = new System.Drawing.Point(62, 245);
+            this.button3.Location = new System.Drawing.Point(64, 272);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 46);
             this.button3.TabIndex = 7;
@@ -144,11 +146,30 @@
             this.comboBox1.Size = new System.Drawing.Size(117, 20);
             this.comboBox1.TabIndex = 13;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(60, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 19);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Mật khẩu";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(141, 203);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(136, 19);
+            this.textBox3.TabIndex = 15;
+            // 
             // QuanLyHeThong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 422);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
@@ -181,5 +202,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
