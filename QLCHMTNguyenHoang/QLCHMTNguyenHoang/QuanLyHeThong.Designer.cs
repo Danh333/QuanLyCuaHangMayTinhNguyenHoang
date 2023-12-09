@@ -47,9 +47,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(92, 9);
+            this.label1.Location = new System.Drawing.Point(55, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 31);
+            this.label1.Size = new System.Drawing.Size(353, 37);
             this.label1.TabIndex = 3;
             this.label1.Text = "QUẢN LÝ HỆ THỐNG";
             // 
@@ -58,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(59, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 14);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 6;
             // 
             // label4
@@ -68,7 +68,7 @@
             this.label4.Location = new System.Drawing.Point(8, 78);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.Size = new System.Drawing.Size(124, 22);
             this.label4.TabIndex = 10;
             this.label4.Text = "Tên đăng nhập";
             // 
@@ -78,25 +78,25 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(12, 146);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 19);
+            this.label5.Size = new System.Drawing.Size(60, 22);
             this.label5.TabIndex = 11;
             this.label5.Text = "Quyền";
             // 
             // textBoxTendangnhap
             // 
             this.textBoxTendangnhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxTendangnhap.Location = new System.Drawing.Point(119, 78);
+            this.textBoxTendangnhap.Location = new System.Drawing.Point(138, 77);
             this.textBoxTendangnhap.Name = "textBoxTendangnhap";
-            this.textBoxTendangnhap.Size = new System.Drawing.Size(147, 22);
+            this.textBoxTendangnhap.Size = new System.Drawing.Size(147, 26);
             this.textBoxTendangnhap.TabIndex = 12;
             // 
             // comboBox
             // 
             this.comboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(119, 146);
+            this.comboBox.Location = new System.Drawing.Point(138, 145);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(117, 23);
+            this.comboBox.Size = new System.Drawing.Size(147, 27);
             this.comboBox.TabIndex = 13;
             // 
             // label6
@@ -105,16 +105,16 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(12, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 19);
+            this.label6.Size = new System.Drawing.Size(82, 22);
             this.label6.TabIndex = 14;
             this.label6.Text = "Mật khẩu";
             // 
             // textBoxMatkhau
             // 
             this.textBoxMatkhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxMatkhau.Location = new System.Drawing.Point(119, 111);
+            this.textBoxMatkhau.Location = new System.Drawing.Point(138, 111);
             this.textBoxMatkhau.Name = "textBoxMatkhau";
-            this.textBoxMatkhau.Size = new System.Drawing.Size(147, 22);
+            this.textBoxMatkhau.Size = new System.Drawing.Size(147, 26);
             this.textBoxMatkhau.TabIndex = 15;
             // 
             // dataGridView1
@@ -166,7 +166,7 @@
             // 
             // QuanLyHeThong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 438);
             this.Controls.Add(this.ButtonXoa);
