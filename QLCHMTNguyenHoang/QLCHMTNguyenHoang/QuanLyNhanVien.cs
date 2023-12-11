@@ -17,10 +17,14 @@ namespace QLCHMTNguyenHoang
         {
             InitializeComponent();
         }
-
+        Database db;
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?", "Trả lời",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void ButtonTrove_Click(object sender, EventArgs e)
@@ -28,6 +32,13 @@ namespace QLCHMTNguyenHoang
             QuanLyNhanVien trove = new QuanLyNhanVien();
             trove.Show();
             this.Hide();
+        }
+
+        private void QuanLyNhanVien_Load(object sender, EventArgs e)
+        {
+            db = new Database(@"\SQLEXPRESS", "QLCHMTNguyenHoang");
+            DataTable dt = new DataTable();
+            dt = db.laydulieu("Select * from QLnhanvien");
         }
     }
 }
