@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>abcDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
