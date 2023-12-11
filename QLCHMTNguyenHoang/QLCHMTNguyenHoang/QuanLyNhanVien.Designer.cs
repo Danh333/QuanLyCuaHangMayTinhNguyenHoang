@@ -52,6 +52,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +70,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TextBoxDiaChi);
@@ -80,7 +84,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.TextBoxMaNV);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(15, 59);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
@@ -93,16 +97,16 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(148, 129);
+            this.comboBox1.Location = new System.Drawing.Point(337, 41);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 27);
+            this.comboBox1.Size = new System.Drawing.Size(76, 27);
             this.comboBox1.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(58, 132);
+            this.label5.Location = new System.Drawing.Point(250, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 22);
             this.label5.TabIndex = 12;
@@ -194,7 +198,7 @@
             this.TextBoxMaNV.Location = new System.Drawing.Point(148, 39);
             this.TextBoxMaNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxMaNV.Name = "TextBoxMaNV";
-            this.TextBoxMaNV.Size = new System.Drawing.Size(265, 27);
+            this.TextBoxMaNV.Size = new System.Drawing.Size(95, 27);
             this.TextBoxMaNV.TabIndex = 1;
             // 
             // label2
@@ -310,20 +314,38 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(104, 317);
+            this.textBox1.Location = new System.Drawing.Point(105, 316);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(365, 30);
             this.textBox1.TabIndex = 34;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_search_20;
-            this.button1.Location = new System.Drawing.Point(476, 317);
+            this.button1.Location = new System.Drawing.Point(476, 316);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 30);
             this.button1.TabIndex = 35;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 132);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 22);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Chức vụ";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(148, 129);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(265, 30);
+            this.comboBox2.TabIndex = 15;
             // 
             // QuanLyNhanVien
             // 
@@ -379,5 +401,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label9;
     }
 }

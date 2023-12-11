@@ -84,19 +84,19 @@
             // 
             // textBoxTendangnhap
             // 
-            this.textBoxTendangnhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxTendangnhap.Location = new System.Drawing.Point(138, 77);
+            this.textBoxTendangnhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBoxTendangnhap.Location = new System.Drawing.Point(138, 75);
             this.textBoxTendangnhap.Name = "textBoxTendangnhap";
-            this.textBoxTendangnhap.Size = new System.Drawing.Size(147, 26);
+            this.textBoxTendangnhap.Size = new System.Drawing.Size(309, 30);
             this.textBoxTendangnhap.TabIndex = 12;
             // 
             // comboBox
             // 
-            this.comboBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(138, 145);
+            this.comboBox.Location = new System.Drawing.Point(138, 143);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(147, 27);
+            this.comboBox.Size = new System.Drawing.Size(147, 30);
             this.comboBox.TabIndex = 13;
             // 
             // label6
@@ -111,10 +111,10 @@
             // 
             // textBoxMatkhau
             // 
-            this.textBoxMatkhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxMatkhau.Location = new System.Drawing.Point(138, 111);
+            this.textBoxMatkhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.textBoxMatkhau.Location = new System.Drawing.Point(138, 108);
             this.textBoxMatkhau.Name = "textBoxMatkhau";
-            this.textBoxMatkhau.Size = new System.Drawing.Size(147, 26);
+            this.textBoxMatkhau.Size = new System.Drawing.Size(309, 30);
             this.textBoxMatkhau.TabIndex = 15;
             // 
             // dataGridView1
