@@ -286,14 +286,9 @@ namespace QLCHMTNguyenHoang
 
             try
             {
-                txtMahd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                
                 txtMahh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txtManv.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                txtMakh.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                numericUpDown1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                txtDiachi.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                txtSdt.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                
                 txtGia.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
 
 
