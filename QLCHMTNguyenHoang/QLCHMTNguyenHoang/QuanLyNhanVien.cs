@@ -259,7 +259,7 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception)
             {
-                MessageBox.Show("L?i c?p nh?t");
+                MessageBox.Show("Lỗii cập nhật");
             }
         }
 
@@ -278,7 +278,7 @@ namespace QLCHMTNguyenHoang
             Xoa_TextBox();
         }
 
-        private void buttonTimkiem_Click(object sender, EventArgs e)
+        private void ButtonTimkiem_Click(object sender, EventArgs e)
         {
             textBoxTimkiem.Focus();
             cn.Open();
@@ -292,5 +292,7 @@ namespace QLCHMTNguyenHoang
             dongTextbox();
             cn.Close();
         }
+
+        
     }
 }

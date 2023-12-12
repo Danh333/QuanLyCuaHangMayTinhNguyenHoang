@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace QLCHMTNguyenHoang
 {
@@ -16,7 +18,7 @@ namespace QLCHMTNguyenHoang
         {
             InitializeComponent();
         }
-
+        SqlConnection cn;
         private void QuanLyHeThong_Load(object sender, EventArgs e)
         {
 
