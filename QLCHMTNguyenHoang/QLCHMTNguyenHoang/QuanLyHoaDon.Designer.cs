@@ -232,6 +232,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(218, 26);
             this.txtGia.TabIndex = 5;
+            this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGia_KeyPress);
             // 
             // dateTimePicker1

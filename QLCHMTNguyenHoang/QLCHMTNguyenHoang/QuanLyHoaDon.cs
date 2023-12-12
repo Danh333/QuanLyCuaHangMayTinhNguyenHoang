@@ -372,5 +372,10 @@ namespace QLCHMTNguyenHoang
         {
 
         }
+
+        private void txtGia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

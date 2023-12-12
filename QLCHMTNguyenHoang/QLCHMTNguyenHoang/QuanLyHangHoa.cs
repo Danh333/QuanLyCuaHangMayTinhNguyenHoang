@@ -93,6 +93,24 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Enabled = true;
           
         }
+        void hienthi()
+        {
+            cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
+            string sql = "select * from qlhoadon";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            DataGridViewImageColumn pic = new DataGridViewImageColumn();
+            pic = (DataGridViewImageColumn)dataGridView1.Columns[6];
+            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            getsizecolums();
+            //dataGridView1.Columns
+            
+            this.txtMahh.Enabled = false;
+            this.txtGia.Enabled = false;
+            
+        }
         public void getsizecolums()
         {
             dataGridView1.Columns[0].Width = 150;
@@ -280,7 +298,7 @@ namespace QLCHMTNguyenHoang
 
 
                 MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[9].Value);
-                pictureBox1.Image = Image.FromStream(ms);
+                pictureBox.Image = Image.FromStream(ms);
             }
             catch
             {
