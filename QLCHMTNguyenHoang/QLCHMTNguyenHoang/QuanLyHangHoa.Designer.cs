@@ -36,12 +36,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtGia = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMahh = new System.Windows.Forms.TextBox();
+            this.txtTenHangHoa = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.label1.Location = new System.Drawing.Point(264, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 37);
+            this.label1.Size = new System.Drawing.Size(295, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "QUẢN LÝ HÀNG HÓA";
             // 
@@ -80,12 +80,12 @@
             // 
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtGia);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtMahh);
+            this.groupBox1.Controls.Add(this.txtTenHangHoa);
             this.groupBox1.Location = new System.Drawing.Point(12, 43);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -101,7 +101,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(446, 92);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(175, 26);
             this.dateTimePicker1.TabIndex = 14;
             // 
             // label5
@@ -111,18 +111,18 @@
             this.label5.Location = new System.Drawing.Point(314, 99);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 22);
+            this.label5.Size = new System.Drawing.Size(104, 19);
             this.label5.TabIndex = 13;
             this.label5.Text = "Ngày nhập/xuất";
             // 
-            // textBox3
+            // txtGia
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox3.Location = new System.Drawing.Point(391, 36);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(230, 30);
-            this.textBox3.TabIndex = 12;
+            this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtGia.Location = new System.Drawing.Point(391, 36);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(230, 26);
+            this.txtGia.TabIndex = 12;
             // 
             // label4
             // 
@@ -131,7 +131,7 @@
             this.label4.Location = new System.Drawing.Point(314, 39);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 22);
+            this.label4.Size = new System.Drawing.Size(55, 19);
             this.label4.TabIndex = 11;
             this.label4.Text = "Giá tiền";
             // 
@@ -142,7 +142,7 @@
             this.label2.Location = new System.Drawing.Point(6, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 22);
+            this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 6;
             this.label2.Text = "Mã hàng hóa";
             // 
@@ -153,27 +153,27 @@
             this.label3.Location = new System.Drawing.Point(6, 99);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 22);
+            this.label3.Size = new System.Drawing.Size(90, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "Tên hàng hóa";
             // 
-            // textBox1
+            // txtMahh
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(120, 36);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 30);
-            this.textBox1.TabIndex = 8;
+            this.txtMahh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMahh.Location = new System.Drawing.Point(120, 36);
+            this.txtMahh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMahh.Name = "txtMahh";
+            this.txtMahh.Size = new System.Drawing.Size(170, 26);
+            this.txtMahh.TabIndex = 8;
             // 
-            // textBox2
+            // txtTenHangHoa
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.Location = new System.Drawing.Point(120, 96);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 30);
-            this.textBox2.TabIndex = 9;
+            this.txtTenHangHoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenHangHoa.Location = new System.Drawing.Point(120, 96);
+            this.txtTenHangHoa.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenHangHoa.Name = "txtTenHangHoa";
+            this.txtTenHangHoa.Size = new System.Drawing.Size(170, 26);
+            this.txtTenHangHoa.TabIndex = 9;
             // 
             // pictureBox
             // 
@@ -216,6 +216,7 @@
             this.btnLuu.Text = "Lưu    ";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -308,7 +309,7 @@
             this.label9.Location = new System.Drawing.Point(12, 287);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 27);
+            this.label9.Size = new System.Drawing.Size(82, 21);
             this.label9.TabIndex = 51;
             this.label9.Text = "Tìm kiếm";
             // 
@@ -318,7 +319,7 @@
             this.txttimkiem.Location = new System.Drawing.Point(119, 284);
             this.txttimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(285, 34);
+            this.txttimkiem.Size = new System.Drawing.Size(285, 29);
             this.txttimkiem.TabIndex = 52;
             // 
             // btnTimKiem
@@ -411,7 +412,7 @@
             // 
             // QuanLyHangHoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 478);
             this.Controls.Add(this.dataGridView1);
@@ -448,12 +449,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMahh;
+        private System.Windows.Forms.TextBox txtTenHangHoa;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnLuu;
