@@ -15,7 +15,7 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyKhachHang : Form
     {
-        SqlConnection cn = new SqlConnection("");
+        SqlConnection cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
         public QuanLyKhachHang()
         {
             InitializeComponent();
@@ -43,8 +43,7 @@ namespace QLCHMTNguyenHoang
             this.txtsodt.Enabled = false;
             this.txtghichu.Enabled = false;
            
-            btnAnh.Enabled = false;
-
+           
         }
         void moTextbox()
         {
@@ -76,7 +75,7 @@ namespace QLCHMTNguyenHoang
         {
             btnLuu.Enabled = true;
             btnCapnhat.Enabled = true;
-            btnAnh.Enabled = true;
+           
         }
        
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -110,7 +109,7 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Visible = false;
             Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
-            pictureBox1.Image = imageCircle;
+           
             //Reset textBox
             txtMakh.Clear();
             txtTenkh.Clear();
@@ -195,7 +194,7 @@ namespace QLCHMTNguyenHoang
                 cmd.Parameters.AddWithValue("@sodt", txtsodt.Text);
                 cmd.Parameters.AddWithValue("@ghichu", txtghichu.Text);
                 cmd.Parameters.AddWithValue("@diachi", txtDiachi.Text);
-                pictureBox1.Image.Save(str, pictureBox1.Image.RawFormat);
+                
                 cmd.Parameters.AddWithValue("@anh", str.ToArray());
 
                 cmd.ExecuteNonQuery();
@@ -224,7 +223,7 @@ namespace QLCHMTNguyenHoang
                 cmd.Parameters.AddWithValue("@sodt", txtsodt.Text);
                 cmd.Parameters.AddWithValue("@ghichu", txtghichu.Text);
                 cmd.Parameters.AddWithValue("@diachi", txtDiachi.Text);
-                pictureBox1.Image.Save(str, pictureBox1.Image.RawFormat);
+               
                 cmd.Parameters.AddWithValue("@anh", str.ToArray());
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -245,7 +244,7 @@ namespace QLCHMTNguyenHoang
             cmd.ExecuteNonQuery();
             cn.Close();
             hienthi();
-            pictureBox1.Image = null;
+            
             dongTextbox();
 
 
@@ -255,7 +254,7 @@ namespace QLCHMTNguyenHoang
             //}
             Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
             //Dat hinh mat dinh khi khoi dong
-            pictureBox1.Image = imageCircle;
+            
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -263,7 +262,7 @@ namespace QLCHMTNguyenHoang
             moTextbox();
             moButton();
             btnLuu.Enabled = false;
-            btnAnh.Enabled = true;
+            
             btnSua.Enabled = false;
 
         }
@@ -295,7 +294,7 @@ namespace QLCHMTNguyenHoang
                 txtghichu.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txtDiachi.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[6].Value);
-                pictureBox1.Image = Image.FromStream(ms);
+               
             }
             catch
             {
@@ -303,16 +302,7 @@ namespace QLCHMTNguyenHoang
             }
         }
 
-        private void btnAnh_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Chọn ảnh";
-            op.Filter = "Image Files (*.jpg;*.png)|*.jpg;*.png";
-            if (op.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox1.ImageLocation = op.FileName;
-            }
-        }
+        
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
@@ -343,7 +333,7 @@ namespace QLCHMTNguyenHoang
            
             Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
-            pictureBox1.Image = imageCircle;
+            
         }
 
         private void btReset_Click(object sender, EventArgs e)
@@ -357,7 +347,7 @@ namespace QLCHMTNguyenHoang
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnCapnhat.Enabled = false;
-            btnAnh.Enabled = false;
+            
             dongTextbox();
             Xoa_TextBox();
         }
@@ -405,11 +395,11 @@ namespace QLCHMTNguyenHoang
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnCapnhat.Enabled = false;
-            btnAnh.Enabled = false;
-            dongTextbox();
+            
             Xoa_TextBox();
         }
 
+        
     }
     
     
