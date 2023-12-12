@@ -130,5 +130,91 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Chuẩn bị câu lệnh SQL để xóa thông tin hàng hóa từ cơ sở dữ liệu
+                    string query = "DELETE FROM TenBang WHERE MaHangHoa = @MaHangHoa";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    // Truyền Mã hàng hóa từ trường nhập liệu vào câu lệnh SQL
+                    cmd.Parameters.AddWithValue("@MaHangHoa", txtMahh.Text);
+
+                    // Thực thi câu lệnh SQL
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Đã xóa thông tin hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy hàng hóa cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCapnhat_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Chuẩn bị câu lệnh SQL để cập nhật thông tin hàng hóa trong cơ sở dữ liệu
+                    string query = "UPDATE TenBang SET TenHangHoa = @TenHangHoa, Gia = @Gia, NgayNhap = @NgayNhap, NgayXuat = @NgayXuat WHERE MaHangHoa = @MaHangHoa";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    // Truyền các giá trị mới từ các trường nhập liệu vào câu lệnh SQL
+                    cmd.Parameters.AddWithValue("@MaHangHoa", txtMahh.Text);
+                    cmd.Parameters.AddWithValue("@TenHangHoa", txtTenHangHoa.Text);
+                    cmd.Parameters.AddWithValue("@Gia", Convert.ToDecimal(txtGia.Text));
+                    cmd.Parameters.AddWithValue("@NgayNhapXuat", dateTimePicker1.Value);
+                    
+
+                    // Thực thi câu lệnh SQL
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Đã cập nhật thông tin hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy hàng hóa cần cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            // Xóa hoặc đặt lại thông tin trên giao diện người dùng về giá trị mặc định
+            txtMahh.Text = ""; 
+            txtTenHangHoa.Text = ""; 
+            txtGia.Text = ""; 
+            dateTimePicker1.Value = DateTime.Now; 
+            
+        }
     }
 }
