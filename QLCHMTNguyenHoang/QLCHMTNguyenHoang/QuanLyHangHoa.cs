@@ -42,179 +42,234 @@ namespace QLCHMTNguyenHoang
 
         private void button6_Click(object sender, EventArgs e)
         {
-            // Lấy thông tin từ các trường nhập liệu
-            string tenHangHoa = txtTenHangHoa.Text;
-            string maHangHoa = txtMahh.Text;
-            decimal gia = Convert.ToDecimal(txtGia.Text);
+            dataGridView1.Enabled = false;
+            btnXoa.Visible = false;
+            btnSua.Visible = false;
+            btnCapnhat.Visible = false;
+            //Image imageCircle = Image.FromFile("rong.jpg");
+            //Dat hinh mat dinh khi khoi dong
+            //pictureBox1.Image = imageCircle;
+            //Reset textBox
+            
+            txtMahh.Clear();
+           
+            txtGia.Clear();
+            //Mở textBox
+            
+            txtMahh.Enabled = true;
+            
+            dateTimePicker1.Value = DateTime.Now.Date;
 
-            // TODO: Thêm thông tin hàng hóa vào cơ sở dữ liệu hoặc danh sách hàng hóa
-
-            // Ví dụ: Hiển thị thông tin hàng hóa đã thêm vào MessageBox
-            string thongTinHangHoa = $"Mã hàng hóa: {maHangHoa} \nTên hàng hóa: {tenHangHoa}\nGiá: {gia:C}";
-            MessageBox.Show($"Đã thêm hàng hóa mới:\n{thongTinHangHoa}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Sau khi thêm, có thể làm sạch các trường nhập liệu
-            txtMahh.Text = "";
-            txtTenHangHoa.Text = "";
-            txtGia.Text = "";
+            txtGia.Enabled = true;
+            moButton();
+        }
+        public void getsizecolums()
+        {
+            dataGridView1.Columns[0].Width = 150;
+            dataGridView1.Columns[1].Width = 150;
+            dataGridView1.Columns[2].Width = 150;
+            dataGridView1.Columns[3].Width = 150;
+            dataGridView1.Columns[4].Width = 150;
+            dataGridView1.Columns[5].Width = 150;
+            dataGridView1.Columns[6].Width = 250;
+            dataGridView1.Columns[7].Width = 150;
+            dataGridView1.Columns[8].Width = 250;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            dataGridView1.Enabled = true;
+            btnXoa.Visible = true;
+            btnSua.Visible = true;
+            btnCapnhat.Visible = true;
+           
 
+            
+
+            
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
+                cn.Open();
+                string sql = "insert  into qlhoadon(mahoadon,mahh,manv,makh,soluong,ngayban,diachi,sodt,giaban,hinhanh)  values(@mahoadon,@mahh,@manv,@makh,@soluong,@ngayban,@diachi,@sodt,@giaban,@hinhanh)";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                MemoryStream str = new MemoryStream();
+              
+                cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
+               
+               
+                cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
+              
+              
+                cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
+                // cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
+                pictureBox.Image.Save(str, pictureBox.Image.RawFormat);
+                cmd.Parameters.AddWithValue("@hinhanh", str.ToArray());
 
-                    foreach (HangHoa hangHoa in danhSachHangHoa)
-                    {
-                        string query = "INSERT INTO TenBang (MaHangHoa, TenHangHoa, Gia, NgayNhap, NgayXuat) VALUES (@MaHangHoa, @TenHangHoa, @Gia, @NgayNhap, @NgayXuat)";
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@MaHangHoa", hangHoa.MaHangHoa);
-                        cmd.Parameters.AddWithValue("@TenHangHoa", hangHoa.TenHangHoa);
-                        cmd.Parameters.AddWithValue("@Gia", hangHoa.Gia);
-                        cmd.Parameters.AddWithValue("@NgayNhap", hangHoa.NgayNhap);
-                        cmd.Parameters.AddWithValue("@NgayXuat", hangHoa.NgayXuat);
-
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    MessageBox.Show("Đã lưu thông tin hàng hóa vào cơ sở dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                hienthi();
+                btnLuu.Enabled = false;
+                btnCapnhat.Enabled = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(" Đã có Hàng hóa mang tên : " + txtMahh.Text + ". Vui lòng chọn tên khác ", "THÔNG BÁO ");
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    // Chuẩn bị câu lệnh SQL để cập nhật thông tin hàng hóa trong cơ sở dữ liệu
-                    string query = "UPDATE TenBang SET TenHangHoa = @TenHangHoa, Gia = @Gia, NgayNhap = @NgayNhap, NgayXuat = @NgayXuat WHERE MaHangHoa = @MaHangHoa";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-
-                    // Truyền các giá trị mới từ các trường nhập liệu vào câu lệnh SQL
-                    cmd.Parameters.AddWithValue("@MaHangHoa", txtMahh.Text);
-                    cmd.Parameters.AddWithValue("@TenHangHoa", txtTenHangHoa.Text);
-                    cmd.Parameters.AddWithValue("@Gia", Convert.ToDecimal(txtGia.Text));
-                    cmd.Parameters.AddWithValue("@NgayNhapXuat", dateTimePicker1.Value);
-                    
-
-                    // Thực thi câu lệnh SQL
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Đã cập nhật thông tin hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy hàng hóa cần sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            moTextbox();
+            moButton();
+            btnLuu.Enabled = false;
+            
+            btnSua.Enabled = false;
         }
+            
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string sql = "delete from qlhoadon where mahoadon=@mahoadon";
+            SqlCommand cmd = new SqlCommand(sql, cn);
+            cmd.Parameters.AddWithValue("@mahanghoa", txtMahh.Text);
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            cn.Close();
+            hienthi();
+            pictureBox.Image = null;
+            dongTextbox();
 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
 
-                    // Chuẩn bị câu lệnh SQL để xóa thông tin hàng hóa từ cơ sở dữ liệu
-                    string query = "DELETE FROM TenBang WHERE MaHangHoa = @MaHangHoa";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-
-                    // Truyền Mã hàng hóa từ trường nhập liệu vào câu lệnh SQL
-                    cmd.Parameters.AddWithValue("@MaHangHoa", txtMahh.Text);
-
-                    // Thực thi câu lệnh SQL
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Đã xóa thông tin hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy hàng hóa cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //else if (dialogResult == DialogResult.No)
+            //{
+            //    cn.Close();
+            //}
+            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
+            //Dat hinh mat dinh khi khoi dong
+            pictureBox.Image = imageCircle;
         }
 
         private void btnCapnhat_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    // Chuẩn bị câu lệnh SQL để cập nhật thông tin hàng hóa trong cơ sở dữ liệu
-                    string query = "UPDATE TenBang SET TenHangHoa = @TenHangHoa, Gia = @Gia, NgayNhap = @NgayNhap, NgayXuat = @NgayXuat WHERE MaHangHoa = @MaHangHoa";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-
-                    // Truyền các giá trị mới từ các trường nhập liệu vào câu lệnh SQL
-                    cmd.Parameters.AddWithValue("@MaHangHoa", txtMahh.Text);
-                    cmd.Parameters.AddWithValue("@TenHangHoa", txtTenHangHoa.Text);
-                    cmd.Parameters.AddWithValue("@Gia", Convert.ToDecimal(txtGia.Text));
-                    cmd.Parameters.AddWithValue("@NgayNhapXuat", dateTimePicker1.Value);
-                    
-
-                    // Thực thi câu lệnh SQL
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Đã cập nhật thông tin hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy hàng hóa cần cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
+                cn.Open();
+                string sql = "update qlhoadon set  mahoadon=@mahoadon,mahh=@mahh,manv=@manv,makh=@makh,soluong=@soluong,ngayban=@ngayban,diachi=@diachi,sodt=@sodt,giaban=@giaban,hinhanh=@hinhanh where mahoadon=@mahoadon";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                MemoryStream str = new MemoryStream();
+                
+                cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
+                
+                
+                
+                cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
+               
+                
+                cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
+                //  cmd.Parameters.AddWithValue("@tinhtrang", g);
+                pictureBox.Image.Save(str, pictureBox.Image.RawFormat);
+                cmd.Parameters.AddWithValue("@anh", str.ToArray());
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                hienthi();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi cập nhật");
             }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            // Xóa hoặc đặt lại thông tin trên giao diện người dùng về giá trị mặc định
-            txtMahh.Text = ""; 
-            txtTenHangHoa.Text = ""; 
-            txtGia.Text = ""; 
-            dateTimePicker1.Value = DateTime.Now; 
+            //mở
+            dataGridView1.Enabled = true;
+            btnXoa.Visible = true;
+            btnSua.Visible = true;
+            btnCapnhat.Visible = true;
+            //đóng
+            btnLuu.Enabled = false;
+            btnSua.Enabled = false;
+            btnCapnhat.Enabled = false;
             
+            
+
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            txttimkiem.Focus();
+            cn.Open();
+            string sql = @"select * from qlhoadon where mahd like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
+            SqlCommand cmd = new SqlCommand(sql, cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            cmd.ExecuteNonQuery();
+            dongTextbox();
+            cn.Close();
+        }
+        void dongbtn_clickdatagridview_()
+        {
+            dataGridView1.Enabled = false;
+            btnXoa.Visible = false;
+            btnSua.Visible = false;
+            btnCapnhat.Visible = false;
+        }
+
+        private void btnTrove_Click(object sender, EventArgs e)
+        {
+            QuanLyBanHang trove = new QuanLyBanHang();
+            trove.Show();
+            this.Hide();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnCapnhat.Enabled = false;
+            btnLuu.Enabled = false;
+            btnSua.Enabled = true;
+
+            try
+            {
+                txtMahd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtMahh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtManv.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txtMakh.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                numericUpDown1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                txtDiachi.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                txtSdt.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                txtGia.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+
+
+                MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[9].Value);
+                pictureBox1.Image = Image.FromStream(ms);
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi xảy ra");
+            }
+        }
+
+        private void txtGia_TextChanged(object sender, EventArgs e)
+        {
+            // Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số          
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // có thể cho phép nhập số thực với dấu chấm
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
