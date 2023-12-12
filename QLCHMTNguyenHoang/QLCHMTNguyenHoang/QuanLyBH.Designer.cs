@@ -49,8 +49,8 @@
             this.txtMahd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.hoadon2TableAdapter = new QLCHMTNguyenHoang.abcDataSetTableAdapters.hoadon2TableAdapter();
-            this.abcDataSet = new QLCHMTNguyenHoang.abcDataSet();
+         
+          
             this.hoadon2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abcDataSet)).BeginInit();
+         
             ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -249,17 +249,16 @@
             // 
             // hoadon2TableAdapter
             // 
-            this.hoadon2TableAdapter.ClearBeforeFill = true;
+          
             // 
             // abcDataSet
             // 
-            this.abcDataSet.DataSetName = "abcDataSet";
-            this.abcDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          
             // 
             // hoadon2BindingSource
             // 
             this.hoadon2BindingSource.DataMember = "hoadon2";
-            this.hoadon2BindingSource.DataSource = this.abcDataSet;
+         
             // 
             // label1
             // 
@@ -471,7 +470,7 @@
             this.Text = "QuanLyBH";
             this.Load += new System.EventHandler(this.QuanLyBH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abcDataSet)).EndInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -508,8 +507,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnTrove;
-        private abcDataSetTableAdapters.hoadon2TableAdapter hoadon2TableAdapter;
-        private abcDataSet abcDataSet;
+      
         private System.Windows.Forms.BindingSource hoadon2BindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;

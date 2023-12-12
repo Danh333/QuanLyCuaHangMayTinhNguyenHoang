@@ -94,6 +94,7 @@
             this.groupBox1.Size = new System.Drawing.Size(911, 184);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+        
             // 
             // comboBoxChucvu
             // 
@@ -241,6 +242,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(911, 238);
             this.dataGridView.TabIndex = 26;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // ButtonThem
             // 
@@ -254,6 +256,7 @@
             this.ButtonThem.Text = "Thêm  ";
             this.ButtonThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonThem.UseVisualStyleBackColor = true;
+            this.ButtonThem.Click += new System.EventHandler(this.ButtonThem_Click_1);
             // 
             // ButtonSua
             // 
@@ -267,6 +270,7 @@
             this.ButtonSua.Text = "Sửa    ";
             this.ButtonSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonSua.UseVisualStyleBackColor = true;
+            this.ButtonSua.Click += new System.EventHandler(this.ButtonSua_Click);
             // 
             // ButtonXoa
             // 
@@ -362,6 +366,7 @@
             this.ButtonLuu.Text = "Lưu    ";
             this.ButtonLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonLuu.UseVisualStyleBackColor = true;
+            this.ButtonLuu.Click += new System.EventHandler(this.ButtonLuu_Click_1);
             // 
             // ButtonReset
             // 

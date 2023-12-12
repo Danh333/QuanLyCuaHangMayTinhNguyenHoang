@@ -137,7 +137,7 @@ namespace QLCHMTNguyenHoang
         {
             txttimkiem.Focus();           
             cn.Open();
-            string sql = @"select * from qlhoadon where mahd like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
+            string sql = @"select * from qlhoadon where mahoadon like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -343,9 +343,9 @@ namespace QLCHMTNguyenHoang
             txtGia.Clear();
             dateTimePicker1.Value = DateTime.Now.Date;
           
-            Image imageCircle = Image.FromFile("rong.jpg");
+           // Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
-            pictureBox1.Image = imageCircle;
+           // pictureBox1.Image = imageCircle;
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -361,11 +361,6 @@ namespace QLCHMTNguyenHoang
             btnAnh.Enabled = false;
             dongTextbox();
             Xoa_TextBox();
-        }
-
-        private void txtTenhd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }      
     }
 }
