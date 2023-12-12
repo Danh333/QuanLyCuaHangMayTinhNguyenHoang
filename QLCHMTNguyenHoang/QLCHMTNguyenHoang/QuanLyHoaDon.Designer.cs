@@ -37,9 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.hoadon2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.abcDataSet = new QLCHMTNguyenHoang.abcDataSet();
+            
             this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.hoadon2TableAdapter = new QLCHMTNguyenHoang.abcDataSetTableAdapters.hoadon2TableAdapter();
+          
             this.label9 = new System.Windows.Forms.Label();
             this.btnAnh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.btnTrove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abcDataSet)).BeginInit();
+           
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -148,13 +148,11 @@
             // 
             // hoadon2BindingSource
             // 
-            this.hoadon2BindingSource.DataMember = "hoadon2";
-            this.hoadon2BindingSource.DataSource = this.abcDataSet;
+
             // 
             // abcDataSet
             // 
-            this.abcDataSet.DataSetName = "abcDataSet";
-            this.abcDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+         
             // 
             // txttimkiem
             // 
@@ -166,7 +164,7 @@
             // 
             // hoadon2TableAdapter
             // 
-            this.hoadon2TableAdapter.ClearBeforeFill = true;
+          
             // 
             // label9
             // 
@@ -571,7 +569,7 @@
             this.Load += new System.EventHandler(this.QuanLiHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abcDataSet)).EndInit();
+       
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -596,9 +594,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAnh;
         private System.Windows.Forms.TextBox txttimkiem;
-        private abcDataSet abcDataSet;
+       
         private System.Windows.Forms.BindingSource hoadon2BindingSource;
-        private abcDataSetTableAdapters.hoadon2TableAdapter hoadon2TableAdapter;
+     
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;

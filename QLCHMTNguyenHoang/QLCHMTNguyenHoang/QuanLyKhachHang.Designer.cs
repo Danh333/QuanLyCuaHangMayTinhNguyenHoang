@@ -57,10 +57,10 @@
             this.anhDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.hoadon2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.abcDataSet = new QLCHMTNguyenHoang.abcDataSet();
+          
             this.btnXoa = new System.Windows.Forms.Button();
             this.tenspDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoadon2TableAdapter = new QLCHMTNguyenHoang.abcDataSetTableAdapters.hoadon2TableAdapter();
+         
             this.btnThem = new System.Windows.Forms.Button();
             this.tenhdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abcDataSet)).BeginInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -296,12 +296,11 @@
             // hoadon2BindingSource
             // 
             this.hoadon2BindingSource.DataMember = "hoadon2";
-            this.hoadon2BindingSource.DataSource = this.abcDataSet;
+        
             // 
             // abcDataSet
             // 
-            this.abcDataSet.DataSetName = "abcDataSet";
-            this.abcDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+         
             // 
             // btnXoa
             // 
@@ -325,7 +324,7 @@
             // 
             // hoadon2TableAdapter
             // 
-            this.hoadon2TableAdapter.ClearBeforeFill = true;
+           
             // 
             // btnThem
             // 
@@ -516,7 +515,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abcDataSet)).EndInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -550,10 +549,10 @@
         private System.Windows.Forms.DataGridViewImageColumn anhDataGridViewImageColumn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.BindingSource hoadon2BindingSource;
-        private abcDataSet abcDataSet;
+      
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenspDataGridViewTextBoxColumn;
-        private abcDataSetTableAdapters.hoadon2TableAdapter hoadon2TableAdapter;
+      
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenhdDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnLuu;
