@@ -15,20 +15,19 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHoaDon : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=abc;Integrated Security=True");
+        SqlConnection cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
 
         public QuanLyHoaDon()
         {
             InitializeComponent();
             dataGridView1.RowsAdded += RowsAdded;
-            dataGridView1.RowsRemoved += RowsRemoved;
-           // this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+            dataGridView1.RowsRemoved += RowsRemoved;          
         }
        
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=abc;Integrated Security=True");
-            string sql = "select * from hoadon2";
+            cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
+            string sql = "select * from qlhoadon";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -50,7 +49,10 @@ namespace QLCHMTNguyenHoang
             txtMahd.Enabled = true;
             txtMahh.Enabled = true;
             txtManv.Enabled = true;
-            
+            txtMakh.Enabled = true;
+            numericUpDown1.Enabled = true;
+            txtDiachi.Enabled = true;
+            txtSdt.Enabled = true;            
             txtGia.Enabled = true;
         }
         void dongTextbox()
@@ -58,7 +60,10 @@ namespace QLCHMTNguyenHoang
             txtMahd.Enabled = false;
             txtMahh.Enabled = false;
             txtManv.Enabled = false;
-            
+            txtMakh.Enabled = false;
+            numericUpDown1.Enabled = false;
+            txtDiachi.Enabled = false;
+            txtSdt.Enabled = false;
             txtGia.Enabled = false;
         }
         void dongButton()
@@ -73,7 +78,6 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Enabled = true;
             btnAnh.Enabled = true;
         }
-       
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             label8.Text = "Tổng số đơn hàng :" + (dataGridView1.Rows.Count ).ToString();
@@ -85,12 +89,10 @@ namespace QLCHMTNguyenHoang
         }
         private void QuanLiHoaDon_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'abcDataSet.hoadon2' table. You can move, or remove it, as needed.
-            this.hoadon2TableAdapter.Fill(this.abcDataSet.hoadon2);
-            hienthi();
-            dongTextbox();
-          
            
+           // this.hoadon2TableAdapter.Fill(this.abcDataSet.hoadon2);
+            hienthi();
+            dongTextbox();   
             btnLuu.Enabled = false;
             btnCapnhat.Enabled = false;
             btnSua.Enabled = false;
@@ -101,9 +103,9 @@ namespace QLCHMTNguyenHoang
             btnXoa.Visible = false;
             btnSua.Visible = false;
             btnCapnhat.Visible = false;
-            Image imageCircle = Image.FromFile("rong.jpg");
+            //Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
-            pictureBox1.Image = imageCircle;
+            //pictureBox1.Image = imageCircle;
             //Reset textBox
             txtMahd.Clear();
             txtMahh.Clear();
@@ -126,14 +128,16 @@ namespace QLCHMTNguyenHoang
             dataGridView1.Columns[3].Width = 150;
             dataGridView1.Columns[4].Width = 150;
             dataGridView1.Columns[5].Width = 150;
-            dataGridView1.Columns[6].Width = 250;         
+            dataGridView1.Columns[6].Width = 250;
+            dataGridView1.Columns[7].Width = 150;
+            dataGridView1.Columns[8].Width = 250;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             txttimkiem.Focus();           
             cn.Open();
-            string sql = @"select * from hoadon2 where mahd like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
+            string sql = @"select * from qlhoadon where mahd like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -163,44 +167,38 @@ namespace QLCHMTNguyenHoang
                 txtMahd.Focus();
                 return;
             }
-            if (txtMahh.Text == "")
-            {
-                dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập Tên hóa đơn");
-                txtMahh.Focus(); return;
-            }
+           
             if (txtManv.Text == "")
             {
                 dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập Tên sản phẩm");
                 txtManv.Focus(); return;
             }
-            if (txtGia.Text == "")
+            
+            if (numericUpDown1.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập Giá tiền ");
-                txtGia.Focus(); return;
-            }
-            if (dateTimePicker1.Text == "")
-            {
-                dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng chọn ngày hóa đơn");
-                dateTimePicker1.Focus(); return;
-            }
+                MessageBox.Show("Vui lòng chọn số lượng");
+                numericUpDown1.Focus(); return;
+            }                  
            try
             {
                 cn.Open();
-                string sql = "insert  into hoadon2(mahd,tenhd,tensp,gia,ngayhd,tinhtrang,anh)  values(@mahd,@tenhd,@tensp,@gia,@ngayhd,@tinhtrang,@anh)";
+                string sql = "insert  into qlhoadon(mahoadon,mahh,manv,makh,soluong,ngayban,diachi,sodt,giaban,hinhanh)  values(@mahoadon,@mahh,@manv,@makh,@soluong,@ngayban,@diachi,@sodt,@giaban,@hinhanh)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
-                cmd.Parameters.AddWithValue("@mahd", txtMahd.Text);
-                cmd.Parameters.AddWithValue("@tenhd", txtMahh.Text);
-                cmd.Parameters.AddWithValue("@tensp", txtManv.Text);
-                cmd.Parameters.AddWithValue("@gia", txtGia.Text);
-                cmd.Parameters.AddWithValue("@ngayhd", dateTimePicker1.Value.ToString());
+                cmd.Parameters.AddWithValue("@mahoadon", txtMahd.Text);
+                cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@manv", txtManv.Text);
+                cmd.Parameters.AddWithValue("@makh", txtMakh.Text);
+                cmd.Parameters.AddWithValue("@soluong", numericUpDown1.Text);
+                cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
+                cmd.Parameters.AddWithValue("@diachi", txtDiachi.Text);
+                cmd.Parameters.AddWithValue("@sodt", txtSdt.Text);
+                cmd.Parameters.AddWithValue("@giaban", txtGia.Text);              
                // cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
                 pictureBox1.Image.Save(str, pictureBox1.Image.RawFormat);
-                cmd.Parameters.AddWithValue("@anh", str.ToArray());
+                cmd.Parameters.AddWithValue("@hinhanh", str.ToArray());
                
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -220,15 +218,19 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update hoadon2 set  tenhd=@tenhd,tensp=@tensp,gia=@gia,ngayhd=@ngayhd,tinhtrang=@tinhtrang,anh=@anh where mahd=@mahd";
+                string sql = "update qlhoadon set  mahoadon=@mahoadon,mahh=@mahh,manv=@manv,makh=@makh,soluong=@soluong,ngayban=@ngayban,diachi=@diachi,sodt=@sodt,giaban=@giaban,hinhanh=@hinhanh where mahoadon=@mahoadon";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
-                cmd.Parameters.AddWithValue("@mahd", txtMahd.Text);
-                cmd.Parameters.AddWithValue("@tenhd", txtMahh.Text);
-                cmd.Parameters.AddWithValue("@tensp", txtManv.Text);
-                cmd.Parameters.AddWithValue("@gia", txtGia.Text);
-                cmd.Parameters.AddWithValue("@ngayhd", dateTimePicker1.Value.ToString());
-              //  cmd.Parameters.AddWithValue("@tinhtrang", g);
+                cmd.Parameters.AddWithValue("@mahoadon", txtMahd.Text);
+                cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@manv", txtManv.Text);
+                cmd.Parameters.AddWithValue("@makh", txtMakh.Text);
+                cmd.Parameters.AddWithValue("@soluong", numericUpDown1.Text);
+                cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
+                cmd.Parameters.AddWithValue("@diachi", txtDiachi.Text);
+                cmd.Parameters.AddWithValue("@sodt", txtSdt.Text);
+                cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
+                //  cmd.Parameters.AddWithValue("@tinhtrang", g);
                 pictureBox1.Image.Save(str, pictureBox1.Image.RawFormat);
                 cmd.Parameters.AddWithValue("@anh", str.ToArray());
                 cmd.ExecuteNonQuery();
@@ -244,9 +246,9 @@ namespace QLCHMTNguyenHoang
         private void btnXoa_Click(object sender, EventArgs e)
         {
            
-                string sql = "delete from hoadon2 where mahd=@mahd";
+                string sql = "delete from qlhoadon where mahoadon=@mahoadon";
                 SqlCommand cmd = new SqlCommand(sql, cn);
-                cmd.Parameters.AddWithValue("@mahd", txtMahd.Text);
+                cmd.Parameters.AddWithValue("@mahoadon", txtMahd.Text);
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -293,10 +295,15 @@ namespace QLCHMTNguyenHoang
                 txtMahd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txtMahh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txtManv.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                txtGia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                txtMakh.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                numericUpDown1.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                txtDiachi.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                txtSdt.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                txtGia.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                
-                MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[6].Value);
+               
+                MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[9].Value);
                 pictureBox1.Image = Image.FromStream(ms);              
             }
             catch
@@ -327,28 +334,7 @@ namespace QLCHMTNguyenHoang
             {
                 pictureBox1.ImageLocation = op.FileName;
             }    
-        }    
-        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            try
-            {
-                if ((e.Exception) is System.Data.ConstraintException)
-                {
-                    dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
-                    MessageBox.Show(e.Exception.Message, "Error ConstraintException",
-                                                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    e.ThrowException = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
-                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-       
+        }         
         void Xoa_TextBox()
         {
             txtMahd.Clear();
