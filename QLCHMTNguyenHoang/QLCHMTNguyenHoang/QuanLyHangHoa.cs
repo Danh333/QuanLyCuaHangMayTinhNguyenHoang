@@ -90,5 +90,45 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Chuẩn bị câu lệnh SQL để cập nhật thông tin hàng hóa trong cơ sở dữ liệu
+                    string query = "UPDATE TenBang SET TenHangHoa = @TenHangHoa, Gia = @Gia, NgayNhap = @NgayNhap, NgayXuat = @NgayXuat WHERE MaHangHoa = @MaHangHoa";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    // Truyền các giá trị mới từ các trường nhập liệu vào câu lệnh SQL
+                    cmd.Parameters.AddWithValue("@MaHangHoa", txtMahh.Text);
+                    cmd.Parameters.AddWithValue("@TenHangHoa", txtTenHangHoa.Text);
+                    cmd.Parameters.AddWithValue("@Gia", Convert.ToDecimal(txtGia.Text));
+                    cmd.Parameters.AddWithValue("@NgayNhapXuat", dateTimePicker1.Value);
+                    
+
+                    // Thực thi câu lệnh SQL
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Đã cập nhật thông tin hàng hóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy hàng hóa cần sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
