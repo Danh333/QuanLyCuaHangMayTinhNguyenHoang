@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHangHoa : Form
     {
+        SqlConnection cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
         public QuanLyHangHoa()
         {
             InitializeComponent();
