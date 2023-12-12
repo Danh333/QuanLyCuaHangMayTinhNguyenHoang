@@ -53,7 +53,7 @@
             this.ButtonThoat = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxTimkiem = new System.Windows.Forms.TextBox();
-            this.buttonTimkiem = new System.Windows.Forms.Button();
+            this.ButtonTimkiem = new System.Windows.Forms.Button();
             this.ButtonLuu = new System.Windows.Forms.Button();
             this.ButtonReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -94,7 +94,6 @@
             this.groupBox1.Size = new System.Drawing.Size(911, 184);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-        
             // 
             // comboBoxChucvu
             // 
@@ -242,7 +241,6 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(911, 238);
             this.dataGridView.TabIndex = 26;
-            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // ButtonThem
             // 
@@ -256,7 +254,7 @@
             this.ButtonThem.Text = "Thêm  ";
             this.ButtonThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonThem.UseVisualStyleBackColor = true;
-            this.ButtonThem.Click += new System.EventHandler(this.ButtonThem_Click_1);
+            this.ButtonThem.Click += new System.EventHandler(ButtonThem_Click);
             // 
             // ButtonSua
             // 
@@ -270,7 +268,7 @@
             this.ButtonSua.Text = "Sửa    ";
             this.ButtonSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonSua.UseVisualStyleBackColor = true;
-            this.ButtonSua.Click += new System.EventHandler(this.ButtonSua_Click);
+            this.ButtonSua.Click += new System.EventHandler(ButtonSua_Click);
             // 
             // ButtonXoa
             // 
@@ -284,6 +282,7 @@
             this.ButtonXoa.Text = "Xóa    ";
             this.ButtonXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonXoa.UseVisualStyleBackColor = true;
+            this.ButtonXoa.Click += new System.EventHandler(ButtonXoa_Click);
             // 
             // ButtonCapnhat
             // 
@@ -297,6 +296,7 @@
             this.ButtonCapnhat.Text = "Cập nhật";
             this.ButtonCapnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonCapnhat.UseVisualStyleBackColor = true;
+            this.ButtonCapnhat.Click += new System.EventHandler(ButtonCapnhat_Click);
             // 
             // ButtonTrove
             // 
@@ -310,6 +310,7 @@
             this.ButtonTrove.Text = "Trở về";
             this.ButtonTrove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonTrove.UseVisualStyleBackColor = true;
+            this.ButtonTrove.Click += new System.EventHandler(ButtonTrove_Click);
             // 
             // ButtonThoat
             // 
@@ -323,6 +324,7 @@
             this.ButtonThoat.Text = "Thoát  ";
             this.ButtonThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonThoat.UseVisualStyleBackColor = true;
+            this.ButtonThoat.Click += new System.EventHandler(ButtonThoat_Click);
             // 
             // label8
             // 
@@ -342,17 +344,17 @@
             this.textBoxTimkiem.Size = new System.Drawing.Size(365, 26);
             this.textBoxTimkiem.TabIndex = 34;
             // 
-            // buttonTimkiem
+            // ButtonTimkiem
             // 
-            this.buttonTimkiem.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonTimkiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.buttonTimkiem.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_search_20;
-            this.buttonTimkiem.Location = new System.Drawing.Point(476, 316);
-            this.buttonTimkiem.Name = "buttonTimkiem";
-            this.buttonTimkiem.Size = new System.Drawing.Size(69, 26);
-            this.buttonTimkiem.TabIndex = 35;
-            this.buttonTimkiem.UseVisualStyleBackColor = false;
-            this.buttonTimkiem.Click += new System.EventHandler(this.buttonTimkiem_Click);
+            this.ButtonTimkiem.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ButtonTimkiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ButtonTimkiem.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_search_20;
+            this.ButtonTimkiem.Location = new System.Drawing.Point(476, 316);
+            this.ButtonTimkiem.Name = "ButtonTimkiem";
+            this.ButtonTimkiem.Size = new System.Drawing.Size(69, 26);
+            this.ButtonTimkiem.TabIndex = 35;
+            this.ButtonTimkiem.UseVisualStyleBackColor = false;
+            this.ButtonTimkiem.Click += new System.EventHandler(ButtonTimkiem_Click);
             // 
             // ButtonLuu
             // 
@@ -366,7 +368,7 @@
             this.ButtonLuu.Text = "Lưu    ";
             this.ButtonLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonLuu.UseVisualStyleBackColor = true;
-            this.ButtonLuu.Click += new System.EventHandler(this.ButtonLuu_Click_1);
+            this.ButtonLuu.Click += new System.EventHandler(ButtonLuu_Click);
             // 
             // ButtonReset
             // 
@@ -380,6 +382,7 @@
             this.ButtonReset.Text = "Reset    ";
             this.ButtonReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonReset.UseVisualStyleBackColor = true;
+            this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
             // QuanLyNhanVien
             // 
@@ -388,7 +391,7 @@
             this.ClientSize = new System.Drawing.Size(940, 593);
             this.Controls.Add(this.ButtonReset);
             this.Controls.Add(this.ButtonLuu);
-            this.Controls.Add(this.buttonTimkiem);
+            this.Controls.Add(this.ButtonTimkiem);
             this.Controls.Add(this.textBoxTimkiem);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.ButtonThoat);
@@ -437,7 +440,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxTimkiem;
-        private System.Windows.Forms.Button buttonTimkiem;
+        private System.Windows.Forms.Button ButtonTimkiem;
         private System.Windows.Forms.ComboBox comboBoxChucvu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button ButtonLuu;

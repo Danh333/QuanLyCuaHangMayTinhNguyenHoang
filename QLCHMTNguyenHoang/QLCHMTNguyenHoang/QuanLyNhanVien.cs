@@ -14,12 +14,11 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyNhanVien : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
         public QuanLyNhanVien()
         {
             InitializeComponent();
         }
-       
+        SqlConnection cn;
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,14 +32,11 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
+            cn = new SqlConnection("");
             string sql = "select * from QLnhanvien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            //string gt;
-            //if (comboBoxGioitinh.Text == "true") gt = "Nam"; else gt = "Nữ";
-            dataGridView.DataSource = dt;
             this.TextBoxMaNV.Enabled = false;
             this.TextBoxTenNV.Enabled = false;
             this.TextBoxCCCD.Enabled = false;
@@ -263,7 +259,7 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception)
             {
-                MessageBox.Show("L?i c?p nh?t");
+                MessageBox.Show("Lỗii cập nhật");
             }
         }
 
@@ -282,7 +278,7 @@ namespace QLCHMTNguyenHoang
             Xoa_TextBox();
         }
 
-        private void buttonTimkiem_Click(object sender, EventArgs e)
+        private void ButtonTimkiem_Click(object sender, EventArgs e)
         {
             textBoxTimkiem.Focus();
             cn.Open();
@@ -297,41 +293,6 @@ namespace QLCHMTNguyenHoang
             cn.Close();
         }
 
-        private void ButtonThem_Click_1(object sender, EventArgs e)
-        {
-            TextBoxMaNV.Clear();
-            TextBoxTenNV.Clear();
-            comboBoxGioitinh.ResetText();
-            comboBoxChucvu.ResetText();
-            TextBoxSoDT.Clear();
-            TextBoxCCCD.Clear();
-            TextBoxDiaChi.Clear();
-            moTextbox();
-            ButtonLuu.Enabled = true;
-        }
-
-        private void ButtonLuu_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButtonSua_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            TextBoxMaNV.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
-            TextBoxTenNV.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
-            comboBoxGioitinh.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
-            comboBoxChucvu.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
-            TextBoxSoDT.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
-            TextBoxCCCD.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
-            TextBoxDiaChi.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
-          
-        }
-
-
+        
     }
 }
