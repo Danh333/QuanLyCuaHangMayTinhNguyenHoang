@@ -21,11 +21,7 @@ namespace QLCHMTNguyenHoang
         SqlConnection cn;
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
-            DialogResult traloi;
-            traloi = MessageBox.Show("B?n có ch?c mu?n thoát không?", "Tr? l?i",
-            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (traloi == DialogResult.OK)
-                Application.Exit();
+            this.Close();
         }
 
         private void ButtonTrove_Click(object sender, EventArgs e)
@@ -101,7 +97,7 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có l?i khi load d? li?u!\n", ex.ToString());
+                MessageBox.Show("Có lỗi khi load dữ liệu\n", ex.ToString());
             }
         }
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
@@ -163,32 +159,32 @@ namespace QLCHMTNguyenHoang
             if (TextBoxMaNV.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nh?p mã khách hàng !");
+                MessageBox.Show("Vui lòng nhập mã khách hàng !");
                 TextBoxMaNV.Focus();
                 return;
             }
             if (TextBoxTenNV.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nh?p Tên khách hàng");
+                MessageBox.Show("Vui lòng nhập Tên khách hàng");
                 TextBoxTenNV.Focus(); return;
             }
             if (TextBoxSoDT.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nh?p s? hóa don ");
+                MessageBox.Show("Vui lòng nhập số điện thoại ");
                 TextBoxSoDT.Focus(); return;
             }
             if (TextBoxCCCD.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nh?p s? di?n tho?i ");
+                MessageBox.Show("Vui lòng nhập số CCCD ");
                 TextBoxCCCD.Focus(); return;
             }
             if (TextBoxDiaChi.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nh?p d?a ch? ");
+                MessageBox.Show("Vui lòng nhập địa chỉ ");
                 TextBoxDiaChi.Focus(); return;
             }
             try
@@ -209,7 +205,7 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception)
             {
-                MessageBox.Show(" Ðã có Khách hàng mang tên : " + TextBoxMaNV.Text + ". Vui lòng ch?n tên khác ", "THÔNG BÁO ");
+                MessageBox.Show(" Ðã có mã nhân viên mang tên : " + TextBoxMaNV.Text + ". Vui lòng chọn mã khác ", "THÔNG BÁO ");
             }
         }
 
