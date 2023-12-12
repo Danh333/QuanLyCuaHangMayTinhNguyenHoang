@@ -42,7 +42,7 @@ namespace QLCHMTNguyenHoang
             this.txtDiachi.Enabled = false;
             this.txtsodt.Enabled = false;
             this.txtghichu.Enabled = false;
-            this.comboBox1.Enabled = false;
+           
             btnAnh.Enabled = false;
 
         }
@@ -53,7 +53,7 @@ namespace QLCHMTNguyenHoang
             txtSohd.Enabled = true;
             txtDiachi.Enabled = true;
             txtsodt.Enabled = true;
-            comboBox1.Enabled = true;
+           
             txtghichu.Enabled = true;
         }
         void dongTextbox()
@@ -63,7 +63,7 @@ namespace QLCHMTNguyenHoang
             txtSohd.Enabled = false;
             txtDiachi.Enabled = false;
             txtsodt.Enabled = false;
-            comboBox1.Enabled = false;
+            
             txtghichu.Enabled = true;
         }
         void dongButton()
@@ -78,31 +78,7 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Enabled = true;
             btnAnh.Enabled = true;
         }
-        public void LoadComboBox()
-        {
-            DataTable dt = new DataTable();
-            cn.Open();
-            try
-            {
-                SqlDataAdapter da = new SqlDataAdapter("Select distinct tinhtrang From khachhang2", cn);
-                da.Fill(dt);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error " + ex.ToString());
-            }
-            try
-            {
-                comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "ghichu";
-                comboBox1.ValueMember = "ghichu";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi khi load dữ liệu!\n", ex.ToString());
-            }
-        }
+       
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             label8.Text = "Tổng số khách hàng :" + (dataGridView1.Rows.Count).ToString();
@@ -119,7 +95,7 @@ namespace QLCHMTNguyenHoang
             //this.""TableAdapter.Fill(this.abcDataSet."");
             hienthi();
             dongTextbox();
-            LoadComboBox();
+         
 
             btnLuu.Enabled = false;
             btnCapnhat.Enabled = false;
@@ -149,7 +125,7 @@ namespace QLCHMTNguyenHoang
             txtsodt.Enabled = true;
             txtghichu.Enabled = true;
             txtDiachi.Enabled = true;
-            comboBox1.Enabled = true;
+          
             moButton();
         }
         public void getsizecolums()
@@ -364,7 +340,7 @@ namespace QLCHMTNguyenHoang
             txtsodt.Clear();
             txtghichu.Clear();
             txtDiachi.Clear();
-            comboBox1.ValueMember = "";
+           
             Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
             pictureBox1.Image = imageCircle;

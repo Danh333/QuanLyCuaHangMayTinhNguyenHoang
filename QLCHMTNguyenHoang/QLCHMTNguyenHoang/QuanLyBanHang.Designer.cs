@@ -34,7 +34,6 @@
             this.QLkhachhang = new System.Windows.Forms.Button();
             this.QLhanghoa = new System.Windows.Forms.Button();
             this.QLhoadon = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -45,7 +44,6 @@
             this.quảnLýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ChucNang = new System.Windows.Forms.Label();
@@ -55,6 +53,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -132,17 +131,6 @@
             this.QLhoadon.UseVisualStyleBackColor = true;
             this.QLhoadon.Click += new System.EventHandler(this.QLhoadon_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(581, 76);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 35);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "QUẢN LÝ BÁN HÀNG ";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -151,7 +139,7 @@
             this.label2.Location = new System.Drawing.Point(462, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(558, 32);
+            this.label2.Size = new System.Drawing.Size(441, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "CỬA HÀNG MÁY TÍNH NGUYỄN HOÀNG";
             // 
@@ -179,11 +167,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.qUANToolStripMenuItem,
-            this.toolStripMenuItem,
             this.DangXuatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1186, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1186, 27);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -199,73 +186,68 @@
             this.quảnLýHệThốngToolStripMenuItem});
             this.qUANToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.qUANToolStripMenuItem.Name = "qUANToolStripMenuItem";
-            this.qUANToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.qUANToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
             this.qUANToolStripMenuItem.Text = "Quản lý";
             this.qUANToolStripMenuItem.Click += new System.EventHandler(this.qUANToolStripMenuItem_Click);
             // 
             // quảnLýToolStripMenuItem
             // 
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.quảnLýToolStripMenuItem.Text = "Quản lý nhân viên";
             this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
             // quảnLýKháchHàngToolStripMenuItem
             // 
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý khách hàng";
             // 
             // quảnLýKhoHàngToolStripMenuItem
             // 
             this.quảnLýKhoHàngToolStripMenuItem.Name = "quảnLýKhoHàngToolStripMenuItem";
-            this.quảnLýKhoHàngToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.quảnLýKhoHàngToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.quảnLýKhoHàngToolStripMenuItem.Text = "Quản lý kho hàng";
             // 
             // quảnLýHóaĐơnToolStripMenuItem
             // 
             this.quảnLýHóaĐơnToolStripMenuItem.Name = "quảnLýHóaĐơnToolStripMenuItem";
-            this.quảnLýHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.quảnLýHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.quảnLýHóaĐơnToolStripMenuItem.Text = "Quản lý hóa đơn";
             this.quảnLýHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýHóaĐơnToolStripMenuItem_Click);
             // 
             // quảnLýHàngHóaToolStripMenuItem
             // 
             this.quảnLýHàngHóaToolStripMenuItem.Name = "quảnLýHàngHóaToolStripMenuItem";
-            this.quảnLýHàngHóaToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.quảnLýHàngHóaToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.quảnLýHàngHóaToolStripMenuItem.Text = "Quản lý hàng hóa";
             // 
             // quảnLýHệThốngToolStripMenuItem
             // 
             this.quảnLýHệThốngToolStripMenuItem.Name = "quảnLýHệThốngToolStripMenuItem";
-            this.quảnLýHệThốngToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.quảnLýHệThốngToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.quảnLýHệThốngToolStripMenuItem.Text = "Quản lý hệ thống";
-            // 
-            // toolStripMenuItem
-            // 
-            this.toolStripMenuItem.Name = "toolStripMenuItem";
-            this.toolStripMenuItem.Size = new System.Drawing.Size(37, 26);
-            this.toolStripMenuItem.Text = "...";
             // 
             // DangXuatToolStripMenuItem
             // 
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(82, 23);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.ChucNang);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 528);
+            this.panel1.Size = new System.Drawing.Size(249, 609);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -275,7 +257,7 @@
             this.ChucNang.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ChucNang.Location = new System.Drawing.Point(44, 16);
             this.ChucNang.Name = "ChucNang";
-            this.ChucNang.Size = new System.Drawing.Size(147, 32);
+            this.ChucNang.Size = new System.Drawing.Size(115, 25);
             this.ChucNang.TabIndex = 14;
             this.ChucNang.Text = "Chức năng";
             // 
@@ -286,7 +268,7 @@
             this.button5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button5.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_product_48;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 367);
+            this.button5.Location = new System.Drawing.Point(0, 446);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(249, 80);
             this.button5.TabIndex = 13;
@@ -318,7 +300,7 @@
             this.button6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button6.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_system_48;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 446);
+            this.button6.Location = new System.Drawing.Point(0, 525);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(249, 80);
             this.button6.TabIndex = 12;
@@ -334,7 +316,7 @@
             this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button4.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_bill_48;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 288);
+            this.button4.Location = new System.Drawing.Point(0, 367);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(249, 80);
             this.button4.TabIndex = 2;
@@ -366,7 +348,7 @@
             this.button3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button3.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_depot_48;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 209);
+            this.button3.Location = new System.Drawing.Point(0, 288);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(249, 80);
             this.button3.TabIndex = 3;
@@ -375,15 +357,28 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(0, 209);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(249, 80);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Quản lý bán hàng       ";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // QuanLyBanHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 573);
+            this.ClientSize = new System.Drawing.Size(1186, 667);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.MainMenuStrip = this.menuStrip1;
@@ -409,7 +404,6 @@
         private System.Windows.Forms.Button QLkhachhang;
         private System.Windows.Forms.Button QLhanghoa;
         private System.Windows.Forms.Button QLhoadon;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -420,7 +414,6 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýHóaĐơnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýHàngHóaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýHệThốngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DangXuatToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
@@ -430,5 +423,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label ChucNang;
+        private System.Windows.Forms.Button button7;
     }
 }

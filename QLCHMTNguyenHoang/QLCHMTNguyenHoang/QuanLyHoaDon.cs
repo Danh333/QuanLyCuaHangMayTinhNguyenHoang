@@ -42,16 +42,15 @@ namespace QLCHMTNguyenHoang
             this.txtMahh.Enabled = false;
             this.txtGia.Enabled = false;
             this.txtManv.Enabled = false;
-            this.comboBox1.Enabled = false;
+           
             btnAnh.Enabled= false;
-
         }
         void moTextbox()
         {
             txtMahd.Enabled = true;
             txtMahh.Enabled = true;
             txtManv.Enabled = true;
-            comboBox1.Enabled = true;
+            
             txtGia.Enabled = true;
         }
         void dongTextbox()
@@ -59,7 +58,7 @@ namespace QLCHMTNguyenHoang
             txtMahd.Enabled = false;
             txtMahh.Enabled = false;
             txtManv.Enabled = false;
-            comboBox1.Enabled = false;
+            
             txtGia.Enabled = false;
         }
         void dongButton()
@@ -74,31 +73,7 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Enabled = true;
             btnAnh.Enabled = true;
         }
-        public void LoadComboBox()
-        {
-            DataTable dt = new DataTable();
-            cn.Open();
-            try
-            {
-                SqlDataAdapter da = new SqlDataAdapter("Select distinct tinhtrang From hoadon2", cn);
-                da.Fill(dt);
-                cn.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error " + ex.ToString());
-            }
-            try
-            {
-                comboBox1.DataSource = dt;
-                comboBox1.DisplayMember = "tinhtrang";
-                comboBox1.ValueMember = "tinhtrang";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi khi load dữ liệu!\n", ex.ToString());
-            }
-        }
+       
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             label8.Text = "Tổng số đơn hàng :" + (dataGridView1.Rows.Count ).ToString();
@@ -114,7 +89,7 @@ namespace QLCHMTNguyenHoang
             this.hoadon2TableAdapter.Fill(this.abcDataSet.hoadon2);
             hienthi();
             dongTextbox();
-            LoadComboBox();
+          
            
             btnLuu.Enabled = false;
             btnCapnhat.Enabled = false;
@@ -139,7 +114,7 @@ namespace QLCHMTNguyenHoang
             txtMahh.Enabled = true;
             txtManv.Enabled = true;
             dateTimePicker1.Value = DateTime.Now.Date;
-            comboBox1.Enabled = true;
+           
             txtGia.Enabled = true;
             moButton();
         }
@@ -223,7 +198,7 @@ namespace QLCHMTNguyenHoang
                 cmd.Parameters.AddWithValue("@tensp", txtManv.Text);
                 cmd.Parameters.AddWithValue("@gia", txtGia.Text);
                 cmd.Parameters.AddWithValue("@ngayhd", dateTimePicker1.Value.ToString());
-                cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
+               // cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
                 pictureBox1.Image.Save(str, pictureBox1.Image.RawFormat);
                 cmd.Parameters.AddWithValue("@anh", str.ToArray());
                
@@ -253,7 +228,7 @@ namespace QLCHMTNguyenHoang
                 cmd.Parameters.AddWithValue("@tensp", txtManv.Text);
                 cmd.Parameters.AddWithValue("@gia", txtGia.Text);
                 cmd.Parameters.AddWithValue("@ngayhd", dateTimePicker1.Value.ToString());
-                cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
+              //  cmd.Parameters.AddWithValue("@tinhtrang", g);
                 pictureBox1.Image.Save(str, pictureBox1.Image.RawFormat);
                 cmd.Parameters.AddWithValue("@anh", str.ToArray());
                 cmd.ExecuteNonQuery();
@@ -320,7 +295,7 @@ namespace QLCHMTNguyenHoang
                 txtManv.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txtGia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                comboBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+               
                 MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[6].Value);
                 pictureBox1.Image = Image.FromStream(ms);              
             }
@@ -381,7 +356,7 @@ namespace QLCHMTNguyenHoang
             txtManv.Clear();
             txtGia.Clear();
             dateTimePicker1.Value = DateTime.Now.Date;
-            comboBox1.ValueMember = "";
+          
             Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
             pictureBox1.Image = imageCircle;
