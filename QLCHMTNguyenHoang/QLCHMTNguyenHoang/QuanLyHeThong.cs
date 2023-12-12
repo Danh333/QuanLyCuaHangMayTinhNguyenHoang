@@ -19,10 +19,6 @@ namespace QLCHMTNguyenHoang
             InitializeComponent();
         }
         SqlConnection cn;
-        private void QuanLyHeThong_Load(object sender, EventArgs e)
-        {
-
-        }
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();

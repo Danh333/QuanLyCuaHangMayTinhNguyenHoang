@@ -17,11 +17,6 @@ namespace QLCHMTNguyenHoang
             InitializeComponent();
         }
 
-        private void QuanLyBanHang_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void QLnhanvien_Click(object sender, EventArgs e)
         {
             QuanLyNhanVien fNhanvien = new QuanLyNhanVien();
@@ -64,20 +59,6 @@ namespace QLCHMTNguyenHoang
             this.Hide();
         }
 
-        private void qUANToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
