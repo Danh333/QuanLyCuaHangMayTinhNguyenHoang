@@ -63,6 +63,36 @@ namespace QLCHMTNguyenHoang
             txtGia.Enabled = true;
             moButton();
         }
+        void moTextbox()
+        {
+           
+            txtMahh.Enabled = true;
+           
+            txtGia.Enabled = true;
+        }
+        void dongTextbox()
+        {
+           
+            txtMahh.Enabled = false;
+          
+          
+           
+         
+            
+            txtGia.Enabled = false;
+        }
+        void dongButton()
+        {
+            btnXoa.Enabled = false;
+            btnLuu.Enabled = false;
+            btnCapnhat.Enabled = false;
+        }
+        void moButton()
+        {
+            btnLuu.Enabled = true;
+            btnCapnhat.Enabled = true;
+          
+        }
         public void getsizecolums()
         {
             dataGridView1.Columns[0].Width = 150;
