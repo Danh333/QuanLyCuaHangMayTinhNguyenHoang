@@ -52,14 +52,14 @@ namespace QLCHMTNguyenHoang
             //Dat hinh mat dinh khi khoi dong
             //pictureBox1.Image = imageCircle;
             //Reset textBox
-            
+
             txtMahh.Clear();
-           
+
             txtGia.Clear();
             //Mở textBox
-            
+
             txtMahh.Enabled = true;
-            
+
             dateTimePicker1.Value = DateTime.Now.Date;
 
             txtGia.Enabled = true;
@@ -67,20 +67,20 @@ namespace QLCHMTNguyenHoang
         }
         void moTextbox()
         {
-           
+
             txtMahh.Enabled = true;
-           
+
             txtGia.Enabled = true;
         }
         void dongTextbox()
         {
-           
+
             txtMahh.Enabled = false;
-          
-          
-           
-         
-            
+
+
+
+
+
             txtGia.Enabled = false;
         }
         void dongButton()
@@ -93,7 +93,7 @@ namespace QLCHMTNguyenHoang
         {
             btnLuu.Enabled = true;
             btnCapnhat.Enabled = true;
-          
+
         }
         void hienthi()
         {
@@ -108,10 +108,10 @@ namespace QLCHMTNguyenHoang
             pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
             getsizecolums();
             //dataGridView1.Columns
-            
+
             this.txtMahh.Enabled = false;
             this.txtGia.Enabled = false;
-            
+
         }
         public void getsizecolums()
         {
@@ -132,24 +132,24 @@ namespace QLCHMTNguyenHoang
             btnXoa.Visible = true;
             btnSua.Visible = true;
             btnCapnhat.Visible = true;
-           
 
-            
 
-            
+
+
+
             try
             {
                 cn.Open();
                 string sql = "insert  into qlhoadon(mahoadon,mahh,manv,makh,soluong,ngayban,diachi,sodt,giaban,hinhanh)  values(@mahoadon,@mahh,@manv,@makh,@soluong,@ngayban,@diachi,@sodt,@giaban,@hinhanh)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
-              
+
                 cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
-               
-               
+
+
                 cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
-              
-              
+
+
                 cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
                 // cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
                 pictureBox.Image.Save(str, pictureBox.Image.RawFormat);
@@ -173,10 +173,10 @@ namespace QLCHMTNguyenHoang
             moTextbox();
             moButton();
             btnLuu.Enabled = false;
-            
+
             btnSua.Enabled = false;
         }
-            
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -208,14 +208,14 @@ namespace QLCHMTNguyenHoang
                 string sql = "update qlhoadon set  mahoadon=@mahoadon,mahh=@mahh,manv=@manv,makh=@makh,soluong=@soluong,ngayban=@ngayban,diachi=@diachi,sodt=@sodt,giaban=@giaban,hinhanh=@hinhanh where mahoadon=@mahoadon";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
-                
+
                 cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
-                
-                
-                
+
+
+
                 cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
-               
-                
+
+
                 cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
                 //  cmd.Parameters.AddWithValue("@tinhtrang", g);
                 pictureBox.Image.Save(str, pictureBox.Image.RawFormat);
@@ -241,8 +241,8 @@ namespace QLCHMTNguyenHoang
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnCapnhat.Enabled = false;
-            
-            
+
+
 
         }
 
@@ -288,9 +288,9 @@ namespace QLCHMTNguyenHoang
 
             try
             {
-                
+
                 txtMahh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                
+
                 txtGia.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
 
 
@@ -305,6 +305,11 @@ namespace QLCHMTNguyenHoang
 
         private void txtGia_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
             // Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số          
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
@@ -318,3 +323,4 @@ namespace QLCHMTNguyenHoang
         }
     }
 }
+
