@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.qUANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýKhoHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,7 +166,7 @@
             this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.qUANToolStripMenuItem,
+            this.QLToolStripMenuItem,
             this.DangXuatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -176,26 +176,25 @@
             // 
             // qUANToolStripMenuItem
             // 
-            this.qUANToolStripMenuItem.BackColor = System.Drawing.Color.SkyBlue;
-            this.qUANToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.QLToolStripMenuItem.BackColor = System.Drawing.Color.SkyBlue;
+            this.QLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnLýToolStripMenuItem,
             this.quảnLýKháchHàngToolStripMenuItem,
             this.quảnLýKhoHàngToolStripMenuItem,
             this.quảnLýHóaĐơnToolStripMenuItem,
             this.quảnLýHàngHóaToolStripMenuItem,
             this.quảnLýHệThốngToolStripMenuItem});
-            this.qUANToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.qUANToolStripMenuItem.Name = "qUANToolStripMenuItem";
-            this.qUANToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
-            this.qUANToolStripMenuItem.Text = "Quản lý";
-            this.qUANToolStripMenuItem.Click += new System.EventHandler(this.qUANToolStripMenuItem_Click);
+            this.QLToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QLToolStripMenuItem.Name = "qUANToolStripMenuItem";
+            this.QLToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
+            this.QLToolStripMenuItem.Text = "Quản lý";
+            
             // 
             // quảnLýToolStripMenuItem
             // 
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.quảnLýToolStripMenuItem.Text = "Quản lý nhân viên";
-            this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
             // quảnLýKháchHàngToolStripMenuItem
             // 
@@ -249,7 +248,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(249, 609);
             this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // ChucNang
             // 
@@ -385,7 +383,6 @@
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "QuanLyBanHang";
             this.Text = "Quản Lý Bán Hàng";
-            this.Load += new System.EventHandler(this.QuanLyBanHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -407,7 +404,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem qUANToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýKhoHàngToolStripMenuItem;

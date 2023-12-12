@@ -26,7 +26,7 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonTrove_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien trove = new QuanLyNhanVien();
+            QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
         }
