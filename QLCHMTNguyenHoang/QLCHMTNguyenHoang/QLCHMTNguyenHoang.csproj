@@ -155,18 +155,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\icon\add-1-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\icon\Accept-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\icon\th.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\icon\save.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-save-32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rong.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

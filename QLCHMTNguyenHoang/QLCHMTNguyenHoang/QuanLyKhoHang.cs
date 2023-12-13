@@ -102,8 +102,7 @@ namespace QLCHMTNguyenHoang
 
         private void QuanLyKhoHang_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'abcDataSet.hoadon2' table. You can move, or remove it, as needed.
-            //this.""TableAdapter.Fill(this.abcDataSet."");
+           
             hienthi();
             dongTextbox();
 
@@ -130,8 +129,7 @@ namespace QLCHMTNguyenHoang
             btnXoa.Visible = false;
             btnSua.Visible = false;
             btnCapnhat.Visible = false;
-            //Image imageCircle = Image.FromFile("rong.jpg");
-            //Dat hinh mat dinh khi khoi dong
+          
 
             //Reset textBox
             txtMahh.Clear();
@@ -172,7 +170,7 @@ namespace QLCHMTNguyenHoang
                 txtSol.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txtGia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txttinhtrang.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[6].Value);
+               
 
             }
             catch
