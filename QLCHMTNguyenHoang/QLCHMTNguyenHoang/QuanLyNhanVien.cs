@@ -32,11 +32,12 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("");
+            cn = new SqlConnection(@"Data Source = ASUS\sqlexpress; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
             string sql = "select * from QLnhanvien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            dataGridView.DataSource = dt;
             this.TextBoxMaNV.Enabled = false;
             this.TextBoxTenNV.Enabled = false;
             this.TextBoxCCCD.Enabled = false;
