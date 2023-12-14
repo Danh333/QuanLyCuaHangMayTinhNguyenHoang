@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,7 +50,6 @@
             this.txtMakh = new System.Windows.Forms.TextBox();
             this.lbmakh = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.hoadon2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -62,7 +60,6 @@
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +109,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(409, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 35);
+            this.label1.Size = new System.Drawing.Size(470, 43);
             this.label1.TabIndex = 53;
             this.label1.Text = "QUẢN LÝ KHÁCH HÀNG";
             // 
@@ -141,7 +138,7 @@
             // 
             this.txtsodt.Location = new System.Drawing.Point(533, 82);
             this.txtsodt.Name = "txtsodt";
-            this.txtsodt.Size = new System.Drawing.Size(218, 29);
+            this.txtsodt.Size = new System.Drawing.Size(218, 34);
             this.txtsodt.TabIndex = 22;
             // 
             // lbsodt
@@ -149,7 +146,7 @@
             this.lbsodt.AutoSize = true;
             this.lbsodt.Location = new System.Drawing.Point(457, 85);
             this.lbsodt.Name = "lbsodt";
-            this.lbsodt.Size = new System.Drawing.Size(62, 21);
+            this.lbsodt.Size = new System.Drawing.Size(73, 27);
             this.lbsodt.TabIndex = 21;
             this.lbsodt.Text = "Số ĐT";
             // 
@@ -157,7 +154,7 @@
             // 
             this.txtDiachi.Location = new System.Drawing.Point(533, 33);
             this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(218, 29);
+            this.txtDiachi.Size = new System.Drawing.Size(218, 34);
             this.txtDiachi.TabIndex = 20;
             // 
             // lbdiachi
@@ -165,7 +162,7 @@
             this.lbdiachi.AutoSize = true;
             this.lbdiachi.Location = new System.Drawing.Point(457, 36);
             this.lbdiachi.Name = "lbdiachi";
-            this.lbdiachi.Size = new System.Drawing.Size(65, 21);
+            this.lbdiachi.Size = new System.Drawing.Size(81, 27);
             this.lbdiachi.TabIndex = 19;
             this.lbdiachi.Text = "Địa chỉ";
             // 
@@ -173,7 +170,7 @@
             // 
             this.txtghichu.Location = new System.Drawing.Point(533, 135);
             this.txtghichu.Name = "txtghichu";
-            this.txtghichu.Size = new System.Drawing.Size(218, 29);
+            this.txtghichu.Size = new System.Drawing.Size(218, 34);
             this.txtghichu.TabIndex = 14;
             // 
             // lbsohd
@@ -181,7 +178,7 @@
             this.lbsohd.AutoSize = true;
             this.lbsohd.Location = new System.Drawing.Point(42, 143);
             this.lbsohd.Name = "lbsohd";
-            this.lbsohd.Size = new System.Drawing.Size(102, 21);
+            this.lbsohd.Size = new System.Drawing.Size(126, 27);
             this.lbsohd.TabIndex = 13;
             this.lbsohd.Text = "Số hóa đơn ";
             // 
@@ -189,7 +186,7 @@
             // 
             this.txtSohd.Location = new System.Drawing.Point(172, 135);
             this.txtSohd.Name = "txtSohd";
-            this.txtSohd.Size = new System.Drawing.Size(218, 29);
+            this.txtSohd.Size = new System.Drawing.Size(218, 34);
             this.txtSohd.TabIndex = 9;
             // 
             // lbghichu
@@ -197,7 +194,7 @@
             this.lbghichu.AutoSize = true;
             this.lbghichu.Location = new System.Drawing.Point(453, 138);
             this.lbghichu.Name = "lbghichu";
-            this.lbghichu.Size = new System.Drawing.Size(74, 21);
+            this.lbghichu.Size = new System.Drawing.Size(94, 27);
             this.lbghichu.TabIndex = 8;
             this.lbghichu.Text = "Ghi chú ";
             // 
@@ -205,7 +202,7 @@
             // 
             this.txtTenkh.Location = new System.Drawing.Point(172, 82);
             this.txtTenkh.Name = "txtTenkh";
-            this.txtTenkh.Size = new System.Drawing.Size(218, 29);
+            this.txtTenkh.Size = new System.Drawing.Size(218, 34);
             this.txtTenkh.TabIndex = 3;
             // 
             // lbtenkh
@@ -213,7 +210,7 @@
             this.lbtenkh.AutoSize = true;
             this.lbtenkh.Location = new System.Drawing.Point(20, 85);
             this.lbtenkh.Name = "lbtenkh";
-            this.lbtenkh.Size = new System.Drawing.Size(133, 21);
+            this.lbtenkh.Size = new System.Drawing.Size(171, 27);
             this.lbtenkh.TabIndex = 2;
             this.lbtenkh.Text = "Tên khách hàng ";
             // 
@@ -221,7 +218,7 @@
             // 
             this.txtMakh.Location = new System.Drawing.Point(172, 33);
             this.txtMakh.Name = "txtMakh";
-            this.txtMakh.Size = new System.Drawing.Size(218, 29);
+            this.txtMakh.Size = new System.Drawing.Size(218, 34);
             this.txtMakh.TabIndex = 1;
             // 
             // lbmakh
@@ -229,7 +226,7 @@
             this.lbmakh.AutoSize = true;
             this.lbmakh.Location = new System.Drawing.Point(30, 36);
             this.lbmakh.Name = "lbmakh";
-            this.lbmakh.Size = new System.Drawing.Size(123, 21);
+            this.lbmakh.Size = new System.Drawing.Size(160, 27);
             this.lbmakh.TabIndex = 0;
             this.lbmakh.Text = "Mã khách hàng";
             // 
@@ -239,13 +236,9 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(57, 327);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(171, 21);
+            this.label8.Size = new System.Drawing.Size(216, 27);
             this.label8.TabIndex = 62;
             this.label8.Text = "Tổng số khách hàng :";
-            // 
-            // hoadon2BindingSource
-            // 
-            this.hoadon2BindingSource.DataMember = "hoadon2";
             // 
             // btnXoa
             // 
@@ -336,7 +329,7 @@
             this.lbtimkiem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbtimkiem.Location = new System.Drawing.Point(57, 358);
             this.lbtimkiem.Name = "lbtimkiem";
-            this.lbtimkiem.Size = new System.Drawing.Size(82, 21);
+            this.lbtimkiem.Size = new System.Drawing.Size(103, 27);
             this.lbtimkiem.TabIndex = 52;
             this.lbtimkiem.Text = "Tìm kiếm";
             // 
@@ -345,7 +338,7 @@
             this.txttimkiem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txttimkiem.Location = new System.Drawing.Point(145, 350);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(280, 29);
+            this.txttimkiem.Size = new System.Drawing.Size(280, 34);
             this.txttimkiem.TabIndex = 67;
             // 
             // dataGridView1
@@ -356,7 +349,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -367,7 +359,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.hoadon2BindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -396,7 +387,7 @@
             // 
             // QuanLyKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 615);
             this.Controls.Add(this.btnThoat);
@@ -421,7 +412,6 @@
             this.Load += new System.EventHandler(this.QuanLyKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hoadon2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -451,7 +441,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tinhtrangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn anhDataGridViewImageColumn;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.BindingSource hoadon2BindingSource;
       
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenspDataGridViewTextBoxColumn;
