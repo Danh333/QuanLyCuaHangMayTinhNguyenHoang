@@ -124,7 +124,7 @@ namespace QLCHMTNguyenHoang
             TextBoxSoDT.Clear();
             TextBoxCCCD.Clear();
             TextBoxDiaChi.Clear();
-            //M? textBox
+            //Mở textBox
             TextBoxMaNV.Enabled = true;
             TextBoxTenNV.Enabled = true;
             TextBoxSoDT.Enabled = true;
@@ -160,26 +160,26 @@ namespace QLCHMTNguyenHoang
             if (TextBoxMaNV.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập mã khách hàng !");
+                MessageBox.Show("Vui lòng nhập mã nhân viên!");
                 TextBoxMaNV.Focus();
                 return;
             }
             if (TextBoxTenNV.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập Tên khách hàng");
+                MessageBox.Show("Vui lòng nhập tên nhân viên!");
                 TextBoxTenNV.Focus(); return;
             }
             if (TextBoxSoDT.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập số điện thoại ");
+                MessageBox.Show("Vui lòng nhập số điện thoại!");
                 TextBoxSoDT.Focus(); return;
             }
             if (TextBoxCCCD.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập số CCCD ");
+                MessageBox.Show("Vui lòng nhập số CCCD!");
                 TextBoxCCCD.Focus(); return;
             }
             if (TextBoxDiaChi.Text == "")
@@ -191,7 +191,7 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "insert  into khachhang2(makh,tenkh,sohd,sodt,ghichu,diachi,anh)  values(@manv,@tennv,@sodt,@CCCD,@diachi)";
+                string sql = "insert  into QLnhanvien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
@@ -206,7 +206,7 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception)
             {
-                MessageBox.Show(" Ðã có mã nhân viên mang tên : " + TextBoxMaNV.Text + ". Vui lòng chọn mã khác ", "THÔNG BÁO ");
+                MessageBox.Show(" Ðã có mã nhân viên mang tên : " + TextBoxMaNV.Text + ". Vui lòng chọn mã khác!", "THÔNG BÁO ");
             }
         }
 
@@ -221,9 +221,9 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonXoa_Click(object sender, EventArgs e)
         {
-            string sql = "delete from QLnhanvien where manv=@manv";
+            string sql = "Delete from QLnhanvien where manv=@manv";
             SqlCommand cmd = new SqlCommand(sql, cn);
-            cmd.Parameters.AddWithValue("@makh", TextBoxMaNV.Text);
+            cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
@@ -246,13 +246,13 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update QLnhanvien set  tennv=@tennv,sodt=@sodt,cccd=@cccd,diachi=@diachi where makh=@makh";
+                string sql = "update QLnhanvien set  tennv=@tennv,cccd=@cccd,sodt=@sodt,diachi=@diachi where manv=@manv";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
                 cmd.Parameters.AddWithValue("@tennv", TextBoxTenNV.Text);
-                cmd.Parameters.AddWithValue("@sodt", TextBoxSoDT.Text);
                 cmd.Parameters.AddWithValue("@cccd", TextBoxCCCD.Text);
+                cmd.Parameters.AddWithValue("@sodt", TextBoxSoDT.Text);
                 cmd.Parameters.AddWithValue("@diachi", TextBoxDiaChi.Text);
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -283,7 +283,7 @@ namespace QLCHMTNguyenHoang
         {
             textBoxTimkiem.Focus();
             cn.Open();
-            string sql = @"select * from QLnhanvien where makh like '%" + textBoxTimkiem.Text + "%' or tensp like N'%" + textBoxTimkiem.Text + "%'";
+            string sql = @"select * from QLnhanvien where manv like '%" + textBoxTimkiem.Text + "%' or tennv like N'%" + textBoxTimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
