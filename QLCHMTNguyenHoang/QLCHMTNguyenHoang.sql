@@ -297,3 +297,7 @@ Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV001
 Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV002','Kim Thị B',0,'123456789012','0123456789','Kiên Giang','Nhân viên kho hàng');
 Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV003','Lý Minh C',1,'123456789012','0123456789','Tiền Giang','Nhân viên kho hàng');
 
+Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD001','KH001','NV003','2023-12-15',1);
+Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD002','KH002','NV002','2023-11-15',2);
+Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD003','KH003','NV001','2023-10-15',3);
+
