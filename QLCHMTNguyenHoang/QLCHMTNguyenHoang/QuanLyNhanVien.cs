@@ -14,11 +14,11 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyNhanVien : Form
     {
+        SqlConnection cn;
         public QuanLyNhanVien()
         {
             InitializeComponent();
         }
-        SqlConnection cn;
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
