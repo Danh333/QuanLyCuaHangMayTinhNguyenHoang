@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     12/12/2023 12:12:12 CH                       */
+/* Created on:     12/12/2023 12:12:12 SA                        */
 /*==============================================================*/
 
 Create Database QLCHMTNguyenHoang
@@ -251,10 +251,10 @@ go
 create table QLnhanvien (
    MaNV                 int                  not null,
    TenNV                nvarchar(255)        null,
+   Gioitinh             bit                  null,
    CCCD                 int                  null,
    SoDT                 int                  null,
    Diachi               nvarchar(255)        null,
-   Gioitinh             bit                  null,
    Chucvu               nvarchar(255)        null,
    constraint PK_QLNHANVIEN primary key (MaNV)
 )
