@@ -32,19 +32,20 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source = ASUS\sqlexpress; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
+            cn = new SqlConnection(@"Data Source = WHOANHMINH\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
             string sql = "select * from QLnhanvien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView.DataSource = dt;
-            this.TextBoxMaNV.Enabled = false;
-            this.TextBoxTenNV.Enabled = false;
-            this.TextBoxCCCD.Enabled = false;
-            this.TextBoxSoDT.Enabled = false;
-            this.TextBoxDiaChi.Enabled = false;
-            this.comboBoxGioitinh.Enabled = false;
-            this.comboBoxChucvu.Enabled = false;
+            //cai nay du roi -> cai dong textBox
+            //this.TextBoxMaNV.Enabled = false;
+            //this.TextBoxTenNV.Enabled = false;
+            //this.TextBoxCCCD.Enabled = false;
+            //this.TextBoxSoDT.Enabled = false;
+            //this.TextBoxDiaChi.Enabled = false;
+            //this.comboBoxGioitinh.Enabled = false;
+            //this.comboBoxChucvu.Enabled = false;
         }
         void moTextbox()
         {
@@ -106,7 +107,7 @@ namespace QLCHMTNguyenHoang
             hienthi();
             dongTextbox();
             LoadComboBox();
-
+            getsizecolums();//chinh chieu rong cho cot datagridview
             ButtonLuu.Enabled = false;
             ButtonCapnhat.Enabled = false;
             ButtonSua.Enabled = false;
@@ -136,13 +137,13 @@ namespace QLCHMTNguyenHoang
         }
         public void getsizecolums()
         {
-            dataGridView.Columns[0].Width = 150;
-            dataGridView.Columns[1].Width = 150;
-            dataGridView.Columns[2].Width = 150;
-            dataGridView.Columns[3].Width = 150;
-            dataGridView.Columns[4].Width = 150;
-            dataGridView.Columns[5].Width = 150;
-            dataGridView.Columns[6].Width = 250;
+            dataGridView.Columns[0].Width = 80;
+            dataGridView.Columns[1].Width = 200;
+            dataGridView.Columns[2].Width = 100;
+            dataGridView.Columns[3].Width = 100;
+            dataGridView.Columns[4].Width = 100;
+            dataGridView.Columns[5].Width = 200;
+            dataGridView.Columns[6].Width = 100;
         }
         void dongbtn_clickdatagridview_()
         {

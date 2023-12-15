@@ -336,5 +336,23 @@ namespace QLCHMTNguyenHoang
         {
 
         }
+
+        private void btnXuatHD_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from hoadon ";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            XuatHD xuat = new XuatHD();
+            xuat.ShowDialog();
+            CrystalReport1 rp = new CrystalReport1();
+            rp.SetDataSource(dt);
+            xuat.crystalReportViewer1.ReportSource = rp;
+        }
+
+        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
