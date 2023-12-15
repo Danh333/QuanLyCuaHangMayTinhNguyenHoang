@@ -308,7 +308,7 @@
             this.btReset.Text = "Reset    ";
             this.btReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btReset.UseVisualStyleBackColor = true;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+         
             // 
             // btnTimKiem
             // 

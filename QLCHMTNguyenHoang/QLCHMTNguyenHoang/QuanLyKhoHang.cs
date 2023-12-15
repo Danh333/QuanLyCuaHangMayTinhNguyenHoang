@@ -307,10 +307,10 @@ namespace QLCHMTNguyenHoang
 
         private void btnTrove_Click_1(object sender, EventArgs e)
         {
-
-            QuanLyKhoHang trove = new QuanLyKhoHang();
+            QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
+           
         }
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {

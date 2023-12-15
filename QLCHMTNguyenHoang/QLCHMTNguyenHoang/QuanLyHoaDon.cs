@@ -349,5 +349,10 @@ namespace QLCHMTNguyenHoang
             rp.SetDataSource(dt);
             xuat.crystalReportViewer1.ReportSource = rp;
         }
+
+        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

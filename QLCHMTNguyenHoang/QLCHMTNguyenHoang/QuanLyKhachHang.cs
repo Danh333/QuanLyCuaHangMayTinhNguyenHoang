@@ -21,7 +21,7 @@ namespace QLCHMTNguyenHoang
             InitializeComponent();
             dataGridView1.RowsAdded += RowsAdded;
             dataGridView1.RowsRemoved += RowsRemoved;
-            // this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+           
         }
         void hienthi()
         {
@@ -31,10 +31,8 @@ namespace QLCHMTNguyenHoang
             DataTable dt = new DataTable();
             //da.Fill(dt);
             dataGridView1.DataSource = dt;
-            DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            //pic = (DataGridViewImageColumn)dataGridView1.Columns[6];
-           // pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            getsizecolums();
+                    
+            getsizecolums();//ham chinh chieu rong
             //dataGridView1.Columns
             this.txtMakh.Enabled = false;
             this.txtTenkh.Enabled = false;
@@ -90,12 +88,9 @@ namespace QLCHMTNguyenHoang
 
         private void QuanLyKhachHang_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'abcDataSet.hoadon2' table. You can move, or remove it, as needed.
-            //this.""TableAdapter.Fill(this.abcDataSet."");
+           
             hienthi();
-            dongTextbox();
-         
-
+            dongTextbox();        
             btnLuu.Enabled = false;
             btnCapnhat.Enabled = false;
             btnSua.Enabled = false;
@@ -107,8 +102,7 @@ namespace QLCHMTNguyenHoang
             btnXoa.Visible = false;
             btnSua.Visible = false;
             btnCapnhat.Visible = false;
-            Image imageCircle = Image.FromFile("rong.jpg");
-            //Dat hinh mat dinh khi khoi dong
+            
            
             //Reset textBox
             txtMakh.Clear();
@@ -129,13 +123,15 @@ namespace QLCHMTNguyenHoang
         }
         public void getsizecolums()
         {
-            dataGridView1.Columns[0].Width = 150;
-            dataGridView1.Columns[1].Width = 150;
-            dataGridView1.Columns[2].Width = 150;
-            dataGridView1.Columns[3].Width = 150;
-            dataGridView1.Columns[4].Width = 150;
-            dataGridView1.Columns[5].Width = 150;
-            dataGridView1.Columns[6].Width = 250;
+            //chinh chieu rong cot theo y muon
+
+            //dataGridView1.Columns[0].Width = 150;
+            //dataGridView1.Columns[1].Width = 150;
+            //dataGridView1.Columns[2].Width = 150;
+            //dataGridView1.Columns[3].Width = 150;
+            //dataGridView1.Columns[4].Width = 150;
+            //dataGridView1.Columns[5].Width = 150;
+            //dataGridView1.Columns[6].Width = 250;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -243,8 +239,7 @@ namespace QLCHMTNguyenHoang
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
-            hienthi();
-            
+            hienthi();         
             dongTextbox();
 
 
@@ -252,8 +247,7 @@ namespace QLCHMTNguyenHoang
             //{
             //    cn.Close();
             //}
-            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
-            //Dat hinh mat dinh khi khoi dong
+         
             
         }
 
@@ -273,8 +267,8 @@ namespace QLCHMTNguyenHoang
         }
 
         private void btnTrove_Click(object sender, EventArgs e)
-        {
-            QuanLyKhachHang trove = new QuanLyKhachHang();
+        {       
+            QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
         }
@@ -293,7 +287,7 @@ namespace QLCHMTNguyenHoang
                 txtsodt.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txtghichu.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txtDiachi.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[6].Value);
+              
                
             }
             catch
@@ -302,26 +296,6 @@ namespace QLCHMTNguyenHoang
             }
         }
 
-        
-        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            try
-            {
-                if ((e.Exception) is System.Data.ConstraintException)
-                {
-                    dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
-                    MessageBox.Show(e.Exception.Message, "Error ConstraintException",
-                                                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    e.ThrowException = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
-                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         void Xoa_TextBox()
         {
             txtMakh.Clear();
@@ -331,12 +305,11 @@ namespace QLCHMTNguyenHoang
             txtghichu.Clear();
             txtDiachi.Clear();
            
-            Image imageCircle = Image.FromFile("rong.jpg");
-            //Dat hinh mat dinh khi khoi dong
+           
             
         }
 
-        private void btReset_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
             //mở
             dataGridView1.Enabled = true;
@@ -352,16 +325,7 @@ namespace QLCHMTNguyenHoang
             Xoa_TextBox();
         }
 
-        private void txtTenkh_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbtimkiem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             txttimkiem.Focus();
