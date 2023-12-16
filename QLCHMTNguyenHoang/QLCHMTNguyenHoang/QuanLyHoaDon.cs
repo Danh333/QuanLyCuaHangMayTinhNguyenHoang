@@ -15,7 +15,7 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHoaDon : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=quanli123;Integrated Security=True");
+        SqlConnection cn = new SqlConnection();
 
         public QuanLyHoaDon()
         {
@@ -26,7 +26,7 @@ namespace QLCHMTNguyenHoang
        
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=quanli123;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
             string sql = "select * from hoadon";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
@@ -34,26 +34,27 @@ namespace QLCHMTNguyenHoang
             dataGridView1.DataSource = dt;         
             getsizecolums();
             //dataGridView1.Columns
-            this.txtMaHoaDon.Enabled = false;
-        
-            this.txtTongTien.Enabled = false;
-            this.txtMaKhachHang.Enabled = false;
-         
+            dongTextbox();
+            LoadComboBox();
            
         }
         void moTextbox()
         {
+            comboBox1.Enabled = true;
             txtMaHoaDon.Enabled = true;
             txtMaKhachHang.Enabled = true;
-            txtMaNhanVien.Enabled = true;       
-            txtTongTien.Enabled = true;
+           // txtMaNhanVien.Enabled = true;
+            dateTimePicker1.Enabled = true;
+            numericUpDown1.Enabled = true;
         }
         void dongTextbox()
         {
+            comboBox1.Enabled = false;
             txtMaHoaDon.Enabled = false;          
             txtMaKhachHang.Enabled = false;
-            txtMaNhanVien.Enabled = false;       
-            txtTongTien.Enabled = false;
+           // txtMaNhanVien.Enabled = false;
+            dateTimePicker1.Enabled = true;
+            numericUpDown1.Enabled = false;
         }
         void dongButton()
         {
@@ -95,19 +96,18 @@ namespace QLCHMTNguyenHoang
             btnSua.Visible = false;
             btnCapnhat.Visible = false;
             //Dat hinh mat dinh khi khoi dong
-         
+
 
             //Reset textBox
-            txtMaHoaDon.Clear();
-         
-            txtMaKhachHang.Clear();
-            txtTongTien.Clear();
-            
+            Xoa_TextBox();
+
             //Mở textBox
-            txtMaHoaDon.Enabled = true;  
-            txtMaKhachHang.Enabled = true;    
-            dateTimePicker1.Value = DateTime.Now.Date;          
-            txtTongTien.Enabled = true;
+            moTextbox();
+            //txtMaHoaDon.Enabled = true;  
+            //txtMaKhachHang.Enabled = true;    
+            //dateTimePicker1.Value = DateTime.Now.Date;          
+            //txtTongTien.Enabled = true;
+            //txtMaNhanVien.Enabled = true;
             moButton();//mở button
         }
         public void getsizecolums()  //đặt chiều rộng cố định cho cột
@@ -124,7 +124,7 @@ namespace QLCHMTNguyenHoang
         {
             txttimkiem.Focus();           
             cn.Open();
-            string sql = @"select * from hoadon where mahoadon like '%" + txttimkiem.Text + "%' or makhachhang like N'%" + txttimkiem.Text + "%'";
+            string sql = @"select * from hoadon where mahoadon like '%" + txttimkiem.Text + "%' or makh like N'%" + txttimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -167,14 +167,14 @@ namespace QLCHMTNguyenHoang
             {
                 cn.Open();
                
-                string sql = "insert into hoadon (MaHoaDon,MaKhachHang,MaNhanVien,NgayLapHoaDon,TongTien) values (@MaHoaDon,@MaKhachHang,@MaNhanVien,@NgayLapHoaDon,@TongTien)";
+                string sql = "insert into hoadon (MaHoaDon,MaKH,MaNV,NgayLap,Soluong) values (@MaHoaDon,@MaKH,@MaNV,@NgayLap,@Soluong)";
                 SqlCommand   cmd = new SqlCommand(sql,cn);
                 //MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@MaHoaDon", txtMaHoaDon.Text);
-                cmd.Parameters.AddWithValue("@MaKhachHang", txtMaKhachHang.Text);
-                cmd.Parameters.AddWithValue("@MaNhanVien", txtMaNhanVien.Text);          
-                cmd.Parameters.AddWithValue("@NgayLapHoaDon", dateTimePicker1.Value.ToString());        
-                cmd.Parameters.AddWithValue("@TongTien", txtTongTien.Text);                           
+                cmd.Parameters.AddWithValue("@MaKH", txtMaKhachHang.Text);
+                cmd.Parameters.AddWithValue("@MaNV", comboBox1.Text);          
+                cmd.Parameters.AddWithValue("@NgayLap", dateTimePicker1.Value.ToString());        
+                cmd.Parameters.AddWithValue("@Soluong", numericUpDown1.Value.ToString());                           
                 //pictureBox1.Image.Save     (str        , pictureBox1.Image.RawFormat);
                 //cmd.Parameters.AddWithValue("@hinhanh" , str.ToArray());               
                 cmd.ExecuteNonQuery();
@@ -196,14 +196,14 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update hoadon set  MaHoaDon=@MaHoaDon,MaKhachHang=@MaKhachHang,MaNhanVien=@MaNhanVien,NgayLapHoaDon=@NgayLapHoaDon,TongTien=@TongTien where mahoadon=@mahoadon";
+                string sql = "update hoadon set  MaHoaDon=@MaHoaDon,MaKh=@MaKh,MaNV=@MaNv,NgayLap=@NgayLap,Soluong=@Soluong where mahoadon=@mahoadon";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 //MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@MaHoaDon", txtMaHoaDon.Text);
-                cmd.Parameters.AddWithValue("@MaKhachHang", txtMaKhachHang.Text);
-                cmd.Parameters.AddWithValue("@MaNhanVien", txtMaNhanVien.Text);
-                cmd.Parameters.AddWithValue("@NgayLapHoaDon", dateTimePicker1.Value.ToString());
-                cmd.Parameters.AddWithValue("@TongTien", txtTongTien.Text);
+                cmd.Parameters.AddWithValue("@MaKH", txtMaKhachHang.Text);
+                cmd.Parameters.AddWithValue("@MaNV", comboBox1.Text);
+                cmd.Parameters.AddWithValue("@NgayLap", dateTimePicker1.Value.ToString());
+                cmd.Parameters.AddWithValue("@Soluong", numericUpDown1.Value.ToString());
                 //pictureBox1.Image.Save     (    str      , pictureBox1.Image.RawFormat);
                 //cmd.Parameters.AddWithValue("@anh"       , str.ToArray());
                 cmd.ExecuteNonQuery();
@@ -267,11 +267,11 @@ namespace QLCHMTNguyenHoang
                 txtMaHoaDon.Text         =  dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 
                 txtMaKhachHang.Text         =  dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txtMaNhanVien.Text         =  dataGridView1.CurrentRow.Cells[2].Value.ToString();
-               
+                //txtMaNhanVien.Text         =  dataGridView1.CurrentRow.Cells[2].Value.ToString();
+               comboBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 dateTimePicker1.Text =  dataGridView1.CurrentRow.Cells[3].Value.ToString();
               
-                txtTongTien.Text          =  dataGridView1.CurrentRow.Cells[4].Value.ToString();                         
+                numericUpDown1.Text          =  dataGridView1.CurrentRow.Cells[4].Value.ToString();                         
                 //MemoryStream ms      =  new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[9].Value);
                 //pictureBox1.Image    =  Image.FromStream(ms);              
             }
@@ -307,9 +307,9 @@ namespace QLCHMTNguyenHoang
         void Xoa_TextBox()
         {
             txtMaHoaDon.Clear();
-           
+            comboBox1.ResetText();
             txtMaKhachHang.Clear();
-            txtTongTien. Clear();
+            numericUpDown1.ResetText();
             dateTimePicker1.Value = DateTime.Now.Date;
           
             //Image imageCircle = Image.FromFile("img\\rong.jpg");
@@ -332,27 +332,40 @@ namespace QLCHMTNguyenHoang
             Xoa_TextBox();
         }
 
-        private void btnAnh_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnXuatHD_Click(object sender, EventArgs e)
         {
-            string sql = "select * from hoadon ";
-            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            XuatHD xuat = new XuatHD();
-            xuat.ShowDialog();
-            CrystalReport1 rp = new CrystalReport1();
-            rp.SetDataSource(dt);
-            xuat.crystalReportViewer1.ReportSource = rp;
+            XuatHD f = new XuatHD();
+            f.ShowDialog();
         }
 
         private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+        public void LoadComboBox()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT DISTINCT MaNV From Nhanvien ", cn);
+                da.Fill(dt);
+                cn.Close();
+            }//where nhanvien.manv=hoadon.manv
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi");
+            }
+            try
+            {
+                comboBox1.DataSource = dt;
+                comboBox1.DisplayMember = "MaNV";
+                comboBox1.ValueMember = "MaNV";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi load dữ liệu\n", ex.ToString());
+            }
         }
     }
 }
