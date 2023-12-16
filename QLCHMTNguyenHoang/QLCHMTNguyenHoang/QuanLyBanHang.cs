@@ -108,5 +108,10 @@ namespace QLCHMTNguyenHoang
             f.Show();
             this.Hide();
         }
+
+        private void QuanLyBanHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }

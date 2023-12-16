@@ -33,20 +33,12 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source = ASUS\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
+            cn = new SqlConnection(@"Data Source = whoanhminh\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
             string sql = "select * from NhanVien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView.DataSource = dt;
-            //cai nay du roi -> cai dong textBox
-            //this.TextBoxMaNV.Enabled = false;
-            //this.TextBoxTenNV.Enabled = false;
-            //this.TextBoxCCCD.Enabled = false;
-            //this.TextBoxSoDT.Enabled = false;
-            //this.TextBoxDiaChi.Enabled = false;
-            //this.comboBoxGioitinh.Enabled = false;
-            //this.comboBoxChucvu.Enabled = false;
         }
         void moTextbox()
         {
@@ -113,7 +105,16 @@ namespace QLCHMTNguyenHoang
             ButtonCapnhat.Enabled = false;
             ButtonSua.Enabled = false;
         }
-
+        public void getsizecolums()
+        {
+            dataGridView.Columns[0].Width = 80;
+            dataGridView.Columns[1].Width = 200;
+            dataGridView.Columns[2].Width = 100;
+            dataGridView.Columns[3].Width = 100;
+            dataGridView.Columns[4].Width = 100;
+            dataGridView.Columns[5].Width = 200;
+            dataGridView.Columns[6].Width = 100;
+        }
         private void ButtonThem_Click(object sender, EventArgs e)
         {
             dataGridView.Enabled = false;
@@ -136,16 +137,7 @@ namespace QLCHMTNguyenHoang
             comboBoxChucvu.Enabled = true;
             moButton();
         }
-        public void getsizecolums()
-        {
-            dataGridView.Columns[0].Width = 80;
-            dataGridView.Columns[1].Width = 200;
-            dataGridView.Columns[2].Width = 100;
-            dataGridView.Columns[3].Width = 100;
-            dataGridView.Columns[4].Width = 100;
-            dataGridView.Columns[5].Width = 200;
-            dataGridView.Columns[6].Width = 100;
-        }
+        
         void dongbtn_clickdatagridview_()
         {
             dataGridView.Enabled = false;
@@ -163,8 +155,7 @@ namespace QLCHMTNguyenHoang
             {
                 dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập mã nhân viên!");
-                TextBoxMaNV.Focus();
-                return;
+                TextBoxMaNV.Focus(); return;
             }
             if (TextBoxTenNV.Text == "")
             {
@@ -223,7 +214,7 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonXoa_Click(object sender, EventArgs e)
         {
-            string sql = "Delete from NhanVien where manv=@manv";
+            string sql = "delete from NhanVien where manv=@manv";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
             cn.Open();
@@ -262,7 +253,7 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception)
             {
-                MessageBox.Show("Lỗii cập nhật");
+                MessageBox.Show("Lỗi cập nhật!");
             }
         }
 
@@ -295,7 +286,5 @@ namespace QLCHMTNguyenHoang
             dongTextbox();
             cn.Close();
         }
-
-        
     }
 }
