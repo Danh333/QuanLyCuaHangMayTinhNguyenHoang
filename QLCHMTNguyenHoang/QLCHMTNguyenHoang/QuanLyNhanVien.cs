@@ -263,12 +263,12 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonReset_Click(object sender, EventArgs e)
         {
-            //m?
+            //mở
             dataGridView.Enabled = true;
             ButtonXoa.Visible = true;
             ButtonSua.Visible = true;
             ButtonCapnhat.Visible = true;
-            //dóng
+            //đóng
             ButtonLuu.Enabled = false;
             ButtonSua.Enabled = false;
             ButtonCapnhat.Enabled = false;

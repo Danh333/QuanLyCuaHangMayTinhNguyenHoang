@@ -14,7 +14,8 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHangHoa : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
         public QuanLyHangHoa()
         {
             InitializeComponent();
@@ -24,14 +25,12 @@ namespace QLCHMTNguyenHoang
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             QuanLyBanHang trove = new QuanLyBanHang();
             trove.Show();
             this.Hide();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -45,23 +44,20 @@ namespace QLCHMTNguyenHoang
         private void button6_Click(object sender, EventArgs e)
         {
             dataGridView1.Enabled = false;
-            btnXoa.Visible = false;
-            btnSua.Visible = false;
-            btnCapnhat.Visible = false;
+            buttonxoa.Visible = false;
+            buttonsua.Visible = false;
+            buttoncapnhat.Visible = false;
             //Image imageCircle = Image.FromFile("rong.jpg");
             //Dat hinh mat dinh khi khoi dong
             //pictureBox1.Image = imageCircle;
             //Reset textBox
 
             txtMahh.Clear();
-
             txtGia.Clear();
             //Mở textBox
 
             txtMahh.Enabled = true;
-
             dateTimePicker1.Value = DateTime.Now.Date;
-
             txtGia.Enabled = true;
             moButton();
         }
@@ -69,30 +65,24 @@ namespace QLCHMTNguyenHoang
         {
 
             txtMahh.Enabled = true;
-
             txtGia.Enabled = true;
         }
         void dongTextbox()
         {
 
             txtMahh.Enabled = false;
-
-
-
-
-
             txtGia.Enabled = false;
         }
         void dongButton()
         {
-            btnXoa.Enabled = false;
-            btnLuu.Enabled = false;
-            btnCapnhat.Enabled = false;
+            buttonxoa.Enabled = false;
+            buttonluu.Enabled = false;
+            buttoncapnhat.Enabled = false;
         }
         void moButton()
         {
-            btnLuu.Enabled = true;
-            btnCapnhat.Enabled = true;
+            buttonluu.Enabled = true;
+            buttoncapnhat.Enabled = true;
 
         }
         void hienthi()
@@ -129,14 +119,9 @@ namespace QLCHMTNguyenHoang
         private void btnLuu_Click(object sender, EventArgs e)
         {
             dataGridView1.Enabled = true;
-            btnXoa.Visible = true;
-            btnSua.Visible = true;
-            btnCapnhat.Visible = true;
-
-
-
-
-
+            buttonxoa.Visible = true;
+            buttonsua.Visible = true;
+            buttoncapnhat.Visible = true;
             try
             {
                 cn.Open();
@@ -145,11 +130,7 @@ namespace QLCHMTNguyenHoang
                 MemoryStream str = new MemoryStream();
 
                 cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
-
-
                 cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
-
-
                 cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
                 // cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
                 pictureBox.Image.Save(str, pictureBox.Image.RawFormat);
@@ -158,8 +139,8 @@ namespace QLCHMTNguyenHoang
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
-                btnLuu.Enabled = false;
-                btnCapnhat.Enabled = false;
+                buttonluu.Enabled = false;
+                buttoncapnhat.Enabled = false;
             }
             catch (Exception)
             {
@@ -172,9 +153,9 @@ namespace QLCHMTNguyenHoang
         {
             moTextbox();
             moButton();
-            btnLuu.Enabled = false;
+            buttonluu.Enabled = false;
 
-            btnSua.Enabled = false;
+            buttonsua.Enabled = false;
         }
 
 
@@ -234,13 +215,13 @@ namespace QLCHMTNguyenHoang
         {
             //mở
             dataGridView1.Enabled = true;
-            btnXoa.Visible = true;
-            btnSua.Visible = true;
-            btnCapnhat.Visible = true;
+            buttonxoa.Visible = true;
+            buttonsua.Visible = true;
+            buttoncapnhat.Visible = true;
             //đóng
-            btnLuu.Enabled = false;
-            btnSua.Enabled = false;
-            btnCapnhat.Enabled = false;
+            buttonluu.Enabled = false;
+            buttonsua.Enabled = false;
+            buttoncapnhat.Enabled = false;
 
 
 
@@ -263,9 +244,9 @@ namespace QLCHMTNguyenHoang
         void dongbtn_clickdatagridview_()
         {
             dataGridView1.Enabled = false;
-            btnXoa.Visible = false;
-            btnSua.Visible = false;
-            btnCapnhat.Visible = false;
+            buttonxoa.Visible = false;
+            buttonsua.Visible = false;
+            buttoncapnhat.Visible = false;
         }
 
         private void btnTrove_Click(object sender, EventArgs e)
@@ -282,9 +263,9 @@ namespace QLCHMTNguyenHoang
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnCapnhat.Enabled = false;
-            btnLuu.Enabled = false;
-            btnSua.Enabled = true;
+            buttoncapnhat.Enabled = false;
+            buttonluu.Enabled = false;
+            buttonsua.Enabled = true;
 
             try
             {
