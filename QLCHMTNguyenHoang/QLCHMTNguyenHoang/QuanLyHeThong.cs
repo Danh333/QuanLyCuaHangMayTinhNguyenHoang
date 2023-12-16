@@ -19,23 +19,26 @@ namespace QLCHMTNguyenHoang
             InitializeComponent();
         }
         SqlConnection cn;
-        private void ButtonThoat_Click_1(object sender, EventArgs e)
+        private void ButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //private void ButtonTrove_Click(object sender, EventArgs e)
-        //{
-        //    QuanLyNhanVien trove = new QuanLyNhanVien();
-        //    trove.Show();
-        //    this.Hide();
-        //}
-
-        private void ButtonTrove_Click_1(object sender, EventArgs e)
+        private void ButtonTrove_Click(object sender, EventArgs e)
         {
-            QuanLyBanHang trove = new QuanLyBanHang();
+            QuanLyNhanVien trove = new QuanLyNhanVien();
             trove.Show();
             this.Hide();
+        }
+
+        private void QuanLyHeThong_Load(object sender, EventArgs e)
+        {
+            cn = new SqlConnection(@"Data Source = ASUS\SQLEXPRESS; Initial Catalog = QLtaikhoan; Integrated Security = True");
+            string sql = "select * from ";
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView.DataSource = dt;
         }
     }
 }

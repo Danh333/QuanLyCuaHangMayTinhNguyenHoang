@@ -289,13 +289,13 @@ go
 
 
 
-Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi) values ('KH001','Nguyễn Thị A','0909080807','nguyenthia@gmail.com','An Giang');
-Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi) values ('KH002','Trần Văn B','0707060605','tranvanb@gmail.com','Bắc Giang');
-Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi) values ('KH003','Lê Thị C','0505040403','lethic@gmail.com','Hà Giang');
+Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi) values ('KH001',N'Nguyễn Thị A','0909080807','nguyenthia@gmail.com','An Giang');
+Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi) values ('KH002',N'Trần Văn B','0707060605','tranvanb@gmail.com','Bắc Giang');
+Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi) values ('KH003',N'Lê Thị C','0505040403','lethic@gmail.com','Hà Giang');
 
-Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV001','Bùi Văn A',1,'123456789012','0123456789','Hậu Giang','Nhân viên kho hàng');
-Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV002','Kim Thị B',0,'123456789012','0123456789','Kiên Giang','Nhân viên kho hàng');
-Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV003','Lý Minh C',1,'123456789012','0123456789','Tiền Giang','Nhân viên kho hàng');
+Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV001',N'Bùi Văn A',1,'123456789012','0123456789','Hậu Giang','Nhân viên kho hàng');
+Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV002',N'Kim Thị B',0,'123456789012','0123456789','Kiên Giang','Nhân viên kho hàng');
+Insert into NhanVien(MaNV,TenNV,Gioitinh,CCCD,SoDT,Diachi,Chucvu) values ('NV003',N'Lý Minh C',1,'123456789012','0123456789','Tiền Giang','Nhân viên kho hàng');
 
 Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD001','KH001','NV003','2023-12-15',1);
 Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD002','KH002','NV002','2023-11-15',2);

@@ -36,7 +36,7 @@
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxMatkhau = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ButtonThem = new System.Windows.Forms.Button();
             this.ButtonSua = new System.Windows.Forms.Button();
             this.ButtonXoa = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.ButtonLuu = new System.Windows.Forms.Button();
             this.ButtonCapnhat = new System.Windows.Forms.Button();
             this.ButtonReset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -122,14 +122,14 @@
             this.textBoxMatkhau.Size = new System.Drawing.Size(368, 30);
             this.textBoxMatkhau.TabIndex = 15;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 311);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(472, 174);
-            this.dataGridView1.TabIndex = 16;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(12, 311);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.Size = new System.Drawing.Size(472, 174);
+            this.dataGridView.TabIndex = 16;
             // 
             // ButtonThem
             // 
@@ -182,7 +182,7 @@
             this.ButtonTrove.Text = "Trở về";
             this.ButtonTrove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonTrove.UseVisualStyleBackColor = true;
-            this.ButtonTrove.Click += new System.EventHandler(this.ButtonTrove_Click_1);
+            this.ButtonTrove.Click += new System.EventHandler(this.ButtonTrove_Click);
             // 
             // ButtonThoat
             // 
@@ -196,6 +196,7 @@
             this.ButtonThoat.Text = "Thoát  ";
             this.ButtonThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonThoat.UseVisualStyleBackColor = true;
+            this.ButtonThoat.Click += new System.EventHandler(this.ButtonThoat_Click);
             // 
             // ButtonLuu
             // 
@@ -249,7 +250,7 @@
             this.Controls.Add(this.ButtonXoa);
             this.Controls.Add(this.ButtonSua);
             this.Controls.Add(this.ButtonThem);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.textBoxMatkhau);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox);
@@ -261,7 +262,8 @@
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Name = "QuanLyHeThong";
             this.Text = "Quản Lý Hệ Thống";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.QuanLyHeThong_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +278,7 @@
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxMatkhau;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button ButtonThem;
         private System.Windows.Forms.Button ButtonSua;
         private System.Windows.Forms.Button ButtonXoa;

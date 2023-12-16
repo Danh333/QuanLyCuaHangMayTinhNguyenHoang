@@ -33,7 +33,7 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("Data Source = "+machineName+@"\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
+            cn = new SqlConnection(@"Data Source = ASUS\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
             string sql = "select * from NhanVien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
