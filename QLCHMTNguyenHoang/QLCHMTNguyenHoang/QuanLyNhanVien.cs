@@ -15,6 +15,7 @@ namespace QLCHMTNguyenHoang
     public partial class QuanLyNhanVien : Form
     {
         SqlConnection cn;
+        string machineName = Environment.MachineName;
         public QuanLyNhanVien()
         {
             InitializeComponent();
@@ -32,8 +33,8 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source = WHOANHMINH\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
-            string sql = "select * from QLnhanvien";
+            cn = new SqlConnection("Data Source = "+machineName+@"\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
+            string sql = "select * from NhanVien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -83,7 +84,7 @@ namespace QLCHMTNguyenHoang
             DataTable dt = new DataTable();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select Chucvu From QLnhanvien", cn);
+                SqlDataAdapter da = new SqlDataAdapter("Select Chucvu From NhanVien", cn);
                 da.Fill(dt);
                 cn.Close();
             }
@@ -192,7 +193,7 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "insert  into QLnhanvien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
+                string sql = "insert  into NhanVien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
@@ -222,7 +223,7 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonXoa_Click(object sender, EventArgs e)
         {
-            string sql = "Delete from QLnhanvien where manv=@manv";
+            string sql = "Delete from NhanVien where manv=@manv";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
             cn.Open();
@@ -247,7 +248,7 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update QLnhanvien set  tennv=@tennv,cccd=@cccd,sodt=@sodt,diachi=@diachi where manv=@manv";
+                string sql = "update NhanVien set  tennv=@tennv,cccd=@cccd,sodt=@sodt,diachi=@diachi where manv=@manv";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
@@ -284,7 +285,7 @@ namespace QLCHMTNguyenHoang
         {
             textBoxTimkiem.Focus();
             cn.Open();
-            string sql = @"select * from QLnhanvien where manv like '%" + textBoxTimkiem.Text + "%' or tennv like N'%" + textBoxTimkiem.Text + "%'";
+            string sql = @"select * from NhanVien where manv like '%" + textBoxTimkiem.Text + "%' or tennv like N'%" + textBoxTimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

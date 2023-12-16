@@ -4,8 +4,8 @@
 /*==============================================================*/
 
 Create Database QLCHMTNguyenHoang
-use QLCHMTNguyenHoang
-go
+Use QLCHMTNguyenHoang
+Go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
@@ -218,7 +218,7 @@ create table KhachHang (
    SoDT                 char(10)             null,
    Email                nvarchar(255)        null,
    Diachi               nvarchar(255)        null,
-   no                   bit                  null,
+   CongNo                   bit              null,
    constraint PK_KHACHHANG primary key (MaKH)
 )
 go
