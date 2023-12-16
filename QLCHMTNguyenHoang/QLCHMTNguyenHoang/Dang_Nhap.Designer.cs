@@ -39,6 +39,7 @@
             // 
             // btnThoat
             // 
+            this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThoat.Location = new System.Drawing.Point(350, 190);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -46,11 +47,12 @@
             this.btnThoat.Size = new System.Drawing.Size(109, 45);
             this.btnThoat.TabIndex = 13;
             this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDangNhap
             // 
+            this.btnDangNhap.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDangNhap.Location = new System.Drawing.Point(57, 190);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -58,7 +60,7 @@
             this.btnDangNhap.Size = new System.Drawing.Size(109, 45);
             this.btnDangNhap.TabIndex = 12;
             this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // txtMatKhau
@@ -106,7 +108,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(172, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 38);
+            this.label1.Size = new System.Drawing.Size(176, 37);
             this.label1.TabIndex = 7;
             this.label1.Text = "Đăng Nhập";
             // 
@@ -123,7 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DangNhap";
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.DangNhap_Load);

@@ -22,10 +22,10 @@ namespace QLCHMTNguyenHoang
         {
             this.Close();
         }
-
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=whoanhminh\SQLEXPRESS;Initial Catalog=QLtaikhoan;Integrated Security=True");
+            string machineName = Environment.MachineName;
+            SqlConnection sqlcon = new SqlConnection("Data Source="+machineName+@"\SQLEXPRESS;Initial Catalog=QLtaikhoan;Integrated Security=True");
             string userName = txtTenDangNhap.Text;
             string passWord = txtMatKhau.Text;
             if (userName == null || userName.Equals(""))
@@ -39,7 +39,7 @@ namespace QLCHMTNguyenHoang
                 return;
             }
             sqlcon.Open();
-            string sql = "select username,password from nguoidung1 where username = '" + userName + "'  and password  = '" + passWord + "'";
+            string sql = "select username,password from nguoidung where username = '" + userName + "'  and password  = '" + passWord + "'";
 
             SqlCommand cmd = new SqlCommand(sql, sqlcon);
             SqlDataReader dt = cmd.ExecuteReader();
