@@ -14,14 +14,19 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHeThong : Form
     {
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
         public QuanLyHeThong()
         {
             InitializeComponent();
         }
-        SqlConnection cn;
+        
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?","", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void ButtonTrove_Click(object sender, EventArgs e)
@@ -43,7 +48,7 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source = whoanhminh\SQLEXPRESS; Initial Catalog = QLtaikhoan; Integrated Security = True");
+            cn = new SqlConnection("Data Source = "+ MachineName +@"; Initial Catalog = QLtaikhoan; Integrated Security = True");
             string sql = "select * from nguoidung";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();

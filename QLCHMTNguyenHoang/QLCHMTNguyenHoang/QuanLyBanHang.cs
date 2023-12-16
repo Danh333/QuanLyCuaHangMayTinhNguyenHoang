@@ -19,99 +19,144 @@ namespace QLCHMTNguyenHoang
 
         private void QLnhanvien_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien fNhanvien = new QuanLyNhanVien();
-            fNhanvien.Show();
+            QuanLyNhanVien nv = new QuanLyNhanVien();
+            nv.Show();
             this.Hide();
         }
 
         private void QLkhachhang_Click(object sender, EventArgs e)
         {
-            QuanLyKhachHang fKhachhang = new QuanLyKhachHang();
-            fKhachhang.Show();
+            QuanLyKhachHang kh = new QuanLyKhachHang();
+            kh.Show();
             this.Hide();
         }
 
         private void QLhoadon_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDon fHoadon = new QuanLyHoaDon();
-            fHoadon.Show();
+            QuanLyHoaDon hd = new QuanLyHoaDon();
+            hd.Show();
             this.Hide();
         }
 
         private void QLkhohang_Click(object sender, EventArgs e)
         {
-            QuanLyKhoHang fKhohang = new QuanLyKhoHang();
-            fKhohang.Show();
+            QuanLyKhoHang kho = new QuanLyKhoHang();
+            kho.Show();
             this.Hide();
         }
 
         private void QLhanghoa_Click(object sender, EventArgs e)
         {
-            QuanLyHangHoa fHanghoa = new QuanLyHangHoa();
-            fHanghoa.Show();
+            QuanLyHangHoa hh = new QuanLyHangHoa();
+            hh.Show();
             this.Hide();
         }
 
         private void QLhethong_Click(object sender, EventArgs e)
         {
-            QuanLyHeThong fHethong = new QuanLyHeThong();
-            fHethong.Show();
+            QuanLyHeThong ht = new QuanLyHeThong();
+            ht.Show();
             this.Hide();
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QuanLyNhanVien f = new QuanLyNhanVien();
-            f.Show();
+            QuanLyNhanVien nv = new QuanLyNhanVien();
+            nv.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            QuanLyKhachHang f = new QuanLyKhachHang();
-            f.Show();
+            QuanLyKhachHang kh = new QuanLyKhachHang();
+            kh.Show();
             this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            QuanLyKhoHang f = new QuanLyKhoHang();
-            f.Show();
+            QuanLyKhoHang kho = new QuanLyKhoHang();
+            kho.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDon f = new QuanLyHoaDon();
-            f.Show();
+            QuanLyHoaDon hd = new QuanLyHoaDon();
+            hd.Show();
             this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            QuanLyHangHoa f = new QuanLyHangHoa();
-            f.Show();
+            QuanLyHangHoa hh = new QuanLyHangHoa();
+            hh.Show();
             this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            QuanLyHeThong f = new QuanLyHeThong();
-            f.Show();
+            QuanLyHeThong ht = new QuanLyHeThong();
+            ht.Show();
             this.Hide();
         }
 
-        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        private void QLNVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDon f = new QuanLyHoaDon();
-            f.Show();
+            QuanLyNhanVien nv = new QuanLyNhanVien();
+            nv.Show();
             this.Hide();
         }
 
-        private void QuanLyBanHang_Load(object sender, EventArgs e)
+        private void QLKHToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            QuanLyKhachHang kh = new QuanLyKhachHang();
+            kh.Show();
+            this.Hide();
+        }
 
+        private void QLKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyKhoHang kho = new QuanLyKhoHang();
+            kho.Show();
+            this.Hide();
+        }
+
+        private void QLHDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyHoaDon hd = new QuanLyHoaDon();
+            hd.Show();
+            this.Hide();
+        }
+
+        private void QLHHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyHangHoa hh = new QuanLyHangHoa();
+            hh.Show();
+            this.Hide();
+        }
+
+        private void QLHTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuanLyHeThong ht = new QuanLyHeThong();
+            ht.Show();
+            this.Hide();
+        }
+
+        private void DangXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DangNhap dn = new DangNhap();
+            dn.Show();
+            this.Hide();
+        }
+
+        private void ThoatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
     }
-    }
+}

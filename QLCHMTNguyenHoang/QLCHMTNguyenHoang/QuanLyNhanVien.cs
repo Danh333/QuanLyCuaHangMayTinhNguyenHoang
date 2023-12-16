@@ -22,7 +22,10 @@ namespace QLCHMTNguyenHoang
         }
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?","",MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void ButtonTrove_Click(object sender, EventArgs e)

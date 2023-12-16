@@ -15,7 +15,8 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyKhachHang : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
         public QuanLyKhachHang()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("");
+            cn = new SqlConnection("Data Source="+ MachineName +@";Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
             string sql = "select * from khachhang";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
@@ -37,8 +38,6 @@ namespace QLCHMTNguyenHoang
             this.txtSohd.Enabled = false;
             this.txtDiachi.Enabled = false;
             this.txtsodt.Enabled = false;
-           
-           
         }
         void moTextbox()
         {
@@ -241,7 +240,10 @@ namespace QLCHMTNguyenHoang
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void btnTrove_Click(object sender, EventArgs e)

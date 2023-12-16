@@ -15,7 +15,8 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHoaDon : Form
     {
-        SqlConnection cn = new SqlConnection();
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
 
         public QuanLyHoaDon()
         {
@@ -26,7 +27,7 @@ namespace QLCHMTNguyenHoang
        
         void hienthi()
         {
-            cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
+            cn = new SqlConnection("Data Source="+ MachineName +@";Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
             string sql = "select * from hoadon";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
@@ -226,9 +227,7 @@ namespace QLCHMTNguyenHoang
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
-              
                 dongTextbox();
-
 
             //else if (dialogResult == DialogResult.No)
             //{
@@ -247,7 +246,10 @@ namespace QLCHMTNguyenHoang
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
         private void btnTrove_Click_1(object sender, EventArgs e)
         {

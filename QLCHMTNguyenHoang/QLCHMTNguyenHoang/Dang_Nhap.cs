@@ -13,6 +13,8 @@ namespace QLCHMTNguyenHoang
 {
     public partial class DangNhap : Form
     {
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
         public DangNhap()
         {
             InitializeComponent();
@@ -20,12 +22,11 @@ namespace QLCHMTNguyenHoang
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string machineName = Environment.MachineName;
-            SqlConnection sqlcon = new SqlConnection("Data Source="+machineName+@"\SQLEXPRESS;Initial Catalog=QLtaikhoan;Integrated Security=True");
+            cn = new SqlConnection("Data Source="+ MachineName +@";Initial Catalog=QLtaikhoan;Integrated Security=True");
             string userName = txtTenDangNhap.Text;
             string passWord = txtMatKhau.Text;
             if (userName == null || userName.Equals(""))
@@ -38,33 +39,25 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Bạn chưa nhập mật khẩu!!", "Thông báo");
                 return;
             }
-            sqlcon.Open();
+            cn.Open();
             string sql = "select username,password from nguoidung where username = '" + userName + "'  and password  = '" + passWord + "'";
-
-            SqlCommand cmd = new SqlCommand(sql, sqlcon);
+            SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataReader dt = cmd.ExecuteReader();
 
 
             if (dt.Read())
             {
                 // MessageBox.Show("Đăng nhập thành công ","Thông báo");
-               QuanLyBanHang  fmain = new QuanLyBanHang();
+                QuanLyBanHang  fmain = new QuanLyBanHang();
                 fmain.Show();
                 this.Hide();
-
             }
             else
             {
                 MessageBox.Show("Đăng nhập không thành công . Tên đăng nhập hoặc mật khẩu không chính xác", "Thông báo");
 
             }
-            sqlcon.Close();
-
-        }
-
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-
+            cn.Close();
         }
     }
 }
