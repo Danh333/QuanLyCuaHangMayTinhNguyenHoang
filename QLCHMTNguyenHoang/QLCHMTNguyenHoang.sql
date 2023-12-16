@@ -230,7 +230,7 @@ create table KhoHang (
    MaKho                char(5)              not null,
    MaHH                 char(5)              not null,
    TenKho               nvarchar(255)        null,
-   Diachi               nvarchar             null,
+   Diachi               nvarchar(255)        null,
    SoDT                 char(10)             null,
    Soluongton           int                  null,
    constraint PK_KHOHANG primary key (MaKho)
@@ -301,3 +301,8 @@ Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD001','KH001','
 Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD002','KH002','NV002','2023-11-15',2);
 Insert into HoaDon(Mahoadon,MaKH,MaNV,Ngaylap,Soluong) values ('HD003','KH003','NV001','2023-10-15',3);
 
+Insert into HangHoa(MaHH,Imei,Soluong,Chatluong,Gia) values ('HH001','1122334455','10','Mới',10000000);
+
+Insert into BanHang(Mabanhang,MaHH,Mahoadon) values ('BH001','HH001','HD001');
+
+Insert into KhoHang(MaKho,MaHH,TenKho,Diachi,SoDT,Soluongton) values ('KHO01','HH001','Kho A','TP HCM','0690967531',20);
