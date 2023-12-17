@@ -22,7 +22,10 @@ namespace QLCHMTNguyenHoang
         }
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?","",MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void ButtonTrove_Click(object sender, EventArgs e)
@@ -33,20 +36,13 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("Data Source = "+machineName+@"\SQLEXPRESS; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
+            //\SQLEXPRESS
+            cn = new SqlConnection("Data Source ="+machineName+@"; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
             string sql = "select * from NhanVien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView.DataSource = dt;
-            //cai nay du roi -> cai dong textBox
-            //this.TextBoxMaNV.Enabled = false;
-            //this.TextBoxTenNV.Enabled = false;
-            //this.TextBoxCCCD.Enabled = false;
-            //this.TextBoxSoDT.Enabled = false;
-            //this.TextBoxDiaChi.Enabled = false;
-            //this.comboBoxGioitinh.Enabled = false;
-            //this.comboBoxChucvu.Enabled = false;
         }
         void moTextbox()
         {
@@ -81,26 +77,20 @@ namespace QLCHMTNguyenHoang
         }
         public void LoadComboBox()
         {
+
             DataTable dt = new DataTable();
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter("Select Chucvu From NhanVien", cn);
                 da.Fill(dt);
+                comboBoxChucvu.DataSource = dt;
+                comboBoxChucvu.DisplayMember = "Chucvu";
+                comboBoxChucvu.ValueMember = "Chucvu";
                 cn.Close();
             }
             catch (Exception ex)
             {
-                throw new Exception("Error " + ex.ToString());
-            }
-            try
-            {
-                comboBoxChucvu.DataSource = dt;
-                comboBoxChucvu.DisplayMember = "Chucvu";
-                comboBoxChucvu.ValueMember = "Chucvu";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi khi load dữ liệu\n", ex.ToString());
+                throw new Exception("Có lỗi khi load dữ liệu" + ex.ToString());
             }
         }
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
@@ -113,7 +103,16 @@ namespace QLCHMTNguyenHoang
             ButtonCapnhat.Enabled = false;
             ButtonSua.Enabled = false;
         }
-
+        public void getsizecolums()
+        {
+            dataGridView.Columns[0].Width = 50;
+            dataGridView.Columns[1].Width = 100;
+            dataGridView.Columns[2].Width = 100;
+            dataGridView.Columns[3].Width = 100;
+            dataGridView.Columns[4].Width = 100;
+            dataGridView.Columns[5].Width = 100;
+            dataGridView.Columns[6].Width = 100;
+        }
         private void ButtonThem_Click(object sender, EventArgs e)
         {
             dataGridView.Enabled = false;
@@ -136,16 +135,7 @@ namespace QLCHMTNguyenHoang
             comboBoxChucvu.Enabled = true;
             moButton();
         }
-        public void getsizecolums()
-        {
-            dataGridView.Columns[0].Width = 80;
-            dataGridView.Columns[1].Width = 200;
-            dataGridView.Columns[2].Width = 100;
-            dataGridView.Columns[3].Width = 100;
-            dataGridView.Columns[4].Width = 100;
-            dataGridView.Columns[5].Width = 200;
-            dataGridView.Columns[6].Width = 100;
-        }
+        
         void dongbtn_clickdatagridview_()
         {
             dataGridView.Enabled = false;
@@ -163,8 +153,7 @@ namespace QLCHMTNguyenHoang
             {
                 dongbtn_clickdatagridview_();
                 MessageBox.Show("Vui lòng nhập mã nhân viên!");
-                TextBoxMaNV.Focus();
-                return;
+                TextBoxMaNV.Focus(); return;
             }
             if (TextBoxTenNV.Text == "")
             {
@@ -193,7 +182,7 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "insert  into NhanVien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
+                string sql = "insert into NhanVien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
@@ -223,7 +212,7 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonXoa_Click(object sender, EventArgs e)
         {
-            string sql = "Delete from NhanVien where manv=@manv";
+            string sql = "delete from NhanVien where manv=@manv";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
             cn.Open();
@@ -262,18 +251,18 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception)
             {
-                MessageBox.Show("Lỗii cập nhật");
+                MessageBox.Show("Lỗi cập nhật!");
             }
         }
 
         private void ButtonReset_Click(object sender, EventArgs e)
         {
-            //m?
+            //mở
             dataGridView.Enabled = true;
             ButtonXoa.Visible = true;
             ButtonSua.Visible = true;
             ButtonCapnhat.Visible = true;
-            //dóng
+            //đóng
             ButtonLuu.Enabled = false;
             ButtonSua.Enabled = false;
             ButtonCapnhat.Enabled = false;
@@ -295,7 +284,5 @@ namespace QLCHMTNguyenHoang
             dongTextbox();
             cn.Close();
         }
-
-        
     }
 }
