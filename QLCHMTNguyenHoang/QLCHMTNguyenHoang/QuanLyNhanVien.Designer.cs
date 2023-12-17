@@ -32,8 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxChucvu = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBoxGioitinh = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.TextBoxDiaChi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TextBoxCCCD = new System.Windows.Forms.TextBox();
@@ -74,8 +72,6 @@
             // 
             this.groupBox1.Controls.Add(this.comboBoxChucvu);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.comboBoxGioitinh);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TextBoxDiaChi);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.TextBoxCCCD);
@@ -111,25 +107,6 @@
             this.label9.Size = new System.Drawing.Size(76, 22);
             this.label9.TabIndex = 14;
             this.label9.Text = "Chức vụ";
-            // 
-            // comboBoxGioitinh
-            // 
-            this.comboBoxGioitinh.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBoxGioitinh.FormattingEnabled = true;
-            this.comboBoxGioitinh.Location = new System.Drawing.Point(337, 41);
-            this.comboBoxGioitinh.Name = "comboBoxGioitinh";
-            this.comboBoxGioitinh.Size = new System.Drawing.Size(76, 27);
-            this.comboBoxGioitinh.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(250, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 22);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Giới tính";
             // 
             // TextBoxDiaChi
             // 
@@ -217,7 +194,7 @@
             this.TextBoxMaNV.Location = new System.Drawing.Point(148, 39);
             this.TextBoxMaNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxMaNV.Name = "TextBoxMaNV";
-            this.TextBoxMaNV.Size = new System.Drawing.Size(95, 27);
+            this.TextBoxMaNV.Size = new System.Drawing.Size(265, 27);
             this.TextBoxMaNV.TabIndex = 1;
             // 
             // label2
@@ -436,8 +413,6 @@
         private System.Windows.Forms.Button ButtonCapnhat;
         private System.Windows.Forms.Button ButtonTrove;
         private System.Windows.Forms.Button ButtonThoat;
-        private System.Windows.Forms.ComboBox comboBoxGioitinh;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxTimkiem;
         private System.Windows.Forms.Button ButtonTimkiem;

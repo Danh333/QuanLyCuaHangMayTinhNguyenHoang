@@ -51,7 +51,6 @@ namespace QLCHMTNguyenHoang
             this.TextBoxCCCD.Enabled = true;
             this.TextBoxSoDT.Enabled = true;
             this.TextBoxDiaChi.Enabled = true;
-            this.comboBoxGioitinh.Enabled = true;
             this.comboBoxChucvu.Enabled = true;
         }
         void dongTextbox()
@@ -61,7 +60,6 @@ namespace QLCHMTNguyenHoang
             this.TextBoxCCCD.Enabled = false;
             this.TextBoxSoDT.Enabled = false;
             this.TextBoxDiaChi.Enabled = false;
-            this.comboBoxGioitinh.Enabled = false;
             this.comboBoxChucvu.Enabled = false;
         }
         void dongButton()
@@ -111,7 +109,6 @@ namespace QLCHMTNguyenHoang
             dataGridView.Columns[3].Width = 100;
             dataGridView.Columns[4].Width = 100;
             dataGridView.Columns[5].Width = 100;
-            dataGridView.Columns[6].Width = 100;
         }
         private void ButtonThem_Click(object sender, EventArgs e)
         {
@@ -131,7 +128,6 @@ namespace QLCHMTNguyenHoang
             TextBoxSoDT.Enabled = true;
             TextBoxCCCD.Enabled = true;
             TextBoxDiaChi.Enabled = true;
-            comboBoxGioitinh.Enabled = true;
             comboBoxChucvu.Enabled = true;
             moButton();
         }
@@ -228,7 +224,6 @@ namespace QLCHMTNguyenHoang
             TextBoxSoDT.Clear();
             TextBoxCCCD.Clear();
             TextBoxDiaChi.Clear();
-            comboBoxGioitinh.ValueMember = "";
             comboBoxChucvu.ValueMember = "";
         }
 
