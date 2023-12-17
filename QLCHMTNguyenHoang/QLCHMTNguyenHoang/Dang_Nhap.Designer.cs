@@ -128,7 +128,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DangNhap";
             this.Text = "Đăng Nhập";
-            this.Load += new System.EventHandler(this.DangNhap_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

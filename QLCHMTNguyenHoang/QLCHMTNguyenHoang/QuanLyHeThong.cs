@@ -14,14 +14,11 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHeThong : Form
     {
-        SqlConnection cn =new SqlConnection(); SqlCommand cmd = new SqlCommand();
-        //string MachineName = Environment.MachineName;
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
         public QuanLyHeThong()
         {
             InitializeComponent();
-            cn.ConnectionString = Properties.Settings.Default.ChuoiKetNoiDangNhap;
-            cn.Open();
-            cmd.Connection = cn;
         }
         
         private void ButtonThoat_Click(object sender, EventArgs e)
@@ -51,13 +48,12 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            //cn = new SqlConnection("Data Source = "+ MachineName +@"; Initial Catalog = QLtaikhoan; Integrated Security = True");
-            string sql = "select * from nguoidung1";
+            cn = new SqlConnection("Data Source = "+ MachineName +@"; Initial Catalog = QLtaikhoan; Integrated Security = True");
+            string sql = "select * from nguoidung";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView.DataSource = dt;
-            moButton();
         }
         void moTextbox()
         {
@@ -79,7 +75,6 @@ namespace QLCHMTNguyenHoang
         }
         void moButton()
         {
-          
             ButtonLuu.Enabled = true;
             ButtonCapnhat.Enabled = true;
         }
@@ -88,7 +83,7 @@ namespace QLCHMTNguyenHoang
             DataTable dt = new DataTable();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select Quyen from nguoidung1", cn);
+                SqlDataAdapter da = new SqlDataAdapter("select Quyen from nguoidung", cn);
                 da.Fill(dt);
                 cn.Close();
             }
@@ -152,21 +147,19 @@ namespace QLCHMTNguyenHoang
             if (textBoxMatkhau.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập mật khẩu!");
+                MessageBox.Show("Vui lòng nhập tên nhân viên!");
                 textBoxMatkhau.Focus();
                 return;
             }
             try
             {
                 cn.Open();
-                string sql = "insert  into nguoidung1(username,password,quyen)  values(@username,@password,@quyen)";
+                string sql = "insert  into nguoidung(username,password)  values(@username,@password)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
-                
+                MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@username", textBoxTendangnhap.Text);
                 cmd.Parameters.AddWithValue("@password", textBoxMatkhau.Text);
-                cmd.Parameters.AddWithValue("@quyen", comboBox.Text);
-                cmd.ExecuteNonQuery();
-                cn.Close();
+
                 hienthi();
                 ButtonLuu.Enabled = false;
                 ButtonCapnhat.Enabled = false;
@@ -188,7 +181,7 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonXoa_Click(object sender, EventArgs e)
         {
-            string sql = "delete from nguoidung1 where username=@username";
+            string sql = "delete from nguoidung where username=@username";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@username", textBoxTendangnhap.Text);
             cn.Open();
@@ -209,12 +202,11 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update nguoidung1 set  username=@username,password=@password quyen=@quyen where username=@username";
+                string sql = "update nguoidung set  username=@username,password=@password where username=@username";
                 SqlCommand cmd = new SqlCommand(sql, cn);
-                
-                cmd.Parameters.AddWithValue("@username", textBoxTendangnhap.Text);
-                cmd.Parameters.AddWithValue("@password", textBoxMatkhau.Text);
-                cmd.Parameters.AddWithValue("@quyen", comboBox.Text);
+                MemoryStream str = new MemoryStream();
+                cmd.Parameters.AddWithValue("@manv", textBoxTendangnhap.Text);
+                cmd.Parameters.AddWithValue("@tennv", textBoxMatkhau.Text);
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
@@ -244,7 +236,7 @@ namespace QLCHMTNguyenHoang
         {
             textBoxTimkiem.Focus();
             cn.Open();
-            string sql = @"select * from nguoidung1 where username like '%";
+            string sql = @"select * from nguoidung where username like '%";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -253,15 +245,6 @@ namespace QLCHMTNguyenHoang
             cmd.ExecuteNonQuery();
             dongTextbox();
             cn.Close();
-        }
-
-        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ButtonSua.Enabled = true;
-            ButtonLuu.Enabled = true;
-            textBoxTendangnhap.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
-            textBoxMatkhau.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
-            comboBox.Text= dataGridView.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }
