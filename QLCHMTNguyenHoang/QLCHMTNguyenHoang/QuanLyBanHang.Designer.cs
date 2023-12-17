@@ -38,19 +38,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.QLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýKhoHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýHệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLNVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLKHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLHDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLHHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLHTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ThoatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ChucNang = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.btnQLHeTHong = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnQLNhanVien = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -169,7 +170,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QLToolStripMenuItem,
-            this.DangXuatToolStripMenuItem});
+            this.DangXuatToolStripMenuItem,
+            this.ThoatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1182, 30);
@@ -180,59 +182,64 @@
             // 
             this.QLToolStripMenuItem.BackColor = System.Drawing.Color.SkyBlue;
             this.QLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýToolStripMenuItem,
-            this.quảnLýKháchHàngToolStripMenuItem,
-            this.quảnLýKhoHàngToolStripMenuItem,
-            this.quảnLýHóaĐơnToolStripMenuItem,
-            this.quảnLýHàngHóaToolStripMenuItem,
-            this.quảnLýHệThốngToolStripMenuItem});
+            this.QLNVToolStripMenuItem,
+            this.QLKHToolStripMenuItem,
+            this.QLKhoToolStripMenuItem,
+            this.QLHDToolStripMenuItem,
+            this.QLHHToolStripMenuItem,
+            this.QLHTToolStripMenuItem});
             this.QLToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.QLToolStripMenuItem.Name = "QLToolStripMenuItem";
             this.QLToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.QLToolStripMenuItem.Text = "Quản lý";
             // 
-            // quảnLýToolStripMenuItem
+            // QLNVToolStripMenuItem
             // 
-            this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.quảnLýToolStripMenuItem.Text = "Quản lý nhân viên";
+            this.QLNVToolStripMenuItem.Name = "QLNVToolStripMenuItem";
+            this.QLNVToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLNVToolStripMenuItem.Text = "Quản lý nhân viên";
             // 
-            // quảnLýKháchHàngToolStripMenuItem
+            // QLKHToolStripMenuItem
             // 
-            this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý khách hàng";
+            this.QLKHToolStripMenuItem.Name = "QLKHToolStripMenuItem";
+            this.QLKHToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLKHToolStripMenuItem.Text = "Quản lý khách hàng";
             // 
-            // quảnLýKhoHàngToolStripMenuItem
+            // QLKhoToolStripMenuItem
             // 
-            this.quảnLýKhoHàngToolStripMenuItem.Name = "quảnLýKhoHàngToolStripMenuItem";
-            this.quảnLýKhoHàngToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.quảnLýKhoHàngToolStripMenuItem.Text = "Quản lý kho hàng";
+            this.QLKhoToolStripMenuItem.Name = "QLKhoToolStripMenuItem";
+            this.QLKhoToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLKhoToolStripMenuItem.Text = "Quản lý kho hàng";
             // 
-            // quảnLýHóaĐơnToolStripMenuItem
+            // QLHDToolStripMenuItem
             // 
-            this.quảnLýHóaĐơnToolStripMenuItem.Name = "quảnLýHóaĐơnToolStripMenuItem";
-            this.quảnLýHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.quảnLýHóaĐơnToolStripMenuItem.Text = "Quản lý hóa đơn";
-            this.quảnLýHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýHóaĐơnToolStripMenuItem_Click);
+            this.QLHDToolStripMenuItem.Name = "QLHDToolStripMenuItem";
+            this.QLHDToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLHDToolStripMenuItem.Text = "Quản lý hóa đơn";
             // 
-            // quảnLýHàngHóaToolStripMenuItem
+            // QLHHToolStripMenuItem
             // 
-            this.quảnLýHàngHóaToolStripMenuItem.Name = "quảnLýHàngHóaToolStripMenuItem";
-            this.quảnLýHàngHóaToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.quảnLýHàngHóaToolStripMenuItem.Text = "Quản lý hàng hóa";
+            this.QLHHToolStripMenuItem.Name = "QLHHToolStripMenuItem";
+            this.QLHHToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLHHToolStripMenuItem.Text = "Quản lý hàng hóa";
             // 
-            // quảnLýHệThốngToolStripMenuItem
+            // QLHTToolStripMenuItem
             // 
-            this.quảnLýHệThốngToolStripMenuItem.Name = "quảnLýHệThốngToolStripMenuItem";
-            this.quảnLýHệThốngToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
-            this.quảnLýHệThốngToolStripMenuItem.Text = "Quản lý hệ thống";
+            this.QLHTToolStripMenuItem.Name = "QLHTToolStripMenuItem";
+            this.QLHTToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLHTToolStripMenuItem.Text = "Quản lý hệ thống";
             // 
             // DangXuatToolStripMenuItem
             // 
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
             this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất";
+            // 
+            // ThoatToolStripMenuItem
+            // 
+            this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
+            this.ThoatToolStripMenuItem.Text = "Thoát";
             // 
             // panel1
             // 
@@ -242,7 +249,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.btnQLHeTHong);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnQLNhanVien);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(-2, 32);
@@ -309,21 +316,21 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnQLNhanVien
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_profile_48;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 446);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 80);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quản lý nhân viên      ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnQLNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnQLNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQLNhanVien.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnQLNhanVien.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_profile_48;
+            this.btnQLNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLNhanVien.Location = new System.Drawing.Point(3, 446);
+            this.btnQLNhanVien.Name = "btnQLNhanVien";
+            this.btnQLNhanVien.Size = new System.Drawing.Size(249, 80);
+            this.btnQLNhanVien.TabIndex = 0;
+            this.btnQLNhanVien.Text = "Quản lý nhân viên      ";
+            this.btnQLNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQLNhanVien.UseVisualStyleBackColor = false;
+            this.btnQLNhanVien.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -397,20 +404,21 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem QLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýKhoHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýHóaĐơnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýHàngHóaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýHệThốngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLNVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLKHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLKhoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLHDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLHHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QLHTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DangXuatToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnQLHeTHong;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnQLNhanVien;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label ChucNang;
+        private System.Windows.Forms.ToolStripMenuItem ThoatToolStripMenuItem;
     }
 }

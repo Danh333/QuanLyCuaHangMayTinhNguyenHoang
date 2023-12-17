@@ -123,6 +123,7 @@ namespace QLCHMTNguyenHoang
             if (quyen == "1")
             {
                 btnQLHeTHong.Hide();
+                btnQLNhanVien.Hide();
             }
         }
     }
