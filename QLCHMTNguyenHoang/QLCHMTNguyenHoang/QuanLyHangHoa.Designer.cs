@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -43,14 +43,14 @@
             this.txtMahh = new System.Windows.Forms.TextBox();
             this.txtTenHangHoa = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnCapnhat = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnTrove = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
+            this.buttonthem = new System.Windows.Forms.Button();
+            this.buttonluu = new System.Windows.Forms.Button();
+            this.buttonsua = new System.Windows.Forms.Button();
+            this.buttonxoa = new System.Windows.Forms.Button();
+            this.buttoncapnhat = new System.Windows.Forms.Button();
+            this.buttonreset = new System.Windows.Forms.Button();
+            this.buttontrove = new System.Windows.Forms.Button();
+            this.buttonthoat = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.label1.Location = new System.Drawing.Point(264, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 31);
+            this.label1.Size = new System.Drawing.Size(356, 37);
             this.label1.TabIndex = 3;
             this.label1.Text = "QUẢN LÝ HÀNG HÓA";
             // 
@@ -101,7 +101,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(446, 92);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(175, 30);
             this.dateTimePicker1.TabIndex = 14;
             // 
             // label5
@@ -111,7 +111,7 @@
             this.label5.Location = new System.Drawing.Point(314, 99);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 19);
+            this.label5.Size = new System.Drawing.Size(131, 22);
             this.label5.TabIndex = 13;
             this.label5.Text = "Ngày nhập/xuất";
             // 
@@ -121,7 +121,7 @@
             this.txtGia.Location = new System.Drawing.Point(391, 36);
             this.txtGia.Margin = new System.Windows.Forms.Padding(2);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(230, 26);
+            this.txtGia.Size = new System.Drawing.Size(230, 30);
             this.txtGia.TabIndex = 12;
             this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGia_KeyPress);
@@ -133,7 +133,7 @@
             this.label4.Location = new System.Drawing.Point(314, 39);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 19);
+            this.label4.Size = new System.Drawing.Size(73, 22);
             this.label4.TabIndex = 11;
             this.label4.Text = "Giá tiền";
             // 
@@ -144,7 +144,7 @@
             this.label2.Location = new System.Drawing.Point(6, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 19);
+            this.label2.Size = new System.Drawing.Size(110, 22);
             this.label2.TabIndex = 6;
             this.label2.Text = "Mã hàng hóa";
             // 
@@ -155,7 +155,7 @@
             this.label3.Location = new System.Drawing.Point(6, 99);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 19);
+            this.label3.Size = new System.Drawing.Size(114, 22);
             this.label3.TabIndex = 7;
             this.label3.Text = "Tên hàng hóa";
             // 
@@ -165,7 +165,7 @@
             this.txtMahh.Location = new System.Drawing.Point(120, 36);
             this.txtMahh.Margin = new System.Windows.Forms.Padding(2);
             this.txtMahh.Name = "txtMahh";
-            this.txtMahh.Size = new System.Drawing.Size(170, 26);
+            this.txtMahh.Size = new System.Drawing.Size(170, 30);
             this.txtMahh.TabIndex = 8;
             // 
             // txtTenHangHoa
@@ -174,7 +174,7 @@
             this.txtTenHangHoa.Location = new System.Drawing.Point(120, 96);
             this.txtTenHangHoa.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenHangHoa.Name = "txtTenHangHoa";
-            this.txtTenHangHoa.Size = new System.Drawing.Size(170, 26);
+            this.txtTenHangHoa.Size = new System.Drawing.Size(170, 30);
             this.txtTenHangHoa.TabIndex = 9;
             // 
             // pictureBox
@@ -190,125 +190,125 @@
             this.pictureBox.TabStop = false;
             this.pictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button6
+            // buttonthem
             // 
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_add_40;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(12, 223);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(132, 50);
-            this.button6.TabIndex = 43;
-            this.button6.Text = "Thêm  ";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonthem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonthem.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_add_40;
+            this.buttonthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonthem.Location = new System.Drawing.Point(12, 223);
+            this.buttonthem.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonthem.Name = "buttonthem";
+            this.buttonthem.Size = new System.Drawing.Size(132, 50);
+            this.buttonthem.TabIndex = 43;
+            this.buttonthem.Text = "Thêm  ";
+            this.buttonthem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonthem.UseVisualStyleBackColor = true;
+            this.buttonthem.Click += new System.EventHandler(this.button6_Click);
             // 
-            // btnLuu
+            // buttonluu
             // 
-            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_save_32;
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(149, 223);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(131, 50);
-            this.btnLuu.TabIndex = 44;
-            this.btnLuu.Text = "Lưu    ";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.buttonluu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonluu.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_save_32;
+            this.buttonluu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonluu.Location = new System.Drawing.Point(149, 223);
+            this.buttonluu.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonluu.Name = "buttonluu";
+            this.buttonluu.Size = new System.Drawing.Size(131, 50);
+            this.buttonluu.TabIndex = 44;
+            this.buttonluu.Text = "Lưu    ";
+            this.buttonluu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonluu.UseVisualStyleBackColor = true;
+            this.buttonluu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // btnSua
+            // buttonsua
             // 
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_pencil_drawing_40;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(286, 223);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(131, 50);
-            this.btnSua.TabIndex = 45;
-            this.btnSua.Text = "Sửa    ";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.buttonsua.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonsua.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_pencil_drawing_40;
+            this.buttonsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonsua.Location = new System.Drawing.Point(286, 223);
+            this.buttonsua.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonsua.Name = "buttonsua";
+            this.buttonsua.Size = new System.Drawing.Size(131, 50);
+            this.buttonsua.TabIndex = 45;
+            this.buttonsua.Text = "Sửa    ";
+            this.buttonsua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonsua.UseVisualStyleBackColor = true;
+            this.buttonsua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnXoa
+            // buttonxoa
             // 
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_delete_40;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(422, 223);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(131, 50);
-            this.btnXoa.TabIndex = 46;
-            this.btnXoa.Text = "Xóa    ";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.buttonxoa.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonxoa.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_delete_40;
+            this.buttonxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonxoa.Location = new System.Drawing.Point(422, 223);
+            this.buttonxoa.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonxoa.Name = "buttonxoa";
+            this.buttonxoa.Size = new System.Drawing.Size(131, 50);
+            this.buttonxoa.TabIndex = 46;
+            this.buttonxoa.Text = "Xóa    ";
+            this.buttonxoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonxoa.UseVisualStyleBackColor = true;
+            this.buttonxoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnCapnhat
+            // buttoncapnhat
             // 
-            this.btnCapnhat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapnhat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_sync_40;
-            this.btnCapnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCapnhat.Location = new System.Drawing.Point(558, 223);
-            this.btnCapnhat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCapnhat.Name = "btnCapnhat";
-            this.btnCapnhat.Size = new System.Drawing.Size(131, 50);
-            this.btnCapnhat.TabIndex = 47;
-            this.btnCapnhat.Text = "Cập nhật";
-            this.btnCapnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCapnhat.UseVisualStyleBackColor = true;
-            this.btnCapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
+            this.buttoncapnhat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttoncapnhat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_sync_40;
+            this.buttoncapnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttoncapnhat.Location = new System.Drawing.Point(558, 223);
+            this.buttoncapnhat.Margin = new System.Windows.Forms.Padding(2);
+            this.buttoncapnhat.Name = "buttoncapnhat";
+            this.buttoncapnhat.Size = new System.Drawing.Size(131, 50);
+            this.buttoncapnhat.TabIndex = 47;
+            this.buttoncapnhat.Text = "Cập nhật";
+            this.buttoncapnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttoncapnhat.UseVisualStyleBackColor = true;
+            this.buttoncapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
             // 
-            // button2
+            // buttonreset
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_reset_32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(694, 223);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 51);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Reset";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.buttonreset.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.buttonreset.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_reset_32;
+            this.buttonreset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonreset.Location = new System.Drawing.Point(694, 223);
+            this.buttonreset.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonreset.Name = "buttonreset";
+            this.buttonreset.Size = new System.Drawing.Size(131, 51);
+            this.buttonreset.TabIndex = 48;
+            this.buttonreset.Text = "Reset";
+            this.buttonreset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonreset.UseVisualStyleBackColor = true;
+            this.buttonreset.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // btnTrove
+            // buttontrove
             // 
-            this.btnTrove.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrove.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_previous_32;
-            this.btnTrove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrove.Location = new System.Drawing.Point(649, 280);
-            this.btnTrove.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTrove.Name = "btnTrove";
-            this.btnTrove.Size = new System.Drawing.Size(131, 51);
-            this.btnTrove.TabIndex = 49;
-            this.btnTrove.Text = "Trở về";
-            this.btnTrove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTrove.UseVisualStyleBackColor = true;
-            this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
+            this.buttontrove.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttontrove.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_previous_32;
+            this.buttontrove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttontrove.Location = new System.Drawing.Point(649, 280);
+            this.buttontrove.Margin = new System.Windows.Forms.Padding(2);
+            this.buttontrove.Name = "buttontrove";
+            this.buttontrove.Size = new System.Drawing.Size(131, 51);
+            this.buttontrove.TabIndex = 49;
+            this.buttontrove.Text = "Trở về";
+            this.buttontrove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttontrove.UseVisualStyleBackColor = true;
+            this.buttontrove.Click += new System.EventHandler(this.btnTrove_Click);
             // 
-            // btnThoat
+            // buttonthoat
             // 
-            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_close_window_32;
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(784, 280);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(131, 50);
-            this.btnThoat.TabIndex = 50;
-            this.btnThoat.Text = "Thoát  ";
-            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.buttonthoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonthoat.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_close_window_32;
+            this.buttonthoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonthoat.Location = new System.Drawing.Point(784, 280);
+            this.buttonthoat.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonthoat.Name = "buttonthoat";
+            this.buttonthoat.Size = new System.Drawing.Size(131, 50);
+            this.buttonthoat.TabIndex = 50;
+            this.buttonthoat.Text = "Thoát  ";
+            this.buttonthoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonthoat.UseVisualStyleBackColor = true;
+            this.buttonthoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label9
             // 
@@ -317,7 +317,7 @@
             this.label9.Location = new System.Drawing.Point(12, 287);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 21);
+            this.label9.Size = new System.Drawing.Size(103, 27);
             this.label9.TabIndex = 51;
             this.label9.Text = "Tìm kiếm";
             // 
@@ -327,7 +327,7 @@
             this.txttimkiem.Location = new System.Drawing.Point(119, 284);
             this.txttimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(285, 29);
+            this.txttimkiem.Size = new System.Drawing.Size(285, 34);
             this.txttimkiem.TabIndex = 52;
             // 
             // btnTimKiem
@@ -347,20 +347,20 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -368,23 +368,23 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(12, 336);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -422,21 +422,21 @@
             // 
             // QuanLyHangHoa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 478);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txttimkiem);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnTrove);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnCapnhat);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.buttonthoat);
+            this.Controls.Add(this.buttontrove);
+            this.Controls.Add(this.buttonreset);
+            this.Controls.Add(this.buttoncapnhat);
+            this.Controls.Add(this.buttonxoa);
+            this.Controls.Add(this.buttonsua);
+            this.Controls.Add(this.buttonluu);
+            this.Controls.Add(this.buttonthem);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -466,14 +466,14 @@
         private System.Windows.Forms.TextBox txtMahh;
         private System.Windows.Forms.TextBox txtTenHangHoa;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnCapnhat;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnTrove;
-        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button buttonthem;
+        private System.Windows.Forms.Button buttonluu;
+        private System.Windows.Forms.Button buttonsua;
+        private System.Windows.Forms.Button buttonxoa;
+        private System.Windows.Forms.Button buttoncapnhat;
+        private System.Windows.Forms.Button buttonreset;
+        private System.Windows.Forms.Button buttontrove;
+        private System.Windows.Forms.Button buttonthoat;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txttimkiem;
         private System.Windows.Forms.Button btnTimKiem;

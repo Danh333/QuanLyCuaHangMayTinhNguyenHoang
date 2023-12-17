@@ -15,7 +15,8 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyKhachHang : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
         public QuanLyKhachHang()
         {
             InitializeComponent();
@@ -25,23 +26,18 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("");
-            string sql = "select * from khachhang2";
+            cn = new SqlConnection("Data Source="+ MachineName +@";Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
+            string sql = "select * from khachhang";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
-            //da.Fill(dt);
+            da.Fill(dt);
             dataGridView1.DataSource = dt;
-                    
             getsizecolums();//ham chinh chieu rong
-            //dataGridView1.Columns
             this.txtMakh.Enabled = false;
             this.txtTenkh.Enabled = false;
             this.txtSohd.Enabled = false;
             this.txtDiachi.Enabled = false;
             this.txtsodt.Enabled = false;
-            this.txtghichu.Enabled = false;
-           
-           
         }
         void moTextbox()
         {
@@ -50,8 +46,7 @@ namespace QLCHMTNguyenHoang
             txtSohd.Enabled = true;
             txtDiachi.Enabled = true;
             txtsodt.Enabled = true;
-           
-            txtghichu.Enabled = true;
+            comboBox.Enabled = true;
         }
         void dongTextbox()
         {
@@ -60,8 +55,7 @@ namespace QLCHMTNguyenHoang
             txtSohd.Enabled = false;
             txtDiachi.Enabled = false;
             txtsodt.Enabled = false;
-            
-            txtghichu.Enabled = true;
+            comboBox.Enabled = false;
         }
         void dongButton()
         {
@@ -73,7 +67,6 @@ namespace QLCHMTNguyenHoang
         {
             btnLuu.Enabled = true;
             btnCapnhat.Enabled = true;
-           
         }
        
         private void RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -109,14 +102,12 @@ namespace QLCHMTNguyenHoang
             txtTenkh.Clear();
             txtSohd.Clear();
             txtsodt.Clear();
-            txtghichu.Clear();
             txtDiachi.Clear();
             //Mở textBox
             txtMakh.Enabled = true;
             txtTenkh.Enabled = true;
             txtSohd.Enabled = true;
             txtsodt.Enabled = true;
-            txtghichu.Enabled = true;
             txtDiachi.Enabled = true;
           
             moButton();
@@ -124,7 +115,6 @@ namespace QLCHMTNguyenHoang
         public void getsizecolums()
         {
             //chinh chieu rong cot theo y muon
-
             //dataGridView1.Columns[0].Width = 150;
             //dataGridView1.Columns[1].Width = 150;
             //dataGridView1.Columns[2].Width = 150;
@@ -171,28 +161,18 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Vui lòng nhập địa chỉ ");
                 txtDiachi.Focus(); return;
             }
-            if (txtghichu.Text == "")
-            {
-                dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập ghi chú  ");
-                txtghichu.Focus(); return;
-            }
-
             try
             {
                 cn.Open();
-                string sql = "insert  into khachhang2(makh,tenkh,sohd,sodt,ghichu,diachi,anh)  values(@makh,@tenkh,@sohd,@sodt,@ghichu,@diachi,@anh)";
+                string sql = "insert  into khachhang(makh,tenkh,sodt,diachi)  values(@makh,@tenkh,@sohd,@sodt,@diachi)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@makh", txtMakh.Text);
                 cmd.Parameters.AddWithValue("@tenkh", txtTenkh.Text);
                 cmd.Parameters.AddWithValue("@sohd", txtSohd.Text);
                 cmd.Parameters.AddWithValue("@sodt", txtsodt.Text);
-                cmd.Parameters.AddWithValue("@ghichu", txtghichu.Text);
                 cmd.Parameters.AddWithValue("@diachi", txtDiachi.Text);
                 
-                cmd.Parameters.AddWithValue("@anh", str.ToArray());
-
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
@@ -210,17 +190,15 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update khachhang2 set  tenkh=@tenkh,sohd=@sohd,sodt=@sodt,ghichu=@ghichu,diachi=@diachi,anh=@anh where makh=@makh";
+                string sql = "update khachhang2 set  tenkh=@tenkh,sohd=@sohd,sodt=@sodt,diachi=@diachi where makh=@makh";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@makh", txtMakh.Text);
                 cmd.Parameters.AddWithValue("@tenkh", txtTenkh.Text);
                 cmd.Parameters.AddWithValue("@sohd", txtSohd.Text);
                 cmd.Parameters.AddWithValue("@sodt", txtsodt.Text);
-                cmd.Parameters.AddWithValue("@ghichu", txtghichu.Text);
                 cmd.Parameters.AddWithValue("@diachi", txtDiachi.Text);
                
-                cmd.Parameters.AddWithValue("@anh", str.ToArray());
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
@@ -242,7 +220,6 @@ namespace QLCHMTNguyenHoang
             hienthi();         
             dongTextbox();
 
-
             //else if (dialogResult == DialogResult.No)
             //{
             //    cn.Close();
@@ -263,7 +240,10 @@ namespace QLCHMTNguyenHoang
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void btnTrove_Click(object sender, EventArgs e)
@@ -285,7 +265,6 @@ namespace QLCHMTNguyenHoang
                 txtTenkh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txtSohd.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txtsodt.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                txtghichu.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txtDiachi.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
               
                
@@ -302,7 +281,6 @@ namespace QLCHMTNguyenHoang
             txtTenkh.Clear();
             txtSohd.Clear();
             txtsodt.Clear();
-            txtghichu.Clear();
             txtDiachi.Clear();
            
            
@@ -348,7 +326,7 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Visible = false;
         }
 
-        private void btReset_Click_1(object sender, EventArgs e)
+        private void btReset_Click(object sender, EventArgs e)
         {
             //mở
             dataGridView1.Enabled = true;
@@ -362,8 +340,6 @@ namespace QLCHMTNguyenHoang
             
             Xoa_TextBox();
         }
-
-        
     }
     
     
