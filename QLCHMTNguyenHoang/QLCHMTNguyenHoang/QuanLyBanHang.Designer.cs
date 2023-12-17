@@ -45,15 +45,15 @@
             this.QLHHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QLHTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ThoatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ChucNang = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.btnQLHeTHong = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnQLNhanVien = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.ThoatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -190,56 +190,57 @@
             this.QLHTToolStripMenuItem});
             this.QLToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.QLToolStripMenuItem.Name = "QLToolStripMenuItem";
-            this.QLToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
+            this.QLToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
             this.QLToolStripMenuItem.Text = "Quản lý";
             // 
             // QLNVToolStripMenuItem
             // 
             this.QLNVToolStripMenuItem.Name = "QLNVToolStripMenuItem";
-            this.QLNVToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLNVToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.QLNVToolStripMenuItem.Text = "Quản lý nhân viên";
+            this.QLNVToolStripMenuItem.Click += new System.EventHandler(this.QLNVToolStripMenuItem_Click);
             // 
             // QLKHToolStripMenuItem
             // 
             this.QLKHToolStripMenuItem.Name = "QLKHToolStripMenuItem";
-            this.QLKHToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLKHToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.QLKHToolStripMenuItem.Text = "Quản lý khách hàng";
+            this.QLKHToolStripMenuItem.Click += new System.EventHandler(this.QLKHToolStripMenuItem_Click);
             // 
             // QLKhoToolStripMenuItem
             // 
             this.QLKhoToolStripMenuItem.Name = "QLKhoToolStripMenuItem";
-            this.QLKhoToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLKhoToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.QLKhoToolStripMenuItem.Text = "Quản lý kho hàng";
+            this.QLKhoToolStripMenuItem.Click += new System.EventHandler(this.QLKhoToolStripMenuItem_Click);
             // 
             // QLHDToolStripMenuItem
             // 
             this.QLHDToolStripMenuItem.Name = "QLHDToolStripMenuItem";
-            this.QLHDToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLHDToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.QLHDToolStripMenuItem.Text = "Quản lý hóa đơn";
+            this.QLHDToolStripMenuItem.Click += new System.EventHandler(this.QLHDToolStripMenuItem_Click);
             // 
             // QLHHToolStripMenuItem
             // 
             this.QLHHToolStripMenuItem.Name = "QLHHToolStripMenuItem";
-            this.QLHHToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLHHToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.QLHHToolStripMenuItem.Text = "Quản lý hàng hóa";
+            this.QLHHToolStripMenuItem.Click += new System.EventHandler(this.QLHHToolStripMenuItem_Click);
             // 
             // QLHTToolStripMenuItem
             // 
             this.QLHTToolStripMenuItem.Name = "QLHTToolStripMenuItem";
-            this.QLHTToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.QLHTToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
             this.QLHTToolStripMenuItem.Text = "Quản lý hệ thống";
+            this.QLHTToolStripMenuItem.Click += new System.EventHandler(this.QLHTToolStripMenuItem_Click);
             // 
             // DangXuatToolStripMenuItem
             // 
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất";
-            // 
-            // ThoatToolStripMenuItem
-            // 
-            this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
-            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(69, 26);
-            this.ThoatToolStripMenuItem.Text = "Thoát";
+            this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuatToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -247,9 +248,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.ChucNang);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.btnQLHeTHong);
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnQLNhanVien);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(-2, 32);
@@ -275,7 +276,7 @@
             this.button5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button5.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_product_48;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 287);
+            this.button5.Location = new System.Drawing.Point(0, 366);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(249, 80);
             this.button5.TabIndex = 13;
@@ -284,21 +285,21 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // btnQLHeTHong
+            // button6
             // 
-            this.btnQLHeTHong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnQLHeTHong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnQLHeTHong.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnQLHeTHong.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_system_48;
-            this.btnQLHeTHong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLHeTHong.Location = new System.Drawing.Point(3, 366);
-            this.btnQLHeTHong.Name = "btnQLHeTHong";
-            this.btnQLHeTHong.Size = new System.Drawing.Size(249, 80);
-            this.btnQLHeTHong.TabIndex = 12;
-            this.btnQLHeTHong.Text = "Quản lý hệ thống       ";
-            this.btnQLHeTHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQLHeTHong.UseVisualStyleBackColor = false;
-            this.btnQLHeTHong.Click += new System.EventHandler(this.button6_Click);
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button6.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button6.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_system_48;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(0, 445);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(249, 80);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Quản lý hệ thống       ";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button2
             // 
@@ -307,7 +308,7 @@
             this.button2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button2.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_customer_48;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 51);
+            this.button2.Location = new System.Drawing.Point(0, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(249, 80);
             this.button2.TabIndex = 1;
@@ -316,21 +317,21 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnQLNhanVien
+            // button1
             // 
-            this.btnQLNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnQLNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnQLNhanVien.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnQLNhanVien.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_profile_48;
-            this.btnQLNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLNhanVien.Location = new System.Drawing.Point(3, 446);
-            this.btnQLNhanVien.Name = "btnQLNhanVien";
-            this.btnQLNhanVien.Size = new System.Drawing.Size(249, 80);
-            this.btnQLNhanVien.TabIndex = 0;
-            this.btnQLNhanVien.Text = "Quản lý nhân viên      ";
-            this.btnQLNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQLNhanVien.UseVisualStyleBackColor = false;
-            this.btnQLNhanVien.Click += new System.EventHandler(this.button1_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button1.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_profile_48;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 51);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(249, 80);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Quản lý nhân viên      ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -339,7 +340,7 @@
             this.button3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button3.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_depot_48;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 129);
+            this.button3.Location = new System.Drawing.Point(0, 208);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(249, 80);
             this.button3.TabIndex = 3;
@@ -355,7 +356,7 @@
             this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button4.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_bill_48;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 208);
+            this.button4.Location = new System.Drawing.Point(0, 287);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(249, 80);
             this.button4.TabIndex = 2;
@@ -363,6 +364,13 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ThoatToolStripMenuItem
+            // 
+            this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
+            this.ThoatToolStripMenuItem.Text = "Thoát";
+            this.ThoatToolStripMenuItem.Click += new System.EventHandler(this.ThoatToolStripMenuItem_Click);
             // 
             // QuanLyBanHang
             // 
@@ -381,7 +389,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Bán Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.QuanLyBanHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -414,8 +421,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnQLHeTHong;
-        private System.Windows.Forms.Button btnQLNhanVien;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label ChucNang;
