@@ -33,13 +33,10 @@ namespace QLCHMTNguyenHoang
             string sql = "select * from khachhang2";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
-            //da.Fill(dt);
+            da.Fill(dt);
             dataGridView1.DataSource = dt;
             DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            //pic = (DataGridViewImageColumn)dataGridView1.Columns[6];
-            //pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
             getsizecolums();
-            //dataGridView1.Columns
             this.txtMahh.Enabled = false;
             this.txtTenhh.Enabled = false;
             this.txtSol.Enabled = false;
