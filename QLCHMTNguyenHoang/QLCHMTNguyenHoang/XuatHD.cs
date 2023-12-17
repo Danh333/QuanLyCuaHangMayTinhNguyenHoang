@@ -13,7 +13,7 @@ namespace QLCHMTNguyenHoang
 {
     public partial class XuatHD : Form
     {
-        SqlConnection cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=quanli123;Integrated Security=True");
+        SqlConnection cn = new SqlConnection();
         public XuatHD()
         {
             InitializeComponent();
@@ -21,13 +21,14 @@ namespace QLCHMTNguyenHoang
 
         private void XuatHD_Load(object sender, EventArgs e)
         {
-            string sql = "select * from hoadon ";
+            cn= new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
+            string sql = "select * from hoadon";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
-           // CrystalReport1 rp = new CrystalReport1();
-            //rp.SetDataSource(dt);
-            //crystalReportViewer1.ReportSource = rp;
+            CrystalReport1 rp = new CrystalReport1();
+            rp.SetDataSource(dt);
+            crystalReportViewer1.ReportSource = rp;
         }
     }
 }

@@ -26,21 +26,21 @@ namespace QLCHMTNguyenHoang.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=whoanhminh\\sqlexpress;Initial Catalog=abc;Integrated Security=True")]
-        public string abcConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=whoanhminh\\sqlexpress;Initial Catalog=QLCHMTNguyenHoang;Integrated Se" +
+            "curity=True")]
+        public string ChuoiKetNoi {
             get {
-                return ((string)(this["abcConnectionString"]));
+                return ((string)(this["ChuoiKetNoi"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=whoanhminh\\sqlexpress;Initial Catalog=quanli123;Integrated Security=T" +
-            "rue")]
-        public string quanli123ConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=whoanhminh\\sqlexpress;Initial Catalog=abc;Integrated Security=True")]
+        public string ChuoiKetNoiDangNhap {
             get {
-                return ((string)(this["quanli123ConnectionString"]));
+                return ((string)(this["ChuoiKetNoiDangNhap"]));
             }
         }
     }

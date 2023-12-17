@@ -12,9 +12,18 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyBanHang : Form
     {
+        string tendn = "", mk = "", quyen = "";
         public QuanLyBanHang()
         {
             InitializeComponent();
+        }
+
+        public QuanLyBanHang(string tendn, string mk, string quyen)
+        {
+            InitializeComponent();
+            this.tendn = tendn;
+            this.mk = mk;
+            this.quyen = quyen;
         }
 
         private void QLnhanvien_Click(object sender, EventArgs e)
@@ -107,6 +116,14 @@ namespace QLCHMTNguyenHoang
             QuanLyHoaDon f = new QuanLyHoaDon();
             f.Show();
             this.Hide();
+        }
+
+        private void QuanLyBanHang_Load(object sender, EventArgs e)
+        {
+            if (quyen == "1")
+            {
+                btnQLHeTHong.Hide();
+            }
         }
     }
     }
