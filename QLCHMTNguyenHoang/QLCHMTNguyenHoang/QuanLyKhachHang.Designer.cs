@@ -40,8 +40,6 @@
             this.lbsodt = new System.Windows.Forms.Label();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.lbdiachi = new System.Windows.Forms.Label();
-            this.lbsohd = new System.Windows.Forms.Label();
-            this.txtSohd = new System.Windows.Forms.TextBox();
             this.lbcongno = new System.Windows.Forms.Label();
             this.txtTenkh = new System.Windows.Forms.TextBox();
             this.lbtenkh = new System.Windows.Forms.Label();
@@ -59,6 +57,8 @@
             this.btnCapnhat = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -89,13 +89,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboBox);
             this.groupBox1.Controls.Add(this.txtsodt);
             this.groupBox1.Controls.Add(this.lbsodt);
             this.groupBox1.Controls.Add(this.txtDiachi);
             this.groupBox1.Controls.Add(this.lbdiachi);
-            this.groupBox1.Controls.Add(this.lbsohd);
-            this.groupBox1.Controls.Add(this.txtSohd);
             this.groupBox1.Controls.Add(this.lbcongno);
             this.groupBox1.Controls.Add(this.txtTenkh);
             this.groupBox1.Controls.Add(this.lbtenkh);
@@ -118,7 +118,7 @@
             // 
             // txtsodt
             // 
-            this.txtsodt.Location = new System.Drawing.Point(562, 82);
+            this.txtsodt.Location = new System.Drawing.Point(196, 136);
             this.txtsodt.Name = "txtsodt";
             this.txtsodt.Size = new System.Drawing.Size(218, 34);
             this.txtsodt.TabIndex = 22;
@@ -126,7 +126,7 @@
             // lbsodt
             // 
             this.lbsodt.AutoSize = true;
-            this.lbsodt.Location = new System.Drawing.Point(457, 85);
+            this.lbsodt.Location = new System.Drawing.Point(91, 139);
             this.lbsodt.Name = "lbsodt";
             this.lbsodt.Size = new System.Drawing.Size(73, 27);
             this.lbsodt.TabIndex = 21;
@@ -134,7 +134,7 @@
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(562, 33);
+            this.txtDiachi.Location = new System.Drawing.Point(562, 91);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(218, 34);
             this.txtDiachi.TabIndex = 20;
@@ -142,27 +142,11 @@
             // lbdiachi
             // 
             this.lbdiachi.AutoSize = true;
-            this.lbdiachi.Location = new System.Drawing.Point(457, 36);
+            this.lbdiachi.Location = new System.Drawing.Point(457, 94);
             this.lbdiachi.Name = "lbdiachi";
             this.lbdiachi.Size = new System.Drawing.Size(81, 27);
             this.lbdiachi.TabIndex = 19;
             this.lbdiachi.Text = "Địa chỉ";
-            // 
-            // lbsohd
-            // 
-            this.lbsohd.AutoSize = true;
-            this.lbsohd.Location = new System.Drawing.Point(42, 143);
-            this.lbsohd.Name = "lbsohd";
-            this.lbsohd.Size = new System.Drawing.Size(126, 27);
-            this.lbsohd.TabIndex = 13;
-            this.lbsohd.Text = "Số hóa đơn ";
-            // 
-            // txtSohd
-            // 
-            this.txtSohd.Location = new System.Drawing.Point(196, 140);
-            this.txtSohd.Name = "txtSohd";
-            this.txtSohd.Size = new System.Drawing.Size(218, 34);
-            this.txtSohd.TabIndex = 9;
             // 
             // lbcongno
             // 
@@ -388,6 +372,22 @@
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(562, 37);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(218, 34);
+            this.txtEmail.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(462, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 27);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Email";
+            // 
             // QuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -446,9 +446,9 @@
         private System.Windows.Forms.Label lbtimkiem;
         private System.Windows.Forms.TextBox txttimkiem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtSohd;
         private System.Windows.Forms.Label lbcongno;
-        private System.Windows.Forms.Label lbsohd;
         private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label2;
     }
 }

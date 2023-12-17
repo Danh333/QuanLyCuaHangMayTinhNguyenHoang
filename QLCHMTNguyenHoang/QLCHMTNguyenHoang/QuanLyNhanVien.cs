@@ -14,11 +14,15 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyNhanVien : Form
     {
-        SqlConnection cn;
+        SqlConnection cn =  new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
         string machineName = Environment.MachineName;
         public QuanLyNhanVien()
         {
             InitializeComponent();
+            cn.ConnectionString = Properties.Settings.Default.ChuoiKetNoi;
+            cn.Open();
+            cmd.Connection = cn;
         }
         private void ButtonThoat_Click(object sender, EventArgs e)
         {
@@ -37,11 +41,12 @@ namespace QLCHMTNguyenHoang
         void hienthi()
         {
             //\SQLEXPRESS
-            cn = new SqlConnection("Data Source ="+machineName+@"; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
+           // cn = new SqlConnection("Data Source ="+machineName+@"; Initial Catalog = QLCHMTNguyenHoang; Integrated Security = True");
             string sql = "select * from NhanVien";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            LoadComboBox();
             dataGridView.DataSource = dt;
         }
         void moTextbox()
@@ -51,7 +56,7 @@ namespace QLCHMTNguyenHoang
             this.TextBoxCCCD.Enabled = true;
             this.TextBoxSoDT.Enabled = true;
             this.TextBoxDiaChi.Enabled = true;
-            this.comboBoxGioitinh.Enabled = true;
+           
             this.comboBoxChucvu.Enabled = true;
         }
         void dongTextbox()
@@ -61,7 +66,7 @@ namespace QLCHMTNguyenHoang
             this.TextBoxCCCD.Enabled = false;
             this.TextBoxSoDT.Enabled = false;
             this.TextBoxDiaChi.Enabled = false;
-            this.comboBoxGioitinh.Enabled = false;
+           
             this.comboBoxChucvu.Enabled = false;
         }
         void dongButton()
@@ -81,7 +86,7 @@ namespace QLCHMTNguyenHoang
             DataTable dt = new DataTable();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("Select Chucvu From NhanVien", cn);
+                SqlDataAdapter da = new SqlDataAdapter("Select distinct Chucvu From NhanVien", cn);
                 da.Fill(dt);
                 comboBoxChucvu.DataSource = dt;
                 comboBoxChucvu.DisplayMember = "Chucvu";
@@ -111,7 +116,7 @@ namespace QLCHMTNguyenHoang
             dataGridView.Columns[3].Width = 100;
             dataGridView.Columns[4].Width = 100;
             dataGridView.Columns[5].Width = 100;
-            dataGridView.Columns[6].Width = 100;
+            
         }
         private void ButtonThem_Click(object sender, EventArgs e)
         {
@@ -131,7 +136,7 @@ namespace QLCHMTNguyenHoang
             TextBoxSoDT.Enabled = true;
             TextBoxCCCD.Enabled = true;
             TextBoxDiaChi.Enabled = true;
-            comboBoxGioitinh.Enabled = true;
+           
             comboBoxChucvu.Enabled = true;
             moButton();
         }
@@ -182,15 +187,17 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "insert into NhanVien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
+                string sql = "insert into NhanVien(manv,tennv,cccd,sodt,diachi,chucvu)  values(@manv,@tennv,@cccd,@sodt,@diachi,@chucvu)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
-                MemoryStream str = new MemoryStream();
+                
                 cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
                 cmd.Parameters.AddWithValue("@tennv", TextBoxTenNV.Text);
                 cmd.Parameters.AddWithValue("@sodt", TextBoxSoDT.Text);
                 cmd.Parameters.AddWithValue("@CCCD", TextBoxCCCD.Text);
                 cmd.Parameters.AddWithValue("@diachi", TextBoxDiaChi.Text);
+                cmd.Parameters.AddWithValue("@chucvu", comboBoxChucvu.Text);
 
+                cmd.ExecuteNonQuery();
                 hienthi();
                 ButtonLuu.Enabled = false;
                 ButtonCapnhat.Enabled = false;
@@ -207,7 +214,7 @@ namespace QLCHMTNguyenHoang
             moButton();
             ButtonLuu.Enabled = false;
             ButtonSua.Enabled = false;
-
+            ButtonCapnhat.Enabled = true;
         }
 
         private void ButtonXoa_Click(object sender, EventArgs e)
@@ -228,7 +235,7 @@ namespace QLCHMTNguyenHoang
             TextBoxSoDT.Clear();
             TextBoxCCCD.Clear();
             TextBoxDiaChi.Clear();
-            comboBoxGioitinh.ValueMember = "";
+           
             comboBoxChucvu.ValueMember = "";
         }
 
@@ -283,6 +290,29 @@ namespace QLCHMTNguyenHoang
             cmd.ExecuteNonQuery();
             dongTextbox();
             cn.Close();
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ButtonCapnhat.Enabled = false;
+             ButtonLuu.Enabled = false;
+            ButtonSua.Enabled = true;
+
+            try
+            {
+                TextBoxMaNV.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+                TextBoxTenNV.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+                TextBoxCCCD.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+                TextBoxSoDT.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
+                TextBoxDiaChi.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+                comboBoxChucvu.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi xảy ra");
+            }
         }
     }
 }

@@ -32,8 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxChucvu = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBoxGioitinh = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.TextBoxDiaChi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TextBoxCCCD = new System.Windows.Forms.TextBox();
@@ -74,8 +72,6 @@
             // 
             this.groupBox1.Controls.Add(this.comboBoxChucvu);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.comboBoxGioitinh);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TextBoxDiaChi);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.TextBoxCCCD);
@@ -98,7 +94,7 @@
             // comboBoxChucvu
             // 
             this.comboBoxChucvu.FormattingEnabled = true;
-            this.comboBoxChucvu.Location = new System.Drawing.Point(148, 129);
+            this.comboBoxChucvu.Location = new System.Drawing.Point(634, 135);
             this.comboBoxChucvu.Name = "comboBoxChucvu";
             this.comboBoxChucvu.Size = new System.Drawing.Size(265, 30);
             this.comboBoxChucvu.TabIndex = 15;
@@ -106,35 +102,16 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 132);
+            this.label9.Location = new System.Drawing.Point(541, 143);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 22);
             this.label9.TabIndex = 14;
             this.label9.Text = "Chức vụ";
             // 
-            // comboBoxGioitinh
-            // 
-            this.comboBoxGioitinh.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBoxGioitinh.FormattingEnabled = true;
-            this.comboBoxGioitinh.Location = new System.Drawing.Point(337, 41);
-            this.comboBoxGioitinh.Name = "comboBoxGioitinh";
-            this.comboBoxGioitinh.Size = new System.Drawing.Size(76, 27);
-            this.comboBoxGioitinh.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(250, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 22);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Giới tính";
-            // 
             // TextBoxDiaChi
             // 
             this.TextBoxDiaChi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TextBoxDiaChi.Location = new System.Drawing.Point(634, 129);
+            this.TextBoxDiaChi.Location = new System.Drawing.Point(634, 88);
             this.TextBoxDiaChi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxDiaChi.Name = "TextBoxDiaChi";
             this.TextBoxDiaChi.Size = new System.Drawing.Size(265, 27);
@@ -144,7 +121,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(558, 132);
+            this.label7.Location = new System.Drawing.Point(558, 91);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 22);
@@ -154,7 +131,7 @@
             // TextBoxCCCD
             // 
             this.TextBoxCCCD.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TextBoxCCCD.Location = new System.Drawing.Point(634, 85);
+            this.TextBoxCCCD.Location = new System.Drawing.Point(148, 132);
             this.TextBoxCCCD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxCCCD.Name = "TextBoxCCCD";
             this.TextBoxCCCD.Size = new System.Drawing.Size(265, 27);
@@ -164,7 +141,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(537, 88);
+            this.label6.Location = new System.Drawing.Point(51, 135);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 22);
@@ -214,10 +191,10 @@
             // TextBoxMaNV
             // 
             this.TextBoxMaNV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TextBoxMaNV.Location = new System.Drawing.Point(148, 39);
+            this.TextBoxMaNV.Location = new System.Drawing.Point(148, 37);
             this.TextBoxMaNV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TextBoxMaNV.Name = "TextBoxMaNV";
-            this.TextBoxMaNV.Size = new System.Drawing.Size(95, 27);
+            this.TextBoxMaNV.Size = new System.Drawing.Size(265, 27);
             this.TextBoxMaNV.TabIndex = 1;
             // 
             // label2
@@ -233,14 +210,17 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(15, 354);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(911, 238);
             this.dataGridView.TabIndex = 26;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // ButtonThem
             // 
@@ -436,8 +416,6 @@
         private System.Windows.Forms.Button ButtonCapnhat;
         private System.Windows.Forms.Button ButtonTrove;
         private System.Windows.Forms.Button ButtonThoat;
-        private System.Windows.Forms.ComboBox comboBoxGioitinh;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxTimkiem;
         private System.Windows.Forms.Button ButtonTimkiem;
