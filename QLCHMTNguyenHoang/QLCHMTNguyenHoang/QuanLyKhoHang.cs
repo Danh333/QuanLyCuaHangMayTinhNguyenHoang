@@ -18,8 +18,8 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyKhoHang : Form
     {
-
-        SqlConnection cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
+        SqlConnection cn;
+        string MachineName = Environment.MachineName;
         public QuanLyKhoHang()
         {
 
@@ -29,7 +29,7 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("");
+            cn = new SqlConnection("Data Source ="+ MachineName +@"; Initial Catalog = QLCHMaytinh; Integrated Security = True");
             string sql = "select * from khachhang2";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
@@ -97,7 +97,10 @@ namespace QLCHMTNguyenHoang
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-           this.Close();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void QuanLyKhoHang_Load(object sender, EventArgs e)
@@ -300,9 +303,10 @@ namespace QLCHMTNguyenHoang
 
         private void btnThoat_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Bạn có chắc muốn thoát không?",
-                 "Error", MessageBoxButtons.YesNoCancel);
-            Application.Exit();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có chắc muốn thoát không?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void btnTrove_Click_1(object sender, EventArgs e)

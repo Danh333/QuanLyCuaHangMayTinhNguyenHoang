@@ -28,38 +28,56 @@ namespace QLCHMTNguyenHoang
             
         }
         void hienthi()
-        {
-           // cn = new SqlConnection(@"Data Source=whoanhminh\sqlexpress;Initial Catalog=QLCHMTNguyenHoang;Integrated Security=True");
-            string sql = "select * from hoadon";           
-            //string sql = "select hoadon.Mahoadon,KhachHang.MaKH,TenKH,Ngaylap,hanghoa.MaHH,TenHH,HangHoa.Soluong,banhang.Dongia,Tongtien FROM HoaDon join BanHang on HoaDon.Mahoadon = BanHang.Mahoadon  join HangHoa on HangHoa.MaHH=BanHang.MaHH join KhachHang on HoaDon.MaKH=KhachHang.MaKH";
+        {        
+            string sql = "select * from hoadon";                    
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dataGridView1.DataSource = dt;         
-            getsizecolums();
-            //dataGridView1.Columns
-            dongTextbox();
+            dataGridView1.DataSource = dt;
+
+            
+            getsizecolums();        
+            KhoaNhapDuLieu();
             LoadComboBoxNhanVien();
-            LoadComboBoxTenHangHoa();
+            //LoadComboBoxTenHangHoa();
             LoadComboBoxKH();
+            LoadComboBoxMaHH();
         }
-        void moTextbox()
+
+
+        void Xoa_TextBox()
         {
-            //comboBoxMaNV.Enabled = true;
+            
+            txtMaHoaDon.Clear();
+            comboBoxMaHH.ResetText();
+            txtMaKhachHang.ResetText();
+            comboBoxMaNV.ResetText();
+            numericUpDown1.ResetText();
+            txtGiaTien.Clear();
+            txtTongTien.Clear();
+            dateTimePicker1.Value = DateTime.Now.Date;
+        }
+        void MoKhoaNhapDuLieu()
+        {
             txtMaHoaDon.Enabled = true;
-            txtMaKhachHang.Enabled = true;
-           // txtMaNhanVien.Enabled = true;
-            dateTimePicker1.Enabled = true;
+            comboBoxMaNV.Enabled = true;          
+            comboBoxMaHH.Enabled = true;
+            comboBoxMaKH.Enabled = true;
             numericUpDown1.Enabled = true;
-        }
-        void dongTextbox()
-        {
-           // comboBoxMaNV.Enabled = false;
-            txtMaHoaDon.Enabled = false;          
-            txtMaKhachHang.Enabled = false;
-           // txtMaNhanVien.Enabled = false;
+            txtGiaTien.Enabled = true;
+            txtTongTien.Enabled = true;
             dateTimePicker1.Enabled = true;
+        }
+        void KhoaNhapDuLieu()
+        {      
+            txtMaHoaDon.Enabled = false;          
+            comboBoxMaHH.Enabled = false;
+            comboBoxMaKH.Enabled = false;
+            comboBoxMaNV.Enabled = false;
             numericUpDown1.Enabled = false;
+            txtGiaTien.Enabled = false;
+            txtTongTien.Enabled = false;
+            dateTimePicker1.Enabled = false;          
         }
         void dongButton()
         {
@@ -85,11 +103,14 @@ namespace QLCHMTNguyenHoang
         private void QuanLiHoaDon_Load(object sender, EventArgs e)
         {
             hienthi();
-            dongTextbox();   
+            KhoaNhapDuLieu();   
             btnLuu.Enabled = false;
             btnCapnhat.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            comboBoxMaHH.Text = "";
+            comboBoxMaKH.Text = "";
+            comboBoxMaNV.Text = "";
         }
         private void btnThem_Click_1(object sender, EventArgs e)
         {   
@@ -105,7 +126,7 @@ namespace QLCHMTNguyenHoang
             Xoa_TextBox();
 
             //Mở textBox
-            moTextbox();
+            MoKhoaNhapDuLieu();
             //txtMaHoaDon.Enabled = true;  
             //txtMaKhachHang.Enabled = true;    
             //dateTimePicker1.Value = DateTime.Now.Date;          
@@ -139,7 +160,7 @@ namespace QLCHMTNguyenHoang
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             cmd.ExecuteNonQuery();
-            dongTextbox();
+            KhoaNhapDuLieu();
             cn.Close();           
         }
         void dongbtn_clickdatagridview_()  //tắt btn và datagview
@@ -174,15 +195,17 @@ namespace QLCHMTNguyenHoang
           // try
             {
                 cn.Open();
-                string sql = "insert into hoadon (MaHoaDon,MaKH,MaNV,NgayLap,Soluong,gia,tongtien) values (@MaHoaDon,@MaKH,@MaNV,@NgayLap,@Soluong,@gia,@tongtien)";                  
+                string sql = "insert into hoadon (MaHD,MaHH,MaKH,MaNV,Soluong,dongia,tongtien,NgayLap) values (@MaHD,@MaHH,@MaKH,@MaNV,@Soluong,@Dongia,@tongtien,@NgayLap)";                  
                 SqlCommand   cmd = new SqlCommand(sql,cn);             
-                cmd.Parameters.AddWithValue("@MaHoaDon", txtMaHoaDon.Text);
+                cmd.Parameters.AddWithValue("@MaHD", txtMaHoaDon.Text);
+                cmd.Parameters.AddWithValue("@MaHH", comboBoxMaHH.Text);
                 cmd.Parameters.AddWithValue("@MaKH", comboBoxMaKH.Text);
-                cmd.Parameters.AddWithValue("@MaNV", comboBoxMaNV.Text);          
-                cmd.Parameters.AddWithValue("@NgayLap", dateTimePicker1.Value.ToString());        
+                cmd.Parameters.AddWithValue("@MaNV", comboBoxMaNV.Text); 
                 cmd.Parameters.AddWithValue("@Soluong", numericUpDown1.Value.ToString());
-                cmd.Parameters.AddWithValue("@gia", txtGiaTien.Text);              
-                cmd.Parameters.AddWithValue("@tongtien", txtTongTien.Text);                         
+                cmd.Parameters.AddWithValue("@Dongia", txtGiaTien.Text);
+                cmd.Parameters.AddWithValue("@tongtien", txtTongTien.Text);
+                cmd.Parameters.AddWithValue("@NgayLap", dateTimePicker1.Value.ToString());        
+                                 
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi() ;
@@ -199,22 +222,24 @@ namespace QLCHMTNguyenHoang
         private void btnCapnhat_Click(object sender, EventArgs e)
         {
             moButton();
+            dataGridView1.Enabled = true;
             try
             {
                 cn.Open();
-                string sql = "update hoadon set  MaHoaDon=@MaHoaDon,MaKh=@MaKh,MaNV=@MaNv,NgayLap=@NgayLap,Soluong=@Soluong where mahoadon=@mahoadon";
+                string sql = "update hoadon set  mahd=@MaHD,mahh=@MaHH,makh=@MaKH,manv=@MaNV,soluong=@Soluong,dongia=@Dongia,tongtien=@tongtien,ngaylap=@NgayLap where mahd=@mahd";
                 SqlCommand cmd = new SqlCommand(sql, cn);
-                //MemoryStream str = new MemoryStream();
-                cmd.Parameters.AddWithValue("@MaHoaDon", txtMaHoaDon.Text);
-                cmd.Parameters.AddWithValue("@MaKH", txtMaKhachHang.Text);
-               // cmd.Parameters.AddWithValue("@MaNV", comboBoxMaNV.Text);
-                cmd.Parameters.AddWithValue("@NgayLap", dateTimePicker1.Value.ToString());
+                cmd.Parameters.AddWithValue("@MaHD", txtMaHoaDon.Text);
+                cmd.Parameters.AddWithValue("@MaHH", comboBoxMaHH.Text);
+                cmd.Parameters.AddWithValue("@MaKH", comboBoxMaKH.Text);
+                cmd.Parameters.AddWithValue("@MaNV", comboBoxMaNV.Text);
                 cmd.Parameters.AddWithValue("@Soluong", numericUpDown1.Value.ToString());
-                //pictureBox1.Image.Save     (    str      , pictureBox1.Image.RawFormat);
-                //cmd.Parameters.AddWithValue("@anh"       , str.ToArray());
+                cmd.Parameters.AddWithValue("@Dongia", txtGiaTien.Text);
+                cmd.Parameters.AddWithValue("@tongtien", txtTongTien.Text);
+                cmd.Parameters.AddWithValue("@NgayLap", dateTimePicker1.Value.ToString("dd/MM/yyyy"));
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
+                //cmd.Parameters.AddWithValue("@NgayLap", dateTimePicker1.Value.ToString());DateTime.Parse(Đ/MM/YYYY)
             }
             catch (Exception)
             {
@@ -224,28 +249,44 @@ namespace QLCHMTNguyenHoang
        
         private void btnXoa_Click(object sender, EventArgs e)
         {
-           
-                string sql = "delete from hoadon where mahoadon = @mahoadon";
-                SqlCommand cmd = new SqlCommand(sql, cn);
-                cmd.Parameters.AddWithValue("@mahoadon", txtMaHoaDon.Text);
-                cn.Open();
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                hienthi();
-              
-                dongTextbox();
+            if (!string.IsNullOrEmpty(txtMaHoaDon.Text))
+            {
+                // Display a confirmation dialog
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa hóa đơn này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-
-            //else if (dialogResult == DialogResult.No)
-            //{
-            //    cn.Close();
-            //}
-         
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string sql = "DELETE FROM hoadon WHERE mahd = @mahd";
+                        using (SqlCommand cmd = new SqlCommand(sql, cn))
+                        {
+                            cmd.Parameters.AddWithValue("@mahd", txtMaHoaDon.Text);
+                            cn.Open();
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi xóa hóa đơn: " + ex.Message);
+                    }
+                    finally
+                    {
+                        cn.Close();
+                        hienthi();
+                        KhoaNhapDuLieu();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
             dongbtn_clickdatagridview_();
-            moTextbox();
+            MoKhoaNhapDuLieu();
             moButton();
             btnLuu.Enabled = false;
             btnCapnhat.Visible = true;
@@ -270,29 +311,15 @@ namespace QLCHMTNguyenHoang
             btnXoa.Enabled = true;
             //try
             {
-                //txtMaHoaDon.Text         =  dataGridView1.CurrentRow.Cells[0].Value.ToString();               
-                //txtMaKhachHang.Text         =  dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                //txtTenKH.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                ////comboBoxMaNV.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                //dateTimePicker1.Text =  dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                //txtMahanghoa.Text= dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                //txtMaKhachHang.Text= dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                //numericUpDown1.Text          =  dataGridView1.CurrentRow.Cells[6].Value.ToString();  
-                //txtGiaTien.Text= dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                //txtTongTien.Text= dataGridView1.CurrentRow.Cells[8].Value.ToString();
-
                 txtMaHoaDon.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txtMaKhachHang.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                comboBoxMaNV.Text= dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                // txtTenKH.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                //comboBoxMaNV.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                //txtMahanghoa.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-               // txtMaKhachHang.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-
+                comboBoxMaHH.Text= dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                comboBoxMaKH.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                comboBoxMaNV.Text= dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 numericUpDown1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txtGiaTien.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                txtTongTien.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                txtTongTien.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();            
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+               
             }
             //catch
             //{
@@ -314,16 +341,7 @@ namespace QLCHMTNguyenHoang
         }
 
         
-        void Xoa_TextBox()
-        {
-            txtMaHoaDon.Clear();
-            //comboBoxMaNV.ResetText();
-            txtMaKhachHang.ResetText();
-            numericUpDown1.ResetText();
-            dateTimePicker1.Value = DateTime.Now.Date;
-          
-           
-        }
+        
         private void button2_Click(object sender, EventArgs e)
         {
             //mở
@@ -336,7 +354,7 @@ namespace QLCHMTNguyenHoang
             btnSua.Enabled = false;
             btnCapnhat.Enabled = false;
             hienthi();
-            dongTextbox();
+            KhoaNhapDuLieu();
             Xoa_TextBox();
         }
 
@@ -359,7 +377,7 @@ namespace QLCHMTNguyenHoang
                 SqlDataAdapter da = new SqlDataAdapter("SELECT DISTINCT MaNV From Nhanvien ", cn);
                 da.Fill(dt);
                 cn.Close();
-            }//where nhanvien.manv=hoadon.manv
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi");
@@ -385,7 +403,7 @@ namespace QLCHMTNguyenHoang
                 SqlDataAdapter da = new SqlDataAdapter("SELECT DISTINCT MaKH From Khachhang ", cn);
                 da.Fill(dt);
                 cn.Close();
-            }//where nhanvien.manv=hoadon.manv
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi");
@@ -401,24 +419,50 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Có lỗi khi load dữ liệu\n", ex.ToString());
             }
         }
-        public void LoadComboBoxTenHangHoa()
+        //public void LoadComboBoxTenHangHoa()
+        //{
+        //    DataTable dt = new DataTable();
+        //    try
+        //    {
+        //        SqlDataAdapter da = new SqlDataAdapter("SELECT TenHH From HangHoa ", cn);
+        //        da.Fill(dt);
+        //        cn.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Có lỗi");
+        //    }
+        //    try
+        //    {
+        //        comboBoxTenHH.DataSource = dt;
+        //        comboBoxTenHH.DisplayMember = "TenHH";
+        //        comboBoxTenHH.ValueMember = "TenHH";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Có lỗi khi load dữ liệu\n", ex.ToString());
+        //    }
+        //}
+
+
+        public void LoadComboBoxMaHH()
         {
             DataTable dt = new DataTable();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT TenHH From HangHoa ", cn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT MaHH From HangHoa ", cn);
                 da.Fill(dt);
                 cn.Close();
-            }//where nhanvien.manv=hoadon.manv
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi");
             }
             try
             {
-                comboBoxTenHH.DataSource = dt;
-                comboBoxTenHH.DisplayMember = "TenHH";
-                comboBoxTenHH.ValueMember = "TenHH";
+                comboBoxMaHH.DataSource = dt;
+                comboBoxMaHH.DisplayMember = "MaHH";
+                comboBoxMaHH.ValueMember = "MaHH";
             }
             catch (Exception ex)
             {
@@ -443,7 +487,93 @@ namespace QLCHMTNguyenHoang
 
         }
 
-       
+        private void comboBoxMaHH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMaHH.SelectedItem != null)
+            {
+                try
+                {
+                    cn.Open();
+
+                    string ChonHH = comboBoxMaHH.SelectedValue.ToString();
+
+                    string query = "SELECT dongia, tenHH FROM HangHoa WHERE MaHH = @MaHH";
+                    using (SqlCommand cmd = new SqlCommand(query, cn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaHH", ChonHH);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Read values from the data reader
+                                txtGiaTien.Text = reader["dongia"].ToString();
+                                txtTenHH.Text = reader["tenHH"].ToString();
+                            }
+                            else
+                            {
+                                txtTenHH.Text = "";
+                                txtGiaTien.Text = "Trống";
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi Khi load Giá: " + ex.Message);
+                }
+                finally
+                {
+                    cn.Close();
+                }
+            }
+            //if (comboBoxMaHH.SelectedItem != null)
+            //{
+            //    try
+            //    {
+            //        cn.Open();
+
+            //        string ChonHH = comboBoxMaHH.SelectedValue.ToString();
+
+
+            //        string query = "SELECT dongia,tenHH FROM HangHoa WHERE MaHH = @MaHH";
+            //        using (SqlCommand cmd = new SqlCommand(query, cn))
+            //        {
+            //            cmd.Parameters.AddWithValue("@MaHH", ChonHH);
+
+
+            //            object result = cmd.ExecuteScalar();
+
+            //            if (result != null)
+            //            {
+
+            //                txtGiaTien.Text = result.ToString();
+            //                txtTenHH.Text = result.ToString();
+            //            }
+            //            else
+            //            {
+            //                txtTenHH.Text = "";
+            //                txtGiaTien.Text = "Trống";
+            //            }
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Lỗi Khi load Giá: " + ex.Message);
+            //    }
+            //    finally
+            //    {
+            //        cn.Close();
+            //    }
+            // }
+
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }
