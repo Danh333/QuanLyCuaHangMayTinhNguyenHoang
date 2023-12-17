@@ -77,26 +77,20 @@ namespace QLCHMTNguyenHoang
         }
         public void LoadComboBox()
         {
+
             DataTable dt = new DataTable();
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter("Select Chucvu From NhanVien", cn);
                 da.Fill(dt);
+                comboBoxChucvu.DataSource = dt;
+                comboBoxChucvu.DisplayMember = "Chucvu";
+                comboBoxChucvu.ValueMember = "Chucvu";
                 cn.Close();
             }
             catch (Exception ex)
             {
-                throw new Exception("Error " + ex.ToString());
-            }
-            try
-            {
-                comboBoxChucvu.DataSource = dt;
-                comboBoxChucvu.DisplayMember = "Chucvu";
-                comboBoxChucvu.ValueMember = "Chucvu";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi khi load dữ liệu\n", ex.ToString());
+                throw new Exception("Có lỗi khi load dữ liệu" + ex.ToString());
             }
         }
         private void QuanLyNhanVien_Load(object sender, EventArgs e)
@@ -111,12 +105,12 @@ namespace QLCHMTNguyenHoang
         }
         public void getsizecolums()
         {
-            dataGridView.Columns[0].Width = 80;
-            dataGridView.Columns[1].Width = 200;
+            dataGridView.Columns[0].Width = 50;
+            dataGridView.Columns[1].Width = 100;
             dataGridView.Columns[2].Width = 100;
             dataGridView.Columns[3].Width = 100;
             dataGridView.Columns[4].Width = 100;
-            dataGridView.Columns[5].Width = 200;
+            dataGridView.Columns[5].Width = 100;
             dataGridView.Columns[6].Width = 100;
         }
         private void ButtonThem_Click(object sender, EventArgs e)
@@ -188,7 +182,7 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "insert  into NhanVien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
+                string sql = "insert into NhanVien(manv,tennv,cccd,sodt,dichi)  values(@manv,@tennv,@cccd,@sodt,@diachi)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@manv", TextBoxMaNV.Text);
