@@ -47,31 +47,45 @@ namespace QLCHMTNguyenHoang
             buttonxoa.Visible = false;
             buttonsua.Visible = false;
             buttoncapnhat.Visible = false;
-            //Image imageCircle = Image.FromFile("rong.jpg");
-            //Dat hinh mat dinh khi khoi dong
-            //pictureBox1.Image = imageCircle;
-            //Reset textBox
+            
 
             txtMahh.Clear();
-            txtGia.Clear();
-            //Mở textBox
+            txtTenHangHoa.Clear();
+            txtimei.Clear();
+            txtsoluong.Clear();
+            txtDongia.Clear();
+
+
 
             txtMahh.Enabled = true;
+            txtTenHangHoa.Enabled = true;
+            txtimei.Enabled = true;
+            txtsoluong.Enabled = true;
+            txtDongia.Enabled = true;
+            dateTimePicker1.Enabled = true;
             dateTimePicker1.Value = DateTime.Now.Date;
-            txtGia.Enabled = true;
             moButton();
         }
         void moTextbox()
         {
 
             txtMahh.Enabled = true;
-            txtGia.Enabled = true;
+            txtTenHangHoa.Enabled = true;
+            txtimei.Enabled = true;
+            txtsoluong.Enabled = true;
+            txtDongia.Enabled = true;
+            dateTimePicker1.Enabled = true;
+            
         }
         void dongTextbox()
         {
 
             txtMahh.Enabled = false;
-            txtGia.Enabled = false;
+            txtTenHangHoa.Enabled = false;
+            txtimei.Enabled = false;
+            txtsoluong.Enabled = false;
+            txtDongia.Enabled = false;
+            dateTimePicker1.Enabled = false;
         }
         void dongButton()
         {
@@ -88,19 +102,16 @@ namespace QLCHMTNguyenHoang
         void hienthi()
         {
             cn = new SqlConnection(@"Data Source=m15\sqlexpress;Initial Catalog=QLCHMaytinh;Integrated Security=True");
-            string sql = "select * from qlhoadon";
+            string sql = "select * from qlhanghoa";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
-            DataGridViewImageColumn pic = new DataGridViewImageColumn();
-            pic = (DataGridViewImageColumn)dataGridView1.Columns[6];
-            pic.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            
             getsizecolums();
-            //dataGridView1.Columns
+            dongButton();
 
-            this.txtMahh.Enabled = false;
-            this.txtGia.Enabled = false;
+
 
         }
         public void getsizecolums()
@@ -125,16 +136,20 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "insert  into qlhoadon(mahoadon,mahh,manv,makh,soluong,ngayban,diachi,sodt,giaban,hinhanh)  values(@mahoadon,@mahh,@manv,@makh,@soluong,@ngayban,@diachi,@sodt,@giaban,@hinhanh)";
+                string sql = "insert  into qlhanghoa(mahh,tenhh,imei,soluong,dongia,ngaycapnhat)  values(@mahh,@tenhh,@imei,@soluong,@dongia,@ngaycapnhat)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
 
                 cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
-                cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
-                cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
-                // cmd.Parameters.AddWithValue("@tinhtrang", comboBox1.Text);
-                pictureBox.Image.Save(str, pictureBox.Image.RawFormat);
-                cmd.Parameters.AddWithValue("@hinhanh", str.ToArray());
+                cmd.Parameters.AddWithValue("@tenhh", txtTenHangHoa.Text);
+                cmd.Parameters.AddWithValue("@imei", txtimei.Text);
+                cmd.Parameters.AddWithValue("@soluong", txtsoluong.Text);
+                cmd.Parameters.AddWithValue("@dongia", txtDongia.Text);
+                cmd.Parameters.AddWithValue("@ngaycapnhat", dateTimePicker1.Value.ToString());
+                
+                
+                
+            
 
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -161,24 +176,19 @@ namespace QLCHMTNguyenHoang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sql = "delete from qlhoadon where mahoadon=@mahoadon";
+            string sql = "delete from qlhanghoa where mahh=@mahh";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@mahanghoa", txtMahh.Text);
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
             hienthi();
-            pictureBox.Image = null;
+            
             dongTextbox();
 
 
-            //else if (dialogResult == DialogResult.No)
-            //{
-            //    cn.Close();
-            //}
-            Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
-            //Dat hinh mat dinh khi khoi dong
-            pictureBox.Image = imageCircle;
+            
+            
         }
 
         private void btnCapnhat_Click(object sender, EventArgs e)
@@ -186,21 +196,17 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update qlhoadon set  mahoadon=@mahoadon,mahh=@mahh,manv=@manv,makh=@makh,soluong=@soluong,ngayban=@ngayban,diachi=@diachi,sodt=@sodt,giaban=@giaban,hinhanh=@hinhanh where mahoadon=@mahoadon";
+                string sql = "update qlhanghoa set  ,mahh=@mahh,tenhh=@tenhh,imei=@imei,soluong=@soluong,dongia=@dongia,ngaycapnhat=@ngaycapnhat where mahh=@mahh";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
 
                 cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@tenhh", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@imei", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@soluong", txtMahh.Text);
+                cmd.Parameters.AddWithValue("@dongia", txtDongia.Text);
+                cmd.Parameters.AddWithValue("@ngaycapnhat", dateTimePicker1.Value.ToString());
 
-
-
-                cmd.Parameters.AddWithValue("@ngayban", dateTimePicker1.Value.ToString());
-
-
-                cmd.Parameters.AddWithValue("@giaban", txtGia.Text);
-                //  cmd.Parameters.AddWithValue("@tinhtrang", g);
-                pictureBox.Image.Save(str, pictureBox.Image.RawFormat);
-                cmd.Parameters.AddWithValue("@anh", str.ToArray());
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
@@ -231,7 +237,7 @@ namespace QLCHMTNguyenHoang
         {
             txttimkiem.Focus();
             cn.Open();
-            string sql = @"select * from qlhoadon where mahd like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
+            string sql = @"select * from qlhanghoa where mahh like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -270,13 +276,17 @@ namespace QLCHMTNguyenHoang
             try
             {
 
-                txtMahh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtMahh.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtTenHangHoa.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txtimei.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txtsoluong.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                txtDongia.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
-                txtGia.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
 
 
                 MemoryStream ms = new MemoryStream((byte[])dataGridView1.CurrentRow.Cells[9].Value);
-                pictureBox.Image = Image.FromStream(ms);
+                
             }
             catch
             {
