@@ -1,8 +1,11 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     17/12/2023 11:11:27 SA                       */
+/* Created on:     12/12/2023 12:12:22 SA                       */
 /*==============================================================*/
 
+Create Database QLCHMTNguyenHoang
+use QLCHMTNguyenHoang
+go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
