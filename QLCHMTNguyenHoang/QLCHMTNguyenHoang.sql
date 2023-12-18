@@ -1,4 +1,4 @@
-/*==============================================================*/
+﻿/*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
 /* Created on:     17/12/2023 11:11:27 SA                       */
 /*==============================================================*/
@@ -283,3 +283,28 @@ alter table PhieuNhapXuat
    add constraint FK_PHIEUNHAPXUAT_NHAPXUATHH_HANGHOA foreign key (MaHH)
       references HangHoa (MaHH)
 go
+
+
+Insert into NhanVien(MaNV,TenNV,CCCD,SoDT,Diachi,Chucvu) values ('NV001',N'Trần Văn A','012345678910','0123456789',N'An Giang',N'Quản lý');
+Insert into NhanVien(MaNV,TenNV,CCCD,SoDT,Diachi,Chucvu) values ('NV002',N'Lê Nguyễn Trần B','101112131415','9876543210',N'Bắc Giang',N'Nhân viên kho hàng');
+Insert into NhanVien(MaNV,TenNV,CCCD,SoDT,Diachi,Chucvu) values ('NV003',N'Lê Thị C','161718192021','0000000000',N'Hà Giang',N'Nhân viên bán hàng');
+
+Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi,Congno) values ('KH001',N'Nguyễn Thị D','1234567890','nguyenthid@gmail.com','Hậu Giang',0);
+Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi,Congno) values ('KH002',N'Lê Văn E','1011121314','levane@gmail.com','Kiên Giang',0);
+Insert into KhachHang(MaKH,TenKH,SoDT,Email,Diachi,Congno) values ('KH003',N'Bùi Văn F','1617181920','buivanf@gmail.com','Tiền Giang',0);
+
+Insert into HangHoa(MaHH,TenHH,Imei,Soluong,Dongia,Ngaycapnhat) values ('HH001',N'USB Kingston 1TB','1122334455',3,1200000,'11-11-2023');
+Insert into HangHoa(MaHH,TenHH,Imei,Soluong,Dongia,Ngaycapnhat) values ('HH002',N'Máy in laser trắng đen Canon','1234567890',2,3500000,'11-12-2023');
+Insert into HangHoa(MaHH,TenHH,Imei,Soluong,Dongia,Ngaycapnhat) values ('HH003',N'Laptop Macbook Air M3 Pro','0011223344',1,120000000,'12-12-2023');
+
+Insert into HoaDon(MaHD,MaHH,MaKH,MaNV,Soluong,Dongia,Tongtien,Ngaylap) values ('HD001','HH002','KH003','NV002',3,3500000,7500000,'11-22-2023');
+Insert into HoaDon(MaHD,MaHH,MaKH,MaNV,Soluong,Dongia,Tongtien,Ngaylap) values ('HD002','HH001','KH002','NV003',2,1200000,2400000,'12-12-2023');
+Insert into HoaDon(MaHD,MaHH,MaKH,MaNV,Soluong,Dongia,Tongtien,Ngaylap) values ('HD003','HH003','KH001','NV002',1,120000000,120000000,'1/19/2023');
+
+Insert into PhieuNhapXuat(MaPhieu,MaHH,Loai,Soluong,Ngaylap) values ('N0001','HH001',N'Nhập Kho',30,'12-19-2023');
+Insert into PhieuNhapXuat(MaPhieu,MaHH,Loai,Soluong,Ngaylap) values ('N0002','HH002',N'Nhập Kho',20,'12-19-2023');
+Insert into PhieuNhapXuat(MaPhieu,MaHH,Loai,Soluong,Ngaylap) values ('N0003','HH003',N'Nhập Kho',10,'12-19-2023');
+
+Insert into BaoHanh(MaBH,MaHH,NgayBH,NgayhetBH) values ('BH001','HH001','12-12-2023','06-12-2024');
+Insert into BaoHanh(MaBH,MaHH,NgayBH,NgayhetBH) values ('BH002','HH002','11-22-2023','11-22-2024');
+Insert into BaoHanh(MaBH,MaHH,NgayBH,NgayhetBH) values ('BH003','HH003','1-19-2023','1-19-2025');
