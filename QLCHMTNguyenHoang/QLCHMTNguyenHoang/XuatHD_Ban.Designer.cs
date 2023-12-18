@@ -46,14 +46,14 @@ namespace QLCHMTNguyenHoang
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1077, 647);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1219, 904);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1268, 18);
+            this.comboBox1.Location = new System.Drawing.Point(1410, 18);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(264, 37);
             this.comboBox1.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace QLCHMTNguyenHoang
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1268, 211);
+            this.button1.Location = new System.Drawing.Point(1410, 232);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(203, 64);
             this.button1.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace QLCHMTNguyenHoang
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1268, 81);
+            this.comboBox2.Location = new System.Drawing.Point(1410, 81);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(264, 37);
             this.comboBox2.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace QLCHMTNguyenHoang
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1086, 91);
+            this.label2.Location = new System.Drawing.Point(1228, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 20);
             this.label2.TabIndex = 5;
@@ -94,7 +94,7 @@ namespace QLCHMTNguyenHoang
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1168, 28);
+            this.label1.Location = new System.Drawing.Point(1310, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 6;
@@ -104,7 +104,7 @@ namespace QLCHMTNguyenHoang
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1175, 164);
+            this.label3.Location = new System.Drawing.Point(1317, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 44;
@@ -113,7 +113,7 @@ namespace QLCHMTNguyenHoang
             // txtTenKH
             // 
             this.txtTenKH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenKH.Location = new System.Drawing.Point(1268, 157);
+            this.txtTenKH.Location = new System.Drawing.Point(1410, 157);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(264, 34);
             this.txtTenKH.TabIndex = 43;
@@ -122,7 +122,7 @@ namespace QLCHMTNguyenHoang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1561, 659);
+            this.ClientSize = new System.Drawing.Size(1692, 815);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.label1);
@@ -133,6 +133,7 @@ namespace QLCHMTNguyenHoang
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "XuatHD_Ban";
             this.Text = "XuatHD_Ban";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.XuatHD_Ban_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

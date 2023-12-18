@@ -38,7 +38,7 @@ namespace QLCHMTNguyenHoang
         {
             comboBox1.Items.Add("HD Nhập");
             comboBox1.Items.Add("HD Bán");
-            comboBox1.Items.Add("Quản lí tồn kho");
+           
             LoadComboBoxMaHH();
         }
         public void LoadComboBoxMaHH()

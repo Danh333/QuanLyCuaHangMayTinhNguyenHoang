@@ -272,24 +272,7 @@ namespace QLCHMTNguyenHoang
             this.Hide();
            
         }
-        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            try
-            {
-                if ((e.Exception) is System.Data.ConstraintException)
-                {
-                    dataGridView1.Rows[e.RowIndex].ErrorText = "must be unique value";
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "must be unique value";
-                    MessageBox.Show(e.Exception.Message, "Error ConstraintException",
-                                                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    e.ThrowException = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+       
         void Xoa_TextBox()
         {
             txtMahh.Clear();
@@ -335,5 +318,10 @@ namespace QLCHMTNguyenHoang
             btnCapnhat.Visible = false;
         }
 
+        private void btnPhieu_Click(object sender, EventArgs e)
+        {
+            HDnhap n = new HDnhap();
+            n.ShowDialog();
+        }
     }
 }

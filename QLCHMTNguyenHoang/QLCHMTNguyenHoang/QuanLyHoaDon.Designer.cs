@@ -80,6 +80,7 @@
             this.btnCapnhat = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -145,10 +146,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 512);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 485);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -240,7 +241,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 30);
+            this.label2.Location = new System.Drawing.Point(47, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 27);
             this.label2.TabIndex = 0;
@@ -249,7 +250,7 @@
             // txtMaHoaDon
             // 
             this.txtMaHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaHoaDon.Location = new System.Drawing.Point(192, 27);
+            this.txtMaHoaDon.Location = new System.Drawing.Point(223, 25);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
             this.txtMaHoaDon.Size = new System.Drawing.Size(218, 30);
             this.txtMaHoaDon.TabIndex = 1;
@@ -257,7 +258,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 228);
+            this.label4.Location = new System.Drawing.Point(74, 226);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 27);
             this.label4.TabIndex = 4;
@@ -275,7 +276,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(580, 124);
+            this.label5.Location = new System.Drawing.Point(592, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 27);
             this.label5.TabIndex = 7;
@@ -284,7 +285,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(-3, 129);
+            this.label10.Location = new System.Drawing.Point(15, 124);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(160, 27);
             this.label10.TabIndex = 13;
@@ -294,6 +295,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTenHH);
             this.groupBox1.Controls.Add(this.comboBoxMaHH);
             this.groupBox1.Controls.Add(this.label17);
@@ -319,7 +321,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(19, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1154, 304);
+            this.groupBox1.Size = new System.Drawing.Size(1154, 277);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -335,7 +337,7 @@
             // comboBoxMaHH
             // 
             this.comboBoxMaHH.FormattingEnabled = true;
-            this.comboBoxMaHH.Location = new System.Drawing.Point(192, 76);
+            this.comboBoxMaHH.Location = new System.Drawing.Point(223, 74);
             this.comboBoxMaHH.Name = "comboBoxMaHH";
             this.comboBoxMaHH.Size = new System.Drawing.Size(218, 35);
             this.comboBoxMaHH.TabIndex = 50;
@@ -345,7 +347,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(150, 82);
+            this.label17.Location = new System.Drawing.Point(177, 77);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 27);
             this.label17.TabIndex = 49;
@@ -354,7 +356,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(-3, 79);
+            this.label18.Location = new System.Drawing.Point(38, 77);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(137, 27);
             this.label18.TabIndex = 48;
@@ -363,7 +365,7 @@
             // comboBoxMaKH
             // 
             this.comboBoxMaKH.FormattingEnabled = true;
-            this.comboBoxMaKH.Location = new System.Drawing.Point(192, 126);
+            this.comboBoxMaKH.Location = new System.Drawing.Point(223, 124);
             this.comboBoxMaKH.Name = "comboBoxMaKH";
             this.comboBoxMaKH.Size = new System.Drawing.Size(218, 35);
             this.comboBoxMaKH.TabIndex = 46;
@@ -371,7 +373,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 176);
+            this.label16.Location = new System.Drawing.Point(31, 174);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(144, 27);
             this.label16.TabIndex = 45;
@@ -380,7 +382,7 @@
             // comboBoxMaNV
             // 
             this.comboBoxMaNV.FormattingEnabled = true;
-            this.comboBoxMaNV.Location = new System.Drawing.Point(192, 173);
+            this.comboBoxMaNV.Location = new System.Drawing.Point(223, 171);
             this.comboBoxMaNV.Name = "comboBoxMaNV";
             this.comboBoxMaNV.Size = new System.Drawing.Size(218, 35);
             this.comboBoxMaNV.TabIndex = 44;
@@ -388,7 +390,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(629, 30);
+            this.label15.Location = new System.Drawing.Point(641, 30);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(88, 27);
             this.label15.TabIndex = 43;
@@ -397,7 +399,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(602, 71);
+            this.label3.Location = new System.Drawing.Point(614, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 27);
             this.label3.TabIndex = 42;
@@ -407,7 +409,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(146, 232);
+            this.label6.Location = new System.Drawing.Point(177, 230);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 27);
             this.label6.TabIndex = 41;
@@ -416,7 +418,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(573, 170);
+            this.label11.Location = new System.Drawing.Point(585, 170);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(146, 27);
             this.label11.TabIndex = 38;
@@ -440,7 +442,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(192, 226);
+            this.numericUpDown1.Location = new System.Drawing.Point(223, 224);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(218, 35);
             this.numericUpDown1.TabIndex = 29;
@@ -449,7 +451,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(150, 132);
+            this.label14.Location = new System.Drawing.Point(177, 127);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(40, 27);
             this.label14.TabIndex = 27;
@@ -459,7 +461,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(146, 26);
+            this.label12.Location = new System.Drawing.Point(177, 27);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 27);
             this.label12.TabIndex = 26;
@@ -489,7 +491,7 @@
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(21, 342);
+            this.panel1.Location = new System.Drawing.Point(21, 315);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1149, 164);
             this.panel1.TabIndex = 36;
@@ -498,7 +500,7 @@
             // 
             this.btnXuatHD_KH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXuatHD_KH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatHD_KH.Location = new System.Drawing.Point(692, 98);
+            this.btnXuatHD_KH.Location = new System.Drawing.Point(693, 105);
             this.btnXuatHD_KH.Name = "btnXuatHD_KH";
             this.btnXuatHD_KH.Size = new System.Drawing.Size(172, 50);
             this.btnXuatHD_KH.TabIndex = 36;
@@ -544,7 +546,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(145, 50);
             this.btnThem.TabIndex = 21;
-            this.btnThem.Text = "Tạo hóa đơn";
+            this.btnThem.Text = "Thêm   ";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
@@ -632,6 +634,16 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(177, 174);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 27);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "(*)";
+            // 
             // QuanLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -711,5 +723,6 @@
         private System.Windows.Forms.TextBox txtTenHH;
         private System.Windows.Forms.Button btnXuatHD_KH;
         public System.Windows.Forms.ComboBox comboBoxMaKH;
+        private System.Windows.Forms.Label label7;
     }
 }
