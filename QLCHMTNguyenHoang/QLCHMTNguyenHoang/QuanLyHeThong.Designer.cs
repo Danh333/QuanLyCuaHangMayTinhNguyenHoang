@@ -134,6 +134,7 @@
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.Size = new System.Drawing.Size(560, 174);
             this.dataGridView.TabIndex = 16;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // ButtonThem
             // 

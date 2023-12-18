@@ -8,11 +8,11 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHoaDon : Form
     {
-        SqlConnection cn = new SqlConnection();
-       
+        private string tdn = "";
+        private string mk = "";
+        private string quyen = "";
+        SqlConnection cn = new SqlConnection();    
         SqlCommand cmd = new SqlCommand();
-        
-
         public QuanLyHoaDon()
         {
             InitializeComponent();
@@ -47,7 +47,8 @@ namespace QLCHMTNguyenHoang
 
         void Xoa_TextBox()
         {
-            
+            txtTenHH.Clear();
+            comboBoxMaKH.ResetText();
             txtMaHoaDon.Clear();
             comboBoxMaHH.ResetText();
             txtMaKhachHang.ResetText();
@@ -67,6 +68,7 @@ namespace QLCHMTNguyenHoang
             txtGiaTien.Enabled = true;
             txtTongTien.Enabled = true;
             dateTimePicker1.Enabled = true;
+            txtTenHH.Enabled = true;
         }
         void KhoaNhapDuLieu()
         {      
@@ -77,7 +79,8 @@ namespace QLCHMTNguyenHoang
             numericUpDown1.Enabled = false;
             txtGiaTien.Enabled = false;
             txtTongTien.Enabled = false;
-            dateTimePicker1.Enabled = false;          
+            dateTimePicker1.Enabled = false;
+            txtTenHH.Enabled = false;
         }
         void dongButton()
         {
@@ -151,17 +154,46 @@ namespace QLCHMTNguyenHoang
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            txttimkiem.Focus();           
-            cn.Open();
-            string sql = @"select * from hoadon where mahoadon like '%" + txttimkiem.Text + "%' or makh like N'%" + txttimkiem.Text + "%'";
-            SqlCommand cmd = new SqlCommand(sql, cn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            cmd.ExecuteNonQuery();
-            KhoaNhapDuLieu();
-            cn.Close();           
+            //txttimkiem.Focus();           
+            //cn.Open();
+            //string sql = @"select * from hoadon where mahoadon like '%" + txttimkiem.Text + "%' or makh like N'%" + txttimkiem.Text + "%'";
+            //SqlCommand cmd = new SqlCommand(sql, cn);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //dataGridView1.DataSource = dt;
+            //cmd.ExecuteNonQuery();
+            //KhoaNhapDuLieu();
+            //cn.Close();
+            try
+            {
+                cn.Open();
+
+                string sql = "SELECT * FROM hoadon WHERE mahd LIKE @TimKiem OR makh LIKE @TimKiem";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+
+                // Thêm tham số @TimKiem và gán giá trị từ TextBox
+                cmd.Parameters.AddWithValue("@TimKiem", "%" + txttimkiem.Text + "%");
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+
+                KhoaNhapDuLieu();
+            }
+            catch (Exception ex)
+            {
+                // Xử lý nếu có lỗi, ví dụ: MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
         }
         void dongbtn_clickdatagridview_()  //tắt btn và datagview
         {
@@ -172,17 +204,30 @@ namespace QLCHMTNguyenHoang
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            string TaoMoiMaHD = TaoMaHD_auto();
+
+            // Kiểm tra xem mã hóa đơn đã tồn tại chưa
+            while (KTHD_Trung(TaoMoiMaHD))
+            {
+                // Nếu đã tồn tại, tăng số thứ tự và tạo lại mã hóa đơn
+                STT_HD++;
+                TaoMoiMaHD = TaoMaHD_auto();
+            }
+            txtMaHoaDon.Text = TaoMaHD_auto();
+            // Tăng giá trị số thứ tự
+            STT_HD++;
+
             dataGridView1.Enabled = true;
             btnXoa.Visible = true;
             btnSua.Visible = true;
             btnCapnhat.Visible = true;
-            if (txtMaHoaDon.Text == "")
-            {
-                dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập mã hóa đơn !");
-                txtMaHoaDon.Focus();
-                return;
-            }
+            //if (txtMaHoaDon.Text == "")
+            //{
+            //    dongbtn_clickdatagridview_();
+            //    MessageBox.Show("Vui lòng nhập mã hóa đơn !");
+            //    txtMaHoaDon.Focus();
+            //    return;
+            //}
            
             //if (txtMaKhachHang.Text == "")
             //{
@@ -569,7 +614,35 @@ namespace QLCHMTNguyenHoang
 
 
         }
+        private int STT_HD = 1;
+        private string TaoMaHD_auto()
+        {
+            // Tạo mã hóa đơn theo định dạng "HDxxx"
+            string MaHoaDon = "HD" + STT_HD.ToString("000");
+            return MaHoaDon;
+        }
+        private bool KTHD_Trung(string mahoadonn)
+        {
+            if (string.IsNullOrEmpty(mahoadonn))
+            {
+                // Xử lý lỗi nếu mahoadonn không hợp lệ
+                return false;
+            }
 
+            using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.ChuoiKetNoi))
+            {
+                cn.Open();
+                string sql = "SELECT COUNT(*) FROM Hoadon WHERE Mahd = @Mahd";
+                using (SqlCommand cmd = new SqlCommand(sql, cn))
+                {
+                    cmd.Parameters.AddWithValue("@Mahd", mahoadonn); // Đặt tên tham số đúng
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            
+        }
+      
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 

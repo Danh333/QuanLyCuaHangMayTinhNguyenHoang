@@ -14,11 +14,16 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHeThong : Form
     {
-        SqlConnection cn;
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
         string MachineName = Environment.MachineName;
         public QuanLyHeThong()
         {
             InitializeComponent();
+            cn.ConnectionString = Properties.Settings.Default.ChuoiKetNoiDangNhap;
+            cn.Open();
+            cmd.Connection = cn;
+
         }
         
         private void ButtonThoat_Click(object sender, EventArgs e)
@@ -48,12 +53,13 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("Data Source = "+ MachineName +@"; Initial Catalog = QLtaikhoan; Integrated Security = True");
-            string sql = "select * from nguoidung";
+           //cn = new SqlConnection("Data Source = "+ MachineName +@"; Initial Catalog = QLtaikhoan; Integrated Security = True");
+            string sql = "select * from nguoidung1";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView.DataSource = dt;
+            ButtonSua.Enabled = true;
         }
         void moTextbox()
         {
@@ -83,7 +89,7 @@ namespace QLCHMTNguyenHoang
             DataTable dt = new DataTable();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select Quyen from nguoidung", cn);
+                SqlDataAdapter da = new SqlDataAdapter("select Quyen from nguoidung1", cn);
                 da.Fill(dt);
                 cn.Close();
             }
@@ -147,19 +153,28 @@ namespace QLCHMTNguyenHoang
             if (textBoxMatkhau.Text == "")
             {
                 dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập tên nhân viên!");
+                MessageBox.Show("Vui lòng nhập Mật khẩu!");
+                textBoxMatkhau.Focus();
+                return;
+            }
+            if (comboBox.Text == "")
+            {
+                dongbtn_clickdatagridview_();
+                MessageBox.Show("Vui lòng chọn quyền!");
                 textBoxMatkhau.Focus();
                 return;
             }
             try
             {
                 cn.Open();
-                string sql = "insert  into nguoidung(username,password)  values(@username,@password)";
+                string sql = "insert  into nguoidung1(username,password,quyen)  values(@username,@password,@quyen)";
                 SqlCommand cmd = new SqlCommand(sql, cn);
-                MemoryStream str = new MemoryStream();
+               
                 cmd.Parameters.AddWithValue("@username", textBoxTendangnhap.Text);
                 cmd.Parameters.AddWithValue("@password", textBoxMatkhau.Text);
+                cmd.Parameters.AddWithValue("@quyen", comboBox.Text);
 
+                cmd.ExecuteNonQuery();
                 hienthi();
                 ButtonLuu.Enabled = false;
                 ButtonCapnhat.Enabled = false;
@@ -181,7 +196,7 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonXoa_Click(object sender, EventArgs e)
         {
-            string sql = "delete from nguoidung where username=@username";
+            string sql = "delete from nguoidung1 where username=@username";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@username", textBoxTendangnhap.Text);
             cn.Open();
@@ -202,11 +217,11 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update nguoidung set  username=@username,password=@password where username=@username";
+                string sql = "update nguoidung set  username=@username,password=@password,quyen=@quyen where username=@username";
                 SqlCommand cmd = new SqlCommand(sql, cn);
-                MemoryStream str = new MemoryStream();
-                cmd.Parameters.AddWithValue("@manv", textBoxTendangnhap.Text);
-                cmd.Parameters.AddWithValue("@tennv", textBoxMatkhau.Text);
+                
+                cmd.Parameters.AddWithValue("@username", textBoxTendangnhap.Text);
+                cmd.Parameters.AddWithValue("@password", textBoxMatkhau.Text);
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
@@ -234,17 +249,44 @@ namespace QLCHMTNguyenHoang
 
         private void ButtonTimkiem_Click(object sender, EventArgs e)
         {
-            textBoxTimkiem.Focus();
-            cn.Open();
-            string sql = @"select * from nguoidung where username like '%";
-            SqlCommand cmd = new SqlCommand(sql, cn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView.DataSource = dt;
-            cmd.ExecuteNonQuery();
-            dongTextbox();
-            cn.Close();
+            try
+            {
+                cn.Open();
+
+                string sql = "SELECT * FROM nguoidung1 WHERE username LIKE @TimKiem";
+                SqlCommand cmd = new SqlCommand(sql, cn);
+
+                // Thêm tham số @TimKiem và gán giá trị từ TextBox
+                cmd.Parameters.AddWithValue("@TimKiem", "%" + textBoxTimkiem.Text + "%");
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView.DataSource = dt;
+
+                dongTextbox();
+            }
+            catch (Exception ex)
+            {
+                // Xử lý nếu có lỗi, ví dụ: MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
+
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ButtonSua.Enabled = true;
+            textBoxTendangnhap.Text =  dataGridView.CurrentRow.Cells[0].Value.ToString();
+            textBoxMatkhau.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+            comboBox.Text= dataGridView.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }

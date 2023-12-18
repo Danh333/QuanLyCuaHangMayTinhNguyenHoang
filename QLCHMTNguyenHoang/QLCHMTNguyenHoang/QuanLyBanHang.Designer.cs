@@ -49,11 +49,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ChucNang = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.btnQLHeTHong = new System.Windows.Forms.Button();
+            this.btnQLHeThong = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnQLNhanVien = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.labelTenNguoidung = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -234,6 +235,7 @@
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
             this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(102, 26);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất";
+            this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuatToolStripMenuItem_Click);
             // 
             // ThoatToolStripMenuItem
             // 
@@ -247,7 +249,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.ChucNang);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.btnQLHeTHong);
+            this.panel1.Controls.Add(this.btnQLHeThong);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnQLNhanVien);
             this.panel1.Controls.Add(this.button3);
@@ -284,21 +286,21 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // btnQLHeTHong
+            // btnQLHeThong
             // 
-            this.btnQLHeTHong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnQLHeTHong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnQLHeTHong.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnQLHeTHong.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_system_48;
-            this.btnQLHeTHong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLHeTHong.Location = new System.Drawing.Point(3, 366);
-            this.btnQLHeTHong.Name = "btnQLHeTHong";
-            this.btnQLHeTHong.Size = new System.Drawing.Size(249, 80);
-            this.btnQLHeTHong.TabIndex = 12;
-            this.btnQLHeTHong.Text = "Quản lý hệ thống       ";
-            this.btnQLHeTHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQLHeTHong.UseVisualStyleBackColor = false;
-            this.btnQLHeTHong.Click += new System.EventHandler(this.button6_Click);
+            this.btnQLHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnQLHeThong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQLHeThong.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnQLHeThong.Image = global::QLCHMTNguyenHoang.Properties.Resources.icons8_system_48;
+            this.btnQLHeThong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLHeThong.Location = new System.Drawing.Point(3, 366);
+            this.btnQLHeThong.Name = "btnQLHeThong";
+            this.btnQLHeThong.Size = new System.Drawing.Size(249, 80);
+            this.btnQLHeThong.TabIndex = 12;
+            this.btnQLHeThong.Text = "Quản lý hệ thống       ";
+            this.btnQLHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQLHeThong.UseVisualStyleBackColor = false;
+            this.btnQLHeThong.Click += new System.EventHandler(this.button6_Click);
             // 
             // button2
             // 
@@ -364,11 +366,22 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // labelTenNguoidung
+            // 
+            this.labelTenNguoidung.AutoSize = true;
+            this.labelTenNguoidung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelTenNguoidung.Location = new System.Drawing.Point(265, 0);
+            this.labelTenNguoidung.Name = "labelTenNguoidung";
+            this.labelTenNguoidung.Size = new System.Drawing.Size(82, 23);
+            this.labelTenNguoidung.TabIndex = 12;
+            this.labelTenNguoidung.Text = "Xin chào";
+            // 
             // QuanLyBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 673);
+            this.Controls.Add(this.labelTenNguoidung);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -381,6 +394,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Bán Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.QuanLyBanHang_Activated);
             this.Load += new System.EventHandler(this.QuanLyBanHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
@@ -414,11 +428,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnQLHeTHong;
+        private System.Windows.Forms.Button btnQLHeThong;
         private System.Windows.Forms.Button btnQLNhanVien;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label ChucNang;
         private System.Windows.Forms.ToolStripMenuItem ThoatToolStripMenuItem;
+        private System.Windows.Forms.Label labelTenNguoidung;
     }
 }

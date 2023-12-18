@@ -16,17 +16,22 @@ namespace QLCHMTNguyenHoang
 
         SqlConnection cn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
+       
 
-       // SqlConnection cn;
-       // string MachineName = Environment.MachineName;
+        // SqlConnection cn;
+        // string MachineName = Environment.MachineName;
 
         public DangNhap()
         {
             InitializeComponent();
+            
+            
+
             cn.ConnectionString = Properties.Settings.Default.ChuoiKetNoiDangNhap;
             cn.Open();
             cmd.Connection = cn;
         }
+       
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -65,6 +70,7 @@ namespace QLCHMTNguyenHoang
             {
                 MessageBox.Show("Đăng nhập không thành công . Tên đăng nhập hoặc mật khẩu không chính xác", "Thông báo");
             }
+          
         }
 
         private void DangNhap_Load(object sender, EventArgs e)

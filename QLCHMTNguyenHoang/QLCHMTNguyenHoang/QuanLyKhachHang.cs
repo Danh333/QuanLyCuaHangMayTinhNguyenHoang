@@ -116,7 +116,7 @@ namespace QLCHMTNguyenHoang
             txtEmail.Enabled = true;
             txtsodt.Enabled = true;
             txtDiachi.Enabled = true;
-          
+            comboBox.Enabled = true;
             moButton();
         }
         public void getsizecolums()
@@ -290,21 +290,21 @@ namespace QLCHMTNguyenHoang
             
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            //mở
-            dataGridView1.Enabled = true;
-            btnXoa.Visible = true;
-            btnSua.Visible = true;
-            btnCapnhat.Visible = true;
-            //đóng
-            btnLuu.Enabled = false;
-            btnSua.Enabled = false;
-            btnCapnhat.Enabled = false;
+        //private void btnReset_Click(object sender, EventArgs e)
+        //{
+        //    //mở
+        //    dataGridView1.Enabled = true;
+        //    btnXoa.Visible = true;
+        //    btnSua.Visible = true;
+        //    btnCapnhat.Visible = true;
+        //    //đóng
+        //    btnLuu.Enabled = false;
+        //    btnSua.Enabled = false;
+        //    btnCapnhat.Enabled = false;
             
-            dongTextbox();
-            Xoa_TextBox();
-        }
+        //    dongTextbox();
+        //    Xoa_TextBox();
+        //}
 
        
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -340,16 +340,22 @@ namespace QLCHMTNguyenHoang
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnCapnhat.Enabled = false;
-            
+            dongTextbox();
             Xoa_TextBox();
         }
 
         public void LoadComboBoxCongNo()
         {
             DataTable dt = new DataTable();
+           
+
+          
+
+            // Đổ dữ liệu vào ComboBox
+            
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT congno From khachhang ", cn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct congno From khachhang ", cn);
                 da.Fill(dt);
                 cn.Close();
             }
@@ -371,7 +377,8 @@ namespace QLCHMTNguyenHoang
 
 
 
+
     }
-    
-    
+
+
 }
