@@ -16,9 +16,7 @@ namespace QLCHMTNguyenHoang
 
         SqlConnection cn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
-
-       // SqlConnection cn;
-       // string MachineName = Environment.MachineName;
+        string MachineName = Environment.MachineName;
 
         public DangNhap()
         {
@@ -35,7 +33,7 @@ namespace QLCHMTNguyenHoang
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
 
-          //  cn = new SqlConnection("Data Source="+ MachineName +@";Initial Catalog=QLtaikhoan;Integrated Security=True");
+            cn = new SqlConnection("Data Source=" + MachineName + @";Initial Catalog=QLtaikhoan;Integrated Security=True");
 
             string userName = txtTenDangNhap.Text;
             string passWord = txtMatKhau.Text;

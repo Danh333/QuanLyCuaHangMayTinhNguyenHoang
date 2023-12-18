@@ -9,13 +9,17 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[nguoidung](
-	[username] [nvarchar](20) NULL,
-	[password] [nvarchar](30) NULL,
-	[quyen] [nvarchar](20) NULL
+CREATE TABLE nguoidung(
+	[username] [nvarchar](20) NOT NULL,
+	[password] [nvarchar](30) NOT NULL,
+	[quyen] [nvarchar](20) NOT NULL
 ) ON [PRIMARY]
 
 GO
 
-Insert into nguoidung(username,password,quyen) values ('admin','12345','admin')
+Insert into nguoidung(username,password,quyen) values ('admin','123','0');
+Insert into nguoidung(username,password,quyen) values ('user1','123','1');
+Insert into nguoidung(username,password,quyen) values ('user2','123','1');
+
+delete from nguoidung
 

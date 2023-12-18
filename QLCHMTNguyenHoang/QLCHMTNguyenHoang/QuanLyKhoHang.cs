@@ -30,7 +30,7 @@ namespace QLCHMTNguyenHoang
         void hienthi()
         {
             cn = new SqlConnection("Data Source ="+ MachineName +@"; Initial Catalog = QLCHMaytinh; Integrated Security = True");
-            string sql = "select * from khachhang2";
+            string sql = "select maphieu,mahh,tenhh,loai,soluong,ngaylap from phieunhapxuat a, hanghoa b where ";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -41,9 +41,6 @@ namespace QLCHMTNguyenHoang
             this.txtTenhh.Enabled = false;
             this.txtSol.Enabled = false;
             this.txtGia.Enabled = false;
-            this.txttinhtrang.Enabled = false;
-
-
         }
         void moTextbox()
         {
@@ -51,7 +48,6 @@ namespace QLCHMTNguyenHoang
             txtTenhh.Enabled = true;
             txtSol.Enabled = true;
             txtGia.Enabled = true;
-            txttinhtrang.Enabled = true;
 
         }
         void dongTextbox()
@@ -60,7 +56,6 @@ namespace QLCHMTNguyenHoang
             txtTenhh.Enabled = false;
             txtSol.Enabled = false;
             txtGia.Enabled = false;
-            txttinhtrang.Enabled = false;
 
         }
         void dongButton()
@@ -106,24 +101,12 @@ namespace QLCHMTNguyenHoang
             hienthi();
             dongTextbox();
 
-
             btnLuu.Enabled = false;
             btnCapnhat.Enabled = false;
             btnSua.Enabled = false;
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             dataGridView1.Enabled = false;
             btnXoa.Visible = false;
@@ -136,14 +119,11 @@ namespace QLCHMTNguyenHoang
             txtTenhh.Clear();
             txtSol.Clear();
             txtGia.Clear();
-            txttinhtrang.Clear();
             //Mở textBox
             txtMahh.Enabled = true;
             txtTenhh.Enabled = true;
             txtSol.Enabled = true;
             txtGia.Enabled = true;
-            txttinhtrang.Enabled = true;
-
             moButton();
         }
         public void getsizecolums()
@@ -168,9 +148,7 @@ namespace QLCHMTNguyenHoang
                 txtMahh.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txtTenhh.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txtSol.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                txtGia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                txttinhtrang.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-               
+                txtGia.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();               
 
             }
             catch
@@ -210,12 +188,6 @@ namespace QLCHMTNguyenHoang
                 MessageBox.Show("Vui lòng nhập giá hàng hóa ");
                 txtGia.Focus(); return;
             }
-            if (txttinhtrang.Text == "")
-            {
-                dongbtn_clickdatagridview_();
-                MessageBox.Show("Vui lòng nhập tình trạng hoàng hóa ");
-                txttinhtrang.Focus(); return;
-            }
 
             try
             {
@@ -227,8 +199,6 @@ namespace QLCHMTNguyenHoang
                 cmd.Parameters.AddWithValue("@tenhh", txtTenhh.Text);
                 cmd.Parameters.AddWithValue("@sohd", txtSol.Text);
                 cmd.Parameters.AddWithValue("@sodt", txtGia.Text);
-                cmd.Parameters.AddWithValue("@ghichu", txttinhtrang.Text);
-                //cmd.Parameters.AddWithValue("@anh", str.ToArray());
 
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -247,16 +217,14 @@ namespace QLCHMTNguyenHoang
             try
             {
                 cn.Open();
-                string sql = "update hanghoa2 set  tenhh=@tenhh,sohd=@sohd,sodt=@sodt,ghichu=@ghichu,diachi=@diachi,anh=@anh where makh=@mahh";
+                string sql = "update  set  mahh=@mahh,tenhh=@tenhh, where mahh=@mahh";
                 SqlCommand cmd = new SqlCommand(sql, cn);
                 MemoryStream str = new MemoryStream();
                 cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
                 cmd.Parameters.AddWithValue("@tenhh", txtTenhh.Text);
                 cmd.Parameters.AddWithValue("@sohd", txtSol.Text);
                 cmd.Parameters.AddWithValue("@sodt", txtGia.Text);
-                cmd.Parameters.AddWithValue("@ghichu", txttinhtrang.Text);
 
-                //cmd.Parameters.AddWithValue("@anh", str.ToArray());
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 hienthi();
@@ -269,23 +237,14 @@ namespace QLCHMTNguyenHoang
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sql = "delete from hanghoa2 where makh=@mahh";
+            string sql = "delete from hanghoa where mahh=@mahh";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.Parameters.AddWithValue("@mahh", txtMahh.Text);
             cn.Open();
             cmd.ExecuteNonQuery();
             cn.Close();
             hienthi();
-
             dongTextbox();
-
-
-            //else if (dialogResult == DialogResult.No)
-            //{
-            //    cn.Close();
-            //}
-            //Image imageCircle = Image.FromFile("Anh\\empty1.jpg");
-            //Dat hinh mat dinh khi khoi dong
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -328,8 +287,7 @@ namespace QLCHMTNguyenHoang
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",
-                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ERROR: dataGridView1_DataError",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         void Xoa_TextBox()
@@ -338,14 +296,9 @@ namespace QLCHMTNguyenHoang
             txtTenhh.Clear();
             txtSol.Clear();
             txtGia.Clear();
-            txttinhtrang.Clear();
-
-            //Image imageCircle = Image.FromFile("rong.jpg");
-            //Dat hinh mat dinh khi khoi dong
-
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
             dataGridView1.Enabled = true;
             btnXoa.Visible = true;
@@ -364,7 +317,7 @@ namespace QLCHMTNguyenHoang
         {
             txttimkiem.Focus();
             cn.Open();
-            string sql = @"select * from khohang2 where makh like '%" + txttimkiem.Text + "%' or tensp like N'%" + txttimkiem.Text + "%'";
+            string sql = @"select * from hanghoa where mahh like '%" + txttimkiem.Text + "%' or tenhh like N'%" + txttimkiem.Text + "%'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
