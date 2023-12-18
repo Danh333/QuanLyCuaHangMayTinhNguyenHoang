@@ -43,5 +43,16 @@ namespace QLCHMTNguyenHoang.Properties {
                 return ((string)(this["ChuoiKetNoiDangNhap"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=whoanhminh\\sqlexpress;Initial Catalog=QLCHMTNguyenHoang;Integrated Se" +
+            "curity=True")]
+        public string QLCHMTNguyenHoangConnectionString {
+            get {
+                return ((string)(this["QLCHMTNguyenHoangConnectionString"]));
+            }
+        }
     }
 }

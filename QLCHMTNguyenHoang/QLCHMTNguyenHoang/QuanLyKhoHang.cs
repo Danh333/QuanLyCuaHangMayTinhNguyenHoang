@@ -29,8 +29,8 @@ namespace QLCHMTNguyenHoang
         }
         void hienthi()
         {
-            cn = new SqlConnection("Data Source ="+ MachineName +@"; Initial Catalog = QLCHMaytinh; Integrated Security = True");
-            string sql = "select maphieu,mahh,tenhh,loai,soluong,ngaylap from phieunhapxuat a, hanghoa b where ";
+           cn = new SqlConnection(@"Data Source=" + MachineName + @"\sqlexpress; Initial Catalog=QLCHMTNguyenHoang; Integrated Security=True");
+            string sql = "SELECT HangHoa.MaHH, TenHH, HangHoa.Soluong, dongia, PhieuNhapXuat.MaPhieu, loai, ngaylap FROM HangHoa JOIN PhieuNhapXuat ON HangHoa.MaHH = PhieuNhapXuat.MaHH";
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -128,12 +128,12 @@ namespace QLCHMTNguyenHoang
         }
         public void getsizecolums()
         {
-            dataGridView1.Columns[0].Width = 150;
-            dataGridView1.Columns[1].Width = 150;
-            dataGridView1.Columns[2].Width = 150;
-            dataGridView1.Columns[3].Width = 150;
-            dataGridView1.Columns[4].Width = 150;
-            dataGridView1.Columns[5].Width = 150;
+            //dataGridView1.Columns[0].Width = 150;
+            //dataGridView1.Columns[1].Width = 150;
+            //dataGridView1.Columns[2].Width = 150;
+            //dataGridView1.Columns[3].Width = 150;
+            //dataGridView1.Columns[4].Width = 150;
+            //dataGridView1.Columns[5].Width = 150;
             //dataGridView1.Columns[6].Width = 250;
         }
 

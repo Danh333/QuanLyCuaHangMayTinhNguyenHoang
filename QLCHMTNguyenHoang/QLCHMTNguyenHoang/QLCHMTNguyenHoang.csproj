@@ -58,16 +58,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CryHDNhap.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CryHDNhap.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CryXuatHD_Ban.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CryXuatHD_Ban.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsHD_Nhap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsHD_Nhap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsXuatHD_Ban.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsXuatHD_Ban.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDnhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HDnhap.Designer.cs">
+      <DependentUpon>HDnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -130,12 +158,29 @@
     <Compile Include="XuatHD.Designer.cs">
       <DependentUpon>XuatHD.cs</DependentUpon>
     </Compile>
+    <Compile Include="XuatHD_Ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XuatHD_Ban.Designer.cs">
+      <DependentUpon>XuatHD_Ban.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CryHDNhap.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CryHDNhap.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CryXuatHD_Ban.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CryXuatHD_Ban.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dang_Nhap.resx">
       <DependentUpon>Dang_Nhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDnhap.resx">
+      <DependentUpon>HDnhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,6 +211,9 @@
     <EmbeddedResource Include="XuatHD.resx">
       <DependentUpon>XuatHD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XuatHD_Ban.resx">
+      <DependentUpon>XuatHD_Ban.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -176,6 +224,28 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dsHD_Nhap.xsc">
+      <DependentUpon>dsHD_Nhap.xsd</DependentUpon>
+    </None>
+    <None Include="dsHD_Nhap.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHD_Nhap.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsHD_Nhap.xss">
+      <DependentUpon>dsHD_Nhap.xsd</DependentUpon>
+    </None>
+    <None Include="dsXuatHD_Ban.xsc">
+      <DependentUpon>dsXuatHD_Ban.xsd</DependentUpon>
+    </None>
+    <None Include="dsXuatHD_Ban.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsXuatHD_Ban.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsXuatHD_Ban.xss">
+      <DependentUpon>dsXuatHD_Ban.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -8,10 +8,9 @@ namespace QLCHMTNguyenHoang
 {
     public partial class QuanLyHoaDon : Form
     {
-        private string tdn = "";
-        private string mk = "";
-        private string quyen = "";
-        SqlConnection cn = new SqlConnection();    
+       
+        string MachineName = Environment.MachineName;
+        SqlConnection cn = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         public QuanLyHoaDon()
         {
@@ -28,7 +27,8 @@ namespace QLCHMTNguyenHoang
             
         }
         void hienthi()
-        {        
+        {
+            //cn = new SqlConnection(@"Data Source=" + MachineName + @"\sqlexpress; Initial Catalog=QLCHMaytinh; Integrated Security=True");
             string sql = "select * from hoadon";                    
             SqlDataAdapter da = new SqlDataAdapter(sql, cn);
             DataTable dt = new DataTable();
@@ -60,7 +60,7 @@ namespace QLCHMTNguyenHoang
         }
         void MoKhoaNhapDuLieu()
         {
-            txtMaHoaDon.Enabled = true;
+           
             comboBoxMaNV.Enabled = true;          
             comboBoxMaHH.Enabled = true;
             comboBoxMaKH.Enabled = true;
@@ -116,8 +116,9 @@ namespace QLCHMTNguyenHoang
             comboBoxMaNV.Text = "";
         }
         private void btnThem_Click_1(object sender, EventArgs e)
-        {   
+        {
             //đóng datagview và tắt button
+            txtMaHoaDon.Enabled = false;
             dataGridView1.Enabled = false;
             btnXoa.Visible = false;
             btnSua.Visible = false;
@@ -130,11 +131,7 @@ namespace QLCHMTNguyenHoang
 
             //Mở textBox
             MoKhoaNhapDuLieu();
-            //txtMaHoaDon.Enabled = true;  
-            //txtMaKhachHang.Enabled = true;    
-            //dateTimePicker1.Value = DateTime.Now.Date;          
-            //txtTongTien.Enabled = true;
-            //txtMaNhanVien.Enabled = true;
+           
             moButton();//mở button
         }
         public void getsizecolums()  //đặt chiều rộng cố định cho cột
@@ -221,23 +218,34 @@ namespace QLCHMTNguyenHoang
             btnXoa.Visible = true;
             btnSua.Visible = true;
             btnCapnhat.Visible = true;
-            //if (txtMaHoaDon.Text == "")
-            //{
-            //    dongbtn_clickdatagridview_();
-            //    MessageBox.Show("Vui lòng nhập mã hóa đơn !");
-            //    txtMaHoaDon.Focus();
-            //    return;
-            //}
            
-            //if (txtMaKhachHang.Text == "")
-            //{
-            //    dongbtn_clickdatagridview_();
-            //    MessageBox.Show("Vui lòng nhập Tên sản phẩm");
-            //    txtMaKhachHang.Focus(); return;
-            //}
-            
-                   
-          // try
+
+            if (comboBoxMaHH.Text == "")
+            {
+                dongbtn_clickdatagridview_();
+                MessageBox.Show("Vui lòng chọn mã sản phẩm !");
+                comboBoxMaHH.Focus(); return;
+            }
+            if (comboBoxMaKH.Text == "")
+            {
+                dongbtn_clickdatagridview_();
+                MessageBox.Show("Vui lòng chọn mã khách hàng !");
+                comboBoxMaKH.Focus(); return;
+            }
+            if (comboBoxMaNV.Text == "")
+            {
+                dongbtn_clickdatagridview_();
+                MessageBox.Show("Vui lòng chọn mã nhân viên !");
+                comboBoxMaNV.Focus(); return;
+            }
+            if (numericUpDown1.Value == 0)
+            {
+                dongbtn_clickdatagridview_();
+                MessageBox.Show("Vui lòng chọn số lượng sản phẩm !");
+                numericUpDown1.Focus();
+                return;
+            }
+            // try
             {
                 cn.Open();
                 string sql = "insert into hoadon (MaHD,MaHH,MaKH,MaNV,Soluong,dongia,tongtien,NgayLap) values (@MaHD,@MaHH,@MaKH,@MaNV,@Soluong,@Dongia,@tongtien,@NgayLap)";                  
@@ -333,6 +341,7 @@ namespace QLCHMTNguyenHoang
             dongbtn_clickdatagridview_();
             MoKhoaNhapDuLieu();
             moButton();
+            txtMaHoaDon.Enabled = false;
             btnLuu.Enabled = false;
             btnCapnhat.Visible = true;
             btnSua.Enabled = false;
@@ -390,6 +399,7 @@ namespace QLCHMTNguyenHoang
         private void button2_Click(object sender, EventArgs e)
         {
             //mở
+            txtMaHoaDon.Enabled = false;
             dataGridView1.Enabled = true;
             btnXoa.Visible = true;
             btnSua.Visible = true;
@@ -551,7 +561,7 @@ namespace QLCHMTNguyenHoang
                         {
                             if (reader.Read())
                             {
-                                // Read values from the data reader
+                               
                                 txtGiaTien.Text = reader["dongia"].ToString();
                                 txtTenHH.Text = reader["tenHH"].ToString();
                             }
@@ -640,11 +650,20 @@ namespace QLCHMTNguyenHoang
                     return count > 0;
                 }
             }
-            
+
         }
-      
+
+
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnXuatHD_KH_Click(object sender, EventArgs e)
+        {
+            XuatHD_Ban f = new XuatHD_Ban();
+            f.ShowDialog();
 
         }
     }
