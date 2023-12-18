@@ -416,8 +416,7 @@ namespace QLCHMTNguyenHoang
        
         private void btnXuatHD_Click(object sender, EventArgs e)
         {
-            XuatHD f = new XuatHD();
-            f.ShowDialog();
+         
         }
 
         private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
